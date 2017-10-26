@@ -1,0 +1,125 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFrmZInfo','FORMDATA',[
+  'TPF0'#9'TFrmZInfo'#8'FrmZInfo'#4'Left'#3#196#1#6'Height'#3'v'#1#3'Top'#3#150
+  +#0#5'Width'#3'X'#1#18'HorzScrollBar.Page'#3'#'#1#19'HorzScrollBar.Range'#3#31
+  +#1#18'VertScrollBar.Page'#3#227#0#19'VertScrollBar.Range'#3#227#0#13'ActiveC'
+  +'ontrol'#7#5'Edit1'#11'BorderIcons'#11#12'biSystemMenu'#0#11'BorderStyle'#7#8
+  +'bsSingle'#7'Caption'#6#23'Deslocamentos do eixo Z'#12'ClientHeight'#3'v'#1
+  +#11'ClientWidth'#3'X'#1#6'OnShow'#7#8'FormShow'#8'Position'#7#15'poDesktopCe'
+  +'nter'#10'LCLVersion'#6#6'0.9.30'#0#6'TLabel'#6'Label1'#4'Left'#2#6#6'Height'
+  +#2#17#3'Top'#2'2'#5'Width'#3#151#0#7'Caption'#6#24'Profundidade de fresagem'
+  +#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Hei'
+  +'ght'#2#243#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#11'Paren'
+  +'tColor'#8#10'ParentFont'#8#0#0#6'TLabel'#6'Label2'#4'Left'#2#6#6'Height'#2
+  +#17#3'Top'#3#128#0#5'Width'#3#153#0#7'Caption'#6#25'Altura para  deslocament'
+  +'o'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.'
+  +'Height'#2#243#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#11'Pa'
+  +'rentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#6'Label3'#4'Left'#3#28#1#6'Heig'
+  +'ht'#2#15#3'Top'#2'>'#5'Width'#2#17#7'Caption'#6#2'mm'#12'Font.CharSet'#7#12
+  +'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2#245#9'Font.Name'
+  +#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'
+  +#8#0#0#6'TLabel'#6'Label4'#4'Left'#3#28#1#6'Height'#2#15#3'Top'#3#140#0#5'Wi'
+  +'dth'#2#17#7'Caption'#6#2'mm'#11'Font.Height'#2#245#9'Font.Name'#6#5'Arial'
+  +#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#6'Label5'#4'Left'#2#0#6'He'
+  +'ight'#2#25#3'Top'#2#0#5'Width'#3'X'#1#5'Align'#7#5'alTop'#9'Alignment'#7#8
+  +'taCenter'#7'Caption'#6#23'Deslocamentos do Eixo Z'#12'Font.CharSet'#7#12'AN'
+  +'SI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2#235#9'Font.Name'#6
+  +#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#10'Font.Style'#11#6'fsBold'#0#11'P'
+  +'arentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#6'Label6'#4'Left'#2#8#6'Height'
+  +#2#17#3'Top'#3'8'#1#5'Width'#3#7#1#9'Alignment'#7#8'taCenter!BorderSpacing.C'
+  +'ellAlignHorizontal'#7#9'ccaCenter'#31'BorderSpacing.CellAlignVertical'#7#9
+  +'ccaCenter'#7'Caption'#6'0O nivel zero do eixo Z '#195#169' a superficie da '
+  +'placa!'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#5'clRed'#11'Fo'
+  +'nt.Height'#2#243#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#11
+  +'ParentColor'#8#10'ParentFont'#8#0#0#6'TBevel'#6'Bevel1'#4'Left'#2#3#6'Heigh'
+  +'t'#2#24#3'Top'#3'5'#1#5'Width'#3'P'#1#5'Shape'#7#7'bsFrame'#0#0#6'TLabel'#6
+  +'Label7'#4'Left'#2#6#6'Height'#2#17#3'Top'#2'X'#5'Width'#3#133#0#7'Caption'#6
+  +#22'Profundidade dos furos'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Colo'
+  +'r'#7#7'clBlack'#11'Font.Height'#2#243#9'Font.Name'#6#5'Arial'#10'Font.Pitch'
+  +#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#6'Label8'
+  +#4'Left'#3#28#1#6'Height'#2#15#3'Top'#2'd'#5'Width'#2#17#7'Caption'#6#2'mm'
+  +#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Hei'
+  +'ght'#2#245#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#11'Paren'
+  +'tColor'#8#10'ParentFont'#8#0#0#5'TEdit'#5'Edit1'#4'Left'#3#231#0#6'Height'#2
+  +#26#3'Top'#2'0'#5'Width'#2'3'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Co'
+  +'lor'#7#7'clBlack'#11'Font.Height'#2#241#9'Font.Name'#6#5'Arial'#10'Font.Pit'
+  +'ch'#7#10'fpVariable'#10'Font.Style'#11#6'fsBold'#0#8'OnChange'#7#11'Edit1Ch'
+  +'ange'#6'OnExit'#7#9'Edit1Exit'#10'ParentFont'#8#7'TabStop'#8#8'TabOrder'#2#0
+  +#4'Text'#6#4'0,30'#0#0#5'TEdit'#5'Edit2'#4'Left'#3#231#0#6'Height'#2#26#3'To'
+  +'p'#2'~'#5'Width'#2'3'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7
+  +'clBlack'#11'Font.Height'#2#241#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10
+  +'fpVariable'#10'Font.Style'#11#6'fsBold'#0#8'OnChange'#7#11'Edit2Change'#6'O'
+  +'nExit'#7#9'Edit2Exit'#10'ParentFont'#8#7'TabStop'#8#8'TabOrder'#2#1#4'Text'
+  +#6#4'3,00'#0#0#7'TButton'#5'BtnOK'#4'Left'#2#3#6'Height'#2' '#3'Top'#3'Q'#1#5
+  +'Width'#3'Q'#1#25'BorderSpacing.InnerBorder'#2#4#7'Caption'#6#2'OK'#7'OnClic'
+  +'k'#7#10'BtnOKClick'#8'TabOrder'#2#2#0#0#7'TUpDown'#7'UpDown1'#4'Left'#3'7'#1
+  +#6'Height'#2#31#3'Top'#2'-'#5'Width'#2#29#3'Min'#2#10#3'Max'#3#208#7#8'Posit'
+  +'ion'#2#30#8'TabOrder'#2#3#4'Wrap'#8#7'OnClick'#7#12'UpDown1Click'#0#0#7'TUp'
+  +'Down'#7'UpDown2'#4'Left'#3'7'#1#6'Height'#2#31#3'Top'#2'{'#5'Width'#2#29#3
+  +'Min'#2#10#3'Max'#3#232#3#8'Position'#3#150#0#8'TabOrder'#2#4#4'Wrap'#8#7'On'
+  +'Click'#7#12'UpDown2Click'#0#0#5'TEdit'#5'Edit3'#4'Left'#3#231#0#6'Height'#2
+  +#26#3'Top'#2'V'#5'Width'#2'3'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Co'
+  +'lor'#7#7'clBlack'#11'Font.Height'#2#241#9'Font.Name'#6#5'Arial'#10'Font.Pit'
+  +'ch'#7#10'fpVariable'#10'Font.Style'#11#6'fsBold'#0#8'OnChange'#7#11'Edit3Ch'
+  +'ange'#6'OnExit'#7#9'Edit3Exit'#10'ParentFont'#8#7'TabStop'#8#8'TabOrder'#2#5
+  +#4'Text'#6#4'2,40'#0#0#7'TUpDown'#7'UpDown3'#4'Left'#3'7'#1#6'Height'#2#31#3
+  +'Top'#2'S'#5'Width'#2#29#3'Min'#2#10#3'Max'#3#208#7#8'Position'#2'x'#8'TabOr'
+  ,'der'#2#6#4'Wrap'#8#7'OnClick'#7#12'UpDown3Click'#0#0#6'TLabel'#6'Label9'#4
+  +'Left'#2#6#6'Height'#2#17#3'Top'#3#166#0#5'Width'#3#138#0#7'Caption'#6#23'Pr'
+  +'ofundidade do recorte'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7
+  +#7'clBlack'#11'Font.Height'#2#243#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10
+  +'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#7'Label10'#4'L'
+  +'eft'#2#6#6'Height'#2#17#3'Top'#3#207#0#5'Width'#3#194#0#7'Caption'#6' N'#195
+  +#186'mero de passes para o recorte'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'F'
+  +'ont.Color'#7#7'clBlack'#11'Font.Height'#2#243#9'Font.Name'#6#5'Arial'#10'Fo'
+  +'nt.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#5'TEdit'#5
+  +'Edit4'#4'Left'#3#231#0#6'Height'#2#26#3'Top'#3#165#0#5'Width'#2'3'#12'Font.'
+  +'CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2
+  +#241#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#10'Font.Style'
+  +#11#6'fsBold'#0#8'OnChange'#7#11'Edit4Change'#6'OnExit'#7#9'Edit4Exit'#10'Pa'
+  +'rentFont'#8#7'TabStop'#8#8'TabOrder'#2#7#4'Text'#6#3'2,1'#0#0#5'TEdit'#5'Ed'
+  +'it5'#4'Left'#3#8#1#6'Height'#2#26#3'Top'#3#205#0#5'Width'#2'%'#12'Font.Char'
+  +'Set'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2#241#9
+  +'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#10'Font.Style'#11#6'f'
+  +'sBold'#0#8'OnChange'#7#11'Edit5Change'#6'OnExit'#7#9'Edit5Exit'#10'ParentFo'
+  +'nt'#8#7'TabStop'#8#8'TabOrder'#2#8#4'Text'#6#1'3'#0#0#6'TLabel'#7'Label11'#4
+  +'Left'#3#28#1#6'Height'#2#15#3'Top'#3#175#0#5'Width'#2#17#7'Caption'#6#2'mm'
+  +#11'Font.Height'#2#245#9'Font.Name'#6#5'Arial'#11'ParentColor'#8#10'ParentFo'
+  +'nt'#8#0#0#7'TUpDown'#7'UpDown4'#4'Left'#3'7'#1#6'Height'#2#31#3'Top'#3#162#0
+  +#5'Width'#2#29#3'Min'#2#10#3'Max'#3#232#3#8'Position'#3#150#0#8'TabOrder'#2#9
+  +#4'Wrap'#8#7'OnClick'#7#12'UpDown4Click'#0#0#7'TUpDown'#7'UpDown5'#4'Left'#3
+  +'7'#1#6'Height'#2#31#3'Top'#3#202#0#5'Width'#2#29#3'Min'#2#1#3'Max'#2#10#8'P'
+  +'osition'#2#10#8'TabOrder'#2#10#4'Wrap'#8#7'OnClick'#7#12'UpDown5Click'#0#0#6
+  +'TLabel'#7'Label13'#4'Left'#2#6#6'Height'#2#17#3'Top'#3#246#0#5'Width'#3#182
+  +#0#7'Caption'#6#30'Avan'#195#167'o do eixo Z a cada passe'#12'Font.CharSet'#7
+  +#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2#243#9'Font.N'
+  +'ame'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'Parent'
+  +'Font'#8#0#0#5'TEdit'#5'Edit6'#4'Left'#3#8#1#6'Height'#2#26#3'Top'#3#244#0#5
+  +'Width'#2'8'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'
+  +#11'Font.Height'#2#241#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariabl'
+  +'e'#10'Font.Style'#11#6'fsBold'#0#8'OnChange'#7#11'Edit2Change'#10'ParentFon'
+  +'t'#8#8'ReadOnly'#9#7'TabStop'#8#8'TabOrder'#2#11#4'Text'#6#4'0,40'#0#0#6'TL'
+  +'abel'#7'Label14'#4'Left'#3'E'#1#6'Height'#2#15#3'Top'#3#255#0#5'Width'#2#17
+  +#7'Caption'#6#2'mm'#11'Font.Height'#2#245#9'Font.Name'#6#5'Arial'#11'ParentC'
+  +'olor'#8#10'ParentFont'#8#0#0#6'TShape'#6'Shape1'#4'Left'#2#6#6'Height'#2#4#3
+  +'Top'#2'F'#5'Width'#3#223#0#0#0#6'TShape'#6'Shape2'#4'Left'#2#6#6'Height'#2#4
+  +#3'Top'#2'l'#5'Width'#3#223#0#0#0#6'TShape'#6'Shape3'#4'Left'#2#6#6'Height'#2
+  +#4#3'Top'#3#148#0#5'Width'#3#223#0#0#0#6'TShape'#6'Shape4'#4'Left'#2#6#6'Hei'
+  +'ght'#2#4#3'Top'#3#186#0#5'Width'#3#223#0#0#0#6'TShape'#6'Shape5'#4'Left'#2#6
+  +#6'Height'#2#4#3'Top'#3#227#0#5'Width'#3#0#1#0#0#6'TShape'#6'Shape6'#4'Left'
+  +#2#6#6'Height'#2#4#3'Top'#3#10#1#5'Width'#3#0#1#0#0#6'TLabel'#7'Label15'#4'L'
+  +'eft'#2#6#6'Height'#2#17#3'Top'#3#26#1#5'Width'#3#130#0#7'Caption'#6#21'Velo'
+  +'cidade do Spindle'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'c'
+  +'lBlack'#11'Font.Height'#2#243#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'f'
+  +'pVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TShape'#6'Shape7'#4'Lef'
+  +'t'#2#6#6'Height'#2#4#3'Top'#3'.'#1#5'Width'#3#0#1#0#0#5'TEdit'#5'Edit7'#4'L'
+  +'eft'#3#8#1#6'Height'#2#26#3'Top'#3#24#1#5'Width'#2'8'#12'Font.CharSet'#7#12
+  +'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2#241#9'Font.Name'
+  +#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#10'Font.Style'#11#6'fsBold'#0#8
+  +'OnChange'#7#11'Edit7Change'#6'OnExit'#7#9'Edit7Exit'#10'ParentFont'#8#7'Tab'
+  +'Stop'#8#8'TabOrder'#2#12#4'Text'#6#5'15000'#0#0#6'TLabel'#7'Label16'#4'Left'
+  +#3'B'#1#6'Height'#2#15#3'Top'#3'%'#1#5'Width'#2#22#7'Caption'#6#3'RPM'#11'Fo'
+  +'nt.Height'#2#245#9'Font.Name'#6#5'Arial'#11'ParentColor'#8#10'ParentFont'#8
+  +#0#0#0
+]);

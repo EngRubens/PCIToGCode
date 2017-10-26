@@ -1,0 +1,58 @@
+OK => Alterar o padrão de separador decimal de virgula para ponto.
+OK => Incluir uma forma de especificar a espessura da borda.
+OK => No comando de recorte incluir parada para troca de ferramenta.
+OK => No comando de recorte alterar o comando de posicionamento para G00.
+OK => Incluir comando de velocidade do Spindle S100
+OK => Incluir campo para especificar a velocidade de Spindle
+OK => Incluir menu para salvar o código G em um arquivo único.
+OK => Especificar manualmente os furos que não foram detectados automaticamente.
+OK => Excluir manualmente os furos que foram detectados automaticamente e não são reais.
+OK => Falha - A profundidade de fresagem no código G sempre sai -0,3 não importa o que esta configurado.
+OK => Alterar a tela de geração de furos para ficar opcional a geração do recorte.
+OK => Incluir um menu para gerar somente o código G de recorte.
+OK => Incluir um menu para salvar somente o código G de recorte.
+OK => Desabilitar o menu salvar G-Code Único quando não tiver os dois Gcodes gerados (Fresagem e furação)
+OK => Criar GeCode de recorte em arquivo separado.
+OK => Exclusão automatica de furos do processo de fresagem
+OK => Limitar casas decimais na rotina de recorte.
+OK => Gerar Gcode de fresagem sem a borda
+OK => Atualizar o manual do usuario
+
+OK => Inicio do GCode de recorte posicionar com a fresa levantada.
+OK => Quando abrir a tela "Calcular Tamanho da placa" zerar valores
+OK => O arquivo de recorte nos comentários do cabeçalho esta aparecendo furação ao invés de recorte.
+OK => Veirificar porque quando quando gera coordenadas desabilita os menus "Salvar" das imagens.
+OK => Quando faz a detecção automatica de furação o menu "Salvar GCode Furos" não habilita quando fecha a janela no "X"
+OK => O menu "Salvar GCode Unico" não habilita
+OK => Tela de detecção de furos marca quantidade errada.
+OK => Melhorar processamento de exclusão de marcação de furos na fresagem
+OK => Ao iniciar a aplicação o Memo do Gcode Recorte apresenta o texto "Memo1" eliminar o texto
+
+
+OK => Verificar o desvio da furação
+
+
+Otimizar para o menor caminho para a furação
+Otimizar para o menor caminho para a fresagem
+
+
+
+
+
+
+
+Alterar velocidade do Spindle quando em deslocamento?
+
+
+
+
+
+Dicas:
+
+1- Usar o evento onmousedown do componente: Nesse caso, é passado para a procedure uma variável nome button do tipo TMouseButton que, no caso, pode ser mbright (o botao direito).
+if Button = mbright then Edit1.Text := 'Botao Direito'
+else Edit1.text := 'Botão Esquerdo';
+
+EMC Utiliza ponto como separador decimal.
+
+TurboCNC utiliza virgula como separador decimal.

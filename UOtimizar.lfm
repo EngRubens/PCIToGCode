@@ -1,0 +1,113 @@
+object FrmOtimizar: TFrmOtimizar
+  Left = 795
+  Height = 175
+  Top = 455
+  Width = 248
+  ActiveControl = BtnOtimizar
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Otimizar Imagem'
+  ClientHeight = 175
+  ClientWidth = 248
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '1.2.4.0'
+  object Bevel2: TBevel
+    Left = 6
+    Height = 89
+    Top = 3
+    Width = 236
+    Shape = bsFrame
+    Style = bsRaised
+  end
+  object Bevel1: TBevel
+    Left = 6
+    Height = 71
+    Top = 97
+    Width = 236
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 29
+    Top = 8
+    Width = 191
+    Alignment = taCenter
+    Caption = 'Fator de Branco'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -25
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+  end
+  object BtnOtimizar: TButton
+    Left = 9
+    Height = 41
+    Top = 48
+    Width = 96
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Otimizar'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Century'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnClick = BtnOtimizarClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object UpDown1: TUpDown
+    Left = 106
+    Height = 41
+    Top = 48
+    Width = 41
+    Min = 1
+    Max = 1000
+    Position = 30
+    TabOrder = 1
+    Wrap = False
+    OnClick = UpDown1Click
+  end
+  object Edit1: TEdit
+    Left = 149
+    Height = 44
+    Top = 48
+    Width = 88
+    Font.Height = -27
+    Font.Name = 'Verdana'
+    OnChange = Edit1Change
+    ParentFont = False
+    TabOrder = 2
+    Text = '1000'
+  end
+  object TrackBar1: TTrackBar
+    Left = 8
+    Height = 38
+    Top = 128
+    Width = 231
+    Max = 100
+    Min = 1
+    Position = 1
+    TabOrder = 3
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 19
+    Top = 104
+    Width = 154
+    Caption = 'Espessura da borda'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+end

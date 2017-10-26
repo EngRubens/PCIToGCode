@@ -1,0 +1,77 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFrmCMedidas','FORMDATA',[
+  'TPF0'#12'TFrmCMedidas'#11'FrmCMedidas'#4'Left'#3#243#1#6'Height'#3'W'#1#3'To'
+  +'p'#3'+'#1#5'Width'#3#169#1#11'BorderIcons'#11#0#11'BorderStyle'#7#8'bsSingl'
+  +'e'#7'Caption'#6#25'Calcular tamanho da placa'#12'ClientHeight'#3'W'#1#11'Cl'
+  +'ientWidth'#3#169#1#9'FormStyle'#7#11'fsStayOnTop'#6'OnShow'#7#8'FormShow'#8
+  +'Position'#7#16'poMainFormCenter'#10'LCLVersion'#6#7'1.6.0.4'#0#6'TLabel'#6
+  +'Label1'#4'Left'#2#0#6'Height'#2')'#3'Top'#2#0#5'Width'#3#168#1#9'Alignment'
+  +#7#8'taCenter'#8'AutoSize'#8#7'Caption'#6'VCalcular o tamanho da placa basea'
+  +'do na distancia padr'#195#163'o dos pinos de um CI de 2,54mm.'#11'Font.Heig'
+  +'ht'#2#239#11'ParentColor'#8#10'ParentFont'#8#8'WordWrap'#9#0#0#9'TGroupBox'
+  +#9'GroupBox1'#4'Left'#2#8#6'Height'#3#128#0#3'Top'#2'0'#5'Width'#3#152#1#7'C'
+  +'aption'#6#6'Eixo X'#12'ClientHeight'#2'l'#11'ClientWidth'#3#148#1#8'TabOrde'
+  +'r'#2#0#0#7'TButton'#10'BtnPonto1x'#4'Left'#2#6#6'Height'#2#25#4'Hint'#6#24
+  +'Clique no primeiro furo.'#3'Top'#2#5#5'Width'#3#163#0#7'Caption'#6#23'Captu'
+  +'rar primeiro ponto'#7'OnClick'#7#15'BtnPonto1xClick'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#8'TabOrder'#2#0#0#0#7'TButton'#10'BtnPonto2x'#4'Left'#2#6#6'Hei'
+  +'ght'#2#25#4'Hint'#6#23'Clique no segundo furo.'#3'Top'#2' '#5'Width'#3#163#0
+  +#7'Caption'#6#22'Capturar segundo ponto'#7'OnClick'#7#15'BtnPonto2xClick'#14
+  +'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#0#0#6'TLabel'#7'Label1x'#4
+  +'Left'#3#174#0#6'Height'#2#1#3'Top'#2#16#5'Width'#2#1#11'ParentColor'#8#0#0#6
+  +'TLabel'#7'Label2x'#4'Left'#3#174#0#6'Height'#2#1#3'Top'#2'+'#5'Width'#2#1#11
+  +'ParentColor'#8#0#0#6'TLabel'#7'Label3x'#4'Left'#3#174#0#6'Height'#2#1#3'Top'
+  +#2'H'#5'Width'#2#1#11'ParentColor'#8#0#0#7'TButton'#12'BtnCalcularx'#4'Left'
+  +#2#6#6'Height'#2#25#3'Top'#2'H'#5'Width'#3#163#0#7'Caption'#6#20'Calcular re'
+  +'solu'#195#167#195#163'o'#7'OnClick'#7#17'BtnCalcularxClick'#8'TabOrder'#2#2
+  +#0#0#6'TImage'#6'Image1'#4'Left'#3#30#1#6'Height'#2'Z'#3'Top'#2#252#5'Width'
+  +#2'r'#12'Picture.Data'#10'c'#1#0#0#23'TPortableNetworkGraphicG'#1#0#0#137'PN'
+  +'G'#13#10#26#10#0#0#0#13'IHDR'#0#0#0'm'#0#0#0'Z'#1#3#0#0#0#136'IJ'#0#0#0#0#4
+  +'gAMA'#0#0#175#200'7'#5#138#233#0#0#0#6'PLTE'#0#0#0#255#255#255#165#217#159
+  +#221#0#0#0#25'tEXtSoftware'#0'Adobe ImageReadyq'#201'e<'#0#0#0#199'IDAT8'#203
+  +'c'#248#143#12'~0`r'#217'Q'#184#127'~'#162'p'#127#255#179#255#255#163#158#249
+  +'3'#148#251#252#255#249#239#159#237#237#31'C'#185#241#255'?|'#254'oo'#127#152
+  +#165#192#29#196#181#255#255#159#241'_='#251'dACa'#16'W'#254#255#255#207#127
+  +#254#127'6'#6#2#168#189#223#127#254#255#204#8#225#238#255#7#228#127#254#255
+  +#249'3'#132#187#253#27#144#251#193#152#29#202']'#254#233'?X'#26#234#140#6#176
+  +#246#231'0.D'#22#238'H'#176'^'#4#23'l2='#184#132#2#150'l'#238#3#134#3#140#13
+  +#204#12'l'#12'<'#12#18#12#22'T'#229'>8x'#176#185#153#157#141#143'GF'#194#130
+  +' '#151'z'#246#210'.'#172'F'#185#3#194#253#192#144#128#28#195#212#228#22'$ %'
+  +'CB\'#234#217#139#215#191#0#134#211#148#237'6'#229'J'#147#0#0#0#0'IEND'#174
+  +'B`'#130#12'Proportional'#9#7'Stretch'#9#11'Transparent'#9#0#0#0#9'TGroupBox'
+  +#9'GroupBox2'#4'Left'#2#8#6'Height'#3#128#0#3'Top'#3#176#0#5'Width'#3#152#1#7
+  +'Caption'#6#6'Eixo Y'#12'ClientHeight'#2'l'#11'ClientWidth'#3#148#1#8'TabOrd'
+  +'er'#2#1#0#7'TButton'#10'BtnPonto1y'#4'Left'#2#6#6'Height'#2#25#4'Hint'#6#24
+  +'Clique no primeiro furo.'#3'Top'#2#5#5'Width'#3#163#0#7'Caption'#6#23'Captu'
+  +'rar primeiro ponto'#7'OnClick'#7#15'BtnPonto1yClick'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#8'TabOrder'#2#0#0#0#7'TButton'#10'BtnPonto2y'#4'Left'#2#6#6'Hei'
+  +'ght'#2#25#4'Hint'#6#23'Clique no segundo furo.'#3'Top'#2' '#5'Width'#3#163#0
+  +#7'Caption'#6#22'Capturar segundo ponto'#7'OnClick'#7#15'BtnPonto2yClick'#14
+  +'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#0#0#6'TLabel'#7'Label1y'#4
+  +'Left'#3#174#0#6'Height'#2#1#3'Top'#2#16#5'Width'#2#1#11'ParentColor'#8#0#0#6
+  +'TLabel'#7'Label2y'#4'Left'#3#174#0#6'Height'#2#1#3'Top'#2'('#5'Width'#2#1#11
+  +'ParentColor'#8#0#0#6'TLabel'#7'Label3y'#4'Left'#3#174#0#6'Height'#2#1#3'Top'
+  +#2'S'#5'Width'#2#1#11'ParentColor'#8#0#0#7'TButton'#12'BtnCalculary'#4'Left'
+  +#2#6#6'Height'#2#25#3'Top'#2'H'#5'Width'#3#163#0#7'Caption'#6#20'Calcular re'
+  +'solu'#195#167#195#163'o'#7'OnClick'#7#17'BtnCalcularyClick'#8'TabOrder'#2#2
+  +#0#0#6'TImage'#6'Image2'#4'Left'#3'&'#1#6'Height'#2'z'#3'Top'#2#248#5'Width'
+  +#2'`'#12'Picture.Data'#10#151#1#0#0#23'TPortableNetworkGraphic{'#1#0#0#137'P'
+  +'NG'#13#10#26#10#0#0#0#13'IHDR'#0#0#0'a'#0#0#0'u'#1#3#0#0#0'd'#143#29'm'#0#0
+  +#0#4'gAMA'#0#0#175#200'7'#5#138#233#0#0#0#6'PLTE'#0#0#0#255#255#255#165#217
+  +#159#221#0#0#0#25'tEXtSoftware'#0'Adobe ImageReadyq'#201'e<'#0#0#0#251'IDAT8'
+  +#203#181#148#221#13#194' '#20#133'y'#235'['#29#161#163't'#165'n'#128#27'8'
+  +#130#139#212'0'#130'#@'#226#131'11V'#159#252#13'X'#27#146#158#211#22'$'#209
+  +#242#246'5'#192#189#31#247#164#194#193'Z'#138#127#210'Y'#148#29'Y'#145#253'B'
+  +#149#167#220'S'#251#21#200#169#158#218's'#5#222'b'#23't'#167'J'#162#207#170
+  +'%'#26#213'd'#180#145'tNQ=$Wh'#218#217#128#145#200#26'tp'#215#0#9'O"'#137#154
+  ,'i'#234#150#166#25'i'#154#17#245#233'T'#132'd'#128'*O'#249'4Y'#154#145#165
+  +#151#143#209#173'DzI4'#178'3'#164'n'#175#208'h'#183'F'#135#131'F:j4:'#21'xKS'
+  +#134'+p'#234'V'#148#186'm'#178#17#215#27#144#14'P'#219#181'!'#135#11#145#163
+  +#25'q'#189';O'#133#232'A'#153'x'#150'hd'#10'4'#234#169#219#25#153#131#145'a'
+  +#178#145#212#25'&N'#157#12'''yP/'#208#217#248'_g$'#26#5#251'L'#175'W'#249's'
+  +#249'W'#191'H'#159#233'46'#154#137#222#148#231'@'#199#212'u'#24#128#0#0#0#0
+  +'IEND'#174'B`'#130#12'Proportional'#9#7'Stretch'#9#11'Transparent'#9#0#0#0#7
+  +'TButton'#7'Button1'#4'Left'#2#8#6'Height'#2#28#3'Top'#3'4'#1#5'Width'#3#152
+  +#1#7'Caption'#6#2'OK'#7'OnClick'#7#12'Button1Click'#8'TabOrder'#2#2#0#0#0
+]);

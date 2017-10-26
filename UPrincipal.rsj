@@ -1,0 +1,19 @@
+{"version":1,"strings":[
+{"hash":233678557,"name":"uprincipal.texto01","sourcebytes":[84,97,109,97,110,104,111,32,111,114,105,103,105,110,97,108,32,100,97,32,105,109,97,103,101,109],"value":"Tamanho original da imagem"},
+{"hash":75438973,"name":"uprincipal.texto02","sourcebytes":[84,97,109,97,110,104,111,32,111,116,105,109,105,122,97,100,111,32,100,97,32,105,109,97,103,101,109],"value":"Tamanho otimizado da imagem"},
+{"hash":1307453,"name":"uprincipal.texto03","sourcebytes":[32,80,111,110,116,111,115,32,112,111,114,32,109,109],"value":" Pontos por mm"},
+{"hash":253492686,"name":"uprincipal.texto04","sourcebytes":[84,97,109,97,110,104,111,32,100,101,32,73,109,97,103,101,109,32,109,117,105,116,111,32,103,114,97,110,100,101,33,32,84,101,110,116,101,32,114,101,100,117,122,105,114,32,111,32,116,97,109,97,110,104,111,46],"value":"Tamanho de Imagem muito grande! Tente reduzir o tamanho."},
+{"hash":139363729,"name":"uprincipal.texto05","sourcebytes":[70,97,118,111,114,32,101,115,112,101,99,105,102,105,99,97,114,32,111,32,116,97,109,97,110,104,111,32,100,97,32,112,108,97,99,97,32,97,110,116,101,115,33],"value":"Favor especificar o tamanho da placa antes!"},
+{"hash":114357193,"name":"uprincipal.texto06","sourcebytes":[40,32,65,114,113,117,105,118,111,32,100,101,32,70,117,114,111,115,32,100,97,32,80,67,73,32,41],"value":"( Arquivo de Furos da PCI )"},
+{"hash":264905241,"name":"uprincipal.texto07","sourcebytes":[40,32,71,101,114,97,100,111,32,112,101,108,111,32,112,114,111,103,114,97,109,97,32,80,67,73,84,111,71,67,111,100,101,32,41],"value":"( Gerado pelo programa PCIToGCode )"},
+{"hash":77555600,"name":"uprincipal.texto08","sourcebytes":[40,32,65,114,113,117,105,118,111,32,67,111,110,118,101,114,116,105,100,111,58,32],"value":"( Arquivo Convertido: "},
+{"hash":22952688,"name":"uprincipal.texto09","sourcebytes":[40,32,84,97,109,97,110,104,111,32,100,97,32,112,108,97,99,97,58,32,88,32,61,32],"value":"( Tamanho da placa: X = "},
+{"hash":191785785,"name":"uprincipal.texto10","sourcebytes":[40,32,66,111,97,32,102,117,114,97,231,227,111,33,32,41],"value":"( Boa fura\u00E7\u00E3o! )"},
+{"hash":158047801,"name":"uprincipal.texto11","sourcebytes":[40,32,65,114,113,117,105,118,111,32,100,101,32,70,114,101,115,97,103,101,109,32,100,97,32,80,67,73,32,41],"value":"( Arquivo de Fresagem da PCI )"},
+{"hash":79443689,"name":"uprincipal.texto13","sourcebytes":[40,32,66,111,97,32,70,114,101,115,97,103,101,109,33,32,41],"value":"( Boa Fresagem! )"},
+{"hash":111842081,"name":"uprincipal.texto14","sourcebytes":[70,117,114,111,32,101,120,99,108,117,105,100,111,33],"value":"Furo excluido!"},
+{"hash":207835745,"name":"uprincipal.texto15","sourcebytes":[70,117,114,111,32,105,110,101,120,105,115,116,101,110,116,101,33],"value":"Furo inexistente!"},
+{"hash":256313873,"name":"uprincipal.texto16","sourcebytes":[70,117,114,111,32,97,100,105,99,105,111,110,97,100,111,33],"value":"Furo adicionado!"},
+{"hash":118562809,"name":"uprincipal.texto17","sourcebytes":[40,32,65,114,113,117,105,118,111,32,100,101,32,82,101,99,111,114,116,101,32,100,97,32,80,67,73,32,41],"value":"( Arquivo de Recorte da PCI )"},
+{"hash":57498681,"name":"uprincipal.texto18","sourcebytes":[40,32,66,111,109,32,82,101,99,111,114,116,101,33,32,41],"value":"( Bom Recorte! )"}
+]}

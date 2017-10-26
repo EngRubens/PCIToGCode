@@ -1,0 +1,1 @@
+strip PCIToGCode.exe

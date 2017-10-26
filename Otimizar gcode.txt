@@ -1,0 +1,49 @@
+
+
+Como Otimizar o código G para que o inicio de fresagem seja o mais proximo do final da ultima fresagem:
+
+O código G pode seer dividido em blocos onde o inicio é onde a ferramenta controlada pelo eixo Z irá baixar para iniciar a fresagem e o fim onde a ferraemnta ira levantar.
+
+
+Primeiro bloco permanece como esta.
+Com base na ultima posição do bloco anterior procurar o proximo bloco em que o inicio seja o mais proximo deste ponto.
+Repetir o passo anterior até terminar os blocos.
+
+
+informações necessarias:
+
+PosFinalX
+PosFinalY
+PosInicialX
+PosInicialY
+PosDife
+LinhaInicial
+LinhaFinal
+
+
+
+
+
+programação:
+
+criar um array com o inicio do bloco
+
+
+Subtrair a posição X inicial da final e extrair o valor absoluto.
+Subtrair a posição Y inicial da final e extrair o valor absoluto.
+Somar as duas diferenças e guardar
+
+Repetir o processo e comparar se o valor é menor do que a ultima medida.
+
+
+Na rotina que cria o Gcode deve ser alterada para gravar os dados em um Memo temporario.
+após o termino da geração do GCode rodar a rotina de otimização extraindo os dados do Memo temporario para o definitivo.
+
+
+
+
+
+
+
+
+

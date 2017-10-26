@@ -1,0 +1,470 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Pedro Cruz <pedrodacruz@msn.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#: TFRMFUROS.BTNCAPTURAR.CAPTION
+msgid "Capturar Furos"
+msgstr "Löcher erfassen"
+
+#: TFRMFUROS.CHECKBOX1.CAPTION
+msgid "Recortar após furação"
+msgstr "Nach Bohren schneiden"
+
+#: TFRMFUROS.EDIT1.TEXT
+msgid "00"
+msgstr "00"
+
+#: TFRMFUROS.FRMFUROS.CAPTION
+msgid "Captura de furos"
+msgstr "Löcher Erfassung"
+
+#: TFRMFUROS.LABEL1.CAPTION
+msgid "Area livre"
+msgstr "Frei Fläche"
+
+#: TFRMFUROS.LABEL2.CAPTION
+#| msgid "Area do furo"
+msgid "Área do furo"
+msgstr "Lochefläche"
+
+#: TFRMFUROS.LABEL3.CAPTION
+msgid "Quantidade de Furos"
+msgstr "Löcher Quantität"
+
+#: TFRMFUROS.LABEL4.CAPTION
+msgid "Tamanho do furo"
+msgstr "Lochgrösse"
+
+#: TFRMMEDIDA.BTNOK.CAPTION
+msgctxt "TFRMMEDIDA.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMMEDIDA.FRMMEDIDA.CAPTION
+msgid "Medidas da placa"
+msgstr "PCB Board-Größe"
+
+#: TFRMMEDIDA.GROUPBOX1.CAPTION
+msgid "Tamanho"
+msgstr "Größe"
+
+#: TFRMMEDIDA.GROUPBOX2.CAPTION
+msgid "Resolução"
+msgstr "Bildauflösung"
+
+#: TFRMMEDIDA.LABEL1.CAPTION
+msgid "Coloque aqui a medida real da sua placa em centimetros:"
+msgstr "Füllen Sie die Größe Ihrer PCB in Zentimetern:"
+
+#: TFRMMEDIDA.LABEL2.CAPTION
+msgctxt "TFRMMEDIDA.LABEL2.CAPTION"
+msgid "Lado A"
+msgstr "Seite A"
+
+#: TFRMMEDIDA.LABEL3.CAPTION
+msgctxt "TFRMMEDIDA.LABEL3.CAPTION"
+msgid "Lado B"
+msgstr "Seite B"
+
+#: TFRMMEDIDA.LABEL4.CAPTION
+msgctxt "TFRMMEDIDA.LABEL4.CAPTION"
+msgid "Lado A"
+msgstr "Seite A"
+
+#: TFRMMEDIDA.LABEL5.CAPTION
+msgctxt "TFRMMEDIDA.LABEL5.CAPTION"
+msgid "Lado B"
+msgstr "Seite B"
+
+#: TFRMMEDIDA.LABEL6.CAPTION
+msgctxt "TFRMMEDIDA.LABEL6.CAPTION"
+msgid "Cm"
+msgstr "Cm"
+
+#: TFRMMEDIDA.LABEL7.CAPTION
+msgctxt "TFRMMEDIDA.LABEL7.CAPTION"
+msgid "Cm"
+msgstr "Cm"
+
+#: TFRMOTIMIZAR.BTNOTIMIZAR.CAPTION
+msgid "Otimizar"
+msgstr "Optimieren"
+
+#: TFRMOTIMIZAR.EDIT1.TEXT
+msgid "1000"
+msgstr "1000"
+
+#: TFRMOTIMIZAR.FRMOTIMIZAR.CAPTION
+msgctxt "TFRMOTIMIZAR.FRMOTIMIZAR.CAPTION"
+msgid "Otimizar Imagem"
+msgstr "Bild Optimieren"
+
+#: TFRMOTIMIZAR.LABEL1.CAPTION
+msgid "Fator de Branco"
+msgstr "Weiß Faktor"
+
+#: TFRMPRINCIPAL.FRMPRINCIPAL.CAPTION
+#| msgid "PCITOGCODE V1.0"
+msgid "PCIToGCode  v1.0"
+msgstr "PCIToGCode  v1.0"
+
+#: TFRMPRINCIPAL.MAJUDA.CAPTION
+msgid "Ajuda"
+msgstr "Hilfe"
+
+#: TFRMPRINCIPAL.MENUITEM1.CAPTION
+msgid "CNC"
+msgstr "CNC"
+
+#: TFRMPRINCIPAL.MGERBER.CAPTION
+msgid "GCode"
+msgstr "GCode"
+
+#: TFRMPRINCIPAL.MIMAGEM.CAPTION
+msgctxt "TFRMPRINCIPAL.MIMAGEM.CAPTION"
+msgid "Imagem"
+msgstr "Bild"
+
+#: TFRMPRINCIPAL.MVETOR.CAPTION
+msgctxt "TFRMPRINCIPAL.MVETOR.CAPTION"
+msgid "Vetor"
+msgstr "Vektor"
+
+#: TFRMPRINCIPAL.NCOORDENADAS.CAPTION
+msgid "Coordenadas"
+msgstr "Koordinaten"
+
+#: TFRMPRINCIPAL.NFREZAGEM.CAPTION
+msgid "Fresagem"
+msgstr "Fräsen"
+
+#: TFRMPRINCIPAL.NFURACAO.CAPTION
+msgid "Furação"
+msgstr "Bohrung"
+
+#: TFRMPRINCIPAL.NGCODEFRESAGEM.CAPTION
+msgid "G-Code Fresagem"
+msgstr "Fräsen G-Code"
+
+#: TFRMPRINCIPAL.NGCODEFURACAO.CAPTION
+msgid "G-Code Furação"
+msgstr "Bohrung G-Code"
+
+#: TFRMPRINCIPAL.NIMAGEM.CAPTION
+msgctxt "TFRMPRINCIPAL.NIMAGEM.CAPTION"
+msgid "Imagem"
+msgstr "Bild"
+
+#: TFRMPRINCIPAL.NIMAGEMOTIMIZADA.CAPTION
+msgid "Otimizada"
+msgstr "Optmiert"
+
+#: TFRMPRINCIPAL.NVETORISADA.CAPTION
+msgctxt "TFRMPRINCIPAL.NVETORISADA.CAPTION"
+msgid "Vetor"
+msgstr "Vektor"
+
+#: TFRMPRINCIPAL.SAVEPICTUREDIALOG1.TITLE
+msgid "Salvar arquivo como"
+msgstr "Datei speichern unter"
+
+#: TFRMPRINCIPAL.SMABRIR.CAPTION
+msgid "Abrir"
+msgstr "Öffnen"
+
+#: TFRMPRINCIPAL.SMBORDA.CAPTION
+msgid "Borda"
+msgstr "Rand"
+
+#: TFRMPRINCIPAL.SMBORDAEXTERNA.CAPTION
+msgid "Externa"
+msgstr "Extern"
+
+#: TFRMPRINCIPAL.SMBORDAINTERNA.CAPTION
+msgid "Interna"
+msgstr "Intern"
+
+#: TFRMPRINCIPAL.SMEIXOZ.CAPTION
+msgid "Curso do Eixo Z"
+msgstr "Z-Achse"
+
+#: TFRMPRINCIPAL.SMFURACAO.CAPTION
+msgid "Gerar arquivo de Furação"
+msgstr "Bohrung Datei Generieren"
+
+#: TFRMPRINCIPAL.SMGERACOORDENADAS.CAPTION
+msgid "Gerar Coordenadas"
+msgstr "Koordinaten Generieren"
+
+#: TFRMPRINCIPAL.SMGERAGCODE.CAPTION
+msgid "Gerar arquivo de fresagem"
+msgstr "Fräsdatei Generieren"
+
+#: TFRMPRINCIPAL.SMMANUAL.CAPTION
+msgid "Manual"
+msgstr "Handbuch"
+
+#: TFRMPRINCIPAL.SMMAPAFRESAGEM.CAPTION
+msgid "Mapa da Fresagem"
+msgstr "Fräsen Karte"
+
+#: TFRMPRINCIPAL.SMOTIMIZAR.CAPTION
+msgctxt "TFRMPRINCIPAL.SMOTIMIZAR.CAPTION"
+msgid "Otimizar Imagem"
+msgstr "Bild optimieren"
+
+#: TFRMPRINCIPAL.SMPONTO.CAPTION
+msgid "Ponto"
+msgstr "Punkt"
+
+#: TFRMPRINCIPAL.SMSALVACONFIG.CAPTION
+msgid "Salvar configuração"
+msgstr "Konfiguration speichern"
+
+#: TFRMPRINCIPAL.SMSALVAGCODEFRESAGEM.CAPTION
+msgid "Salvar Gcode Fresar"
+msgstr "Speichern Fräsen-Gcode"
+
+#: TFRMPRINCIPAL.SMSALVAGCODEFUROS.CAPTION
+msgid "Salva Gcode Furos"
+msgstr "Speichern Bohren-Gcode"
+
+#: TFRMPRINCIPAL.SMSALVAOTIMIZADA.CAPTION
+msgid "Salvar Otimizada"
+msgstr "Optimiert-Version speichern "
+
+#: TFRMPRINCIPAL.SMSALVAVETORIZADA.CAPTION
+msgid "Salvar Vetorizada"
+msgstr "Vektorisiert Speichern"
+
+#: TFRMPRINCIPAL.SMSEPDECIMAL.CAPTION
+msgid "Separador Decimal"
+msgstr "Dezimaltrennzeichen"
+
+#: TFRMPRINCIPAL.SMSOBRE.CAPTION
+msgctxt "TFRMPRINCIPAL.SMSOBRE.CAPTION"
+msgid "Sobre"
+msgstr "Über"
+
+#: TFRMPRINCIPAL.SMTAMANHO.CAPTION
+msgid "Tamanho Original"
+msgstr "Originalgröße"
+
+#: TFRMPRINCIPAL.SMTAMANHOOTIMIZADO.CAPTION
+msgid "Tamanho Otimizado"
+msgstr "Optimierte Größe"
+
+#: TFRMPRINCIPAL.SMTAMANHOPLACA.CAPTION
+msgid "Tamanho da Placa"
+msgstr "PCB Größe"
+
+#: TFRMPRINCIPAL.SMVELOCIDADE.CAPTION
+msgid "Velocidade dos Eixos"
+msgstr "Achsen Geschwindigkeit"
+
+#: TFRMPRINCIPAL.SMVETORIZAR.CAPTION
+msgid "Vetorizar"
+msgstr "Vektorisieren"
+
+#: TFRMPRINCIPAL.SMVIRGULA.CAPTION
+msgid "Virgula"
+msgstr "Komma"
+
+#: TFRMSOBRE.BUTTON1.CAPTION
+msgid "Fechar"
+msgstr "Schließen"
+
+#: TFRMSOBRE.FRMSOBRE.CAPTION
+msgctxt "TFRMSOBRE.FRMSOBRE.CAPTION"
+msgid "Sobre"
+msgstr "Über"
+
+#: TFRMVELOCIDADE.BTNOK.CAPTION
+msgctxt "TFRMVELOCIDADE.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMVELOCIDADE.EDIT1.TEXT
+msgctxt "TFRMVELOCIDADE.EDIT1.TEXT"
+msgid "60"
+msgstr "60"
+
+#: TFRMVELOCIDADE.EDIT2.TEXT
+msgid "150"
+msgstr "150"
+
+#: TFRMVELOCIDADE.EDIT3.TEXT
+msgctxt "TFRMVELOCIDADE.EDIT3.TEXT"
+msgid "60"
+msgstr "60"
+
+#: TFRMVELOCIDADE.FRMVELOCIDADE.CAPTION
+msgid "Definir velocidade dos eixos"
+msgstr "Achse Geschwindigkeit definieren "
+
+#: TFRMVELOCIDADE.LABEL1.CAPTION
+msgid "Definir as velocidades dos eixos XY e Z."
+msgstr "X-, Y- und Z-Achsen Geschwindigkeit definieren "
+
+#: TFRMVELOCIDADE.LABEL2.CAPTION
+#| msgid "mm/minuto do eixo Z descendo"
+msgid "mm/minuto do eixo Z decendo"
+msgstr "Z-Acshe Abstiegsgeschwindigkeit, in mm pro Minute"
+
+#: TFRMVELOCIDADE.LABEL3.CAPTION
+msgid "mm/minuto do eixo XY fresando"
+msgstr "XY-Achsen Fräsengeschwindigkeit, in mm pro Minute "
+
+#: TFRMVELOCIDADE.LABEL4.CAPTION
+msgid "mm/minuto do eixo XY recortando"
+msgstr "XY-Achsen Schnittgeschwindigkeit, in mm pro Minute "
+
+#: TFRMZINFO.BTNOK.CAPTION
+msgctxt "TFRMZINFO.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMZINFO.EDIT1.TEXT
+msgid "0,30"
+msgstr "0,30"
+
+#: TFRMZINFO.EDIT2.TEXT
+msgid "3,00"
+msgstr "3,00"
+
+#: TFRMZINFO.EDIT3.TEXT
+msgid "2,40"
+msgstr "2,40"
+
+#: TFRMZINFO.EDIT4.TEXT
+msgid "2,1"
+msgstr "2,1"
+
+#: TFRMZINFO.EDIT5.TEXT
+msgid "3"
+msgstr "3"
+
+#: TFRMZINFO.EDIT6.TEXT
+msgid "0,40"
+msgstr "0,40"
+
+#: TFRMZINFO.FRMZINFO.CAPTION
+msgid "Deslocamentos do eixo Z"
+msgstr "Z-Achse Verschiebung"
+
+#: TFRMZINFO.LABEL1.CAPTION
+#| msgid "Profundidade de fresagem:"
+msgid "Profundidade de fresagem"
+msgstr "Fräsen Tiefe"
+
+#: TFRMZINFO.LABEL10.CAPTION
+msgid "Número de passes para o recorte"
+msgstr "Nummern von Schritten für der Schnitten"
+
+#: TFRMZINFO.LABEL11.CAPTION
+msgctxt "TFRMZINFO.LABEL11.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: TFRMZINFO.LABEL13.CAPTION
+msgid "Avanço do eixo Z a cada passe"
+msgstr "Vorfeld der Z-Achse auf aufeinanderfolgenden Durchgängen "
+
+#: TFRMZINFO.LABEL14.CAPTION
+msgctxt "TFRMZINFO.LABEL14.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: TFRMZINFO.LABEL2.CAPTION
+#| msgid "Altura para  deslocamento:"
+msgid "Altura para  deslocamento"
+msgstr "Verschiebungshöhe"
+
+#: TFRMZINFO.LABEL3.CAPTION
+msgctxt "TFRMZINFO.LABEL3.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: TFRMZINFO.LABEL4.CAPTION
+msgctxt "TFRMZINFO.LABEL4.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: TFRMZINFO.LABEL5.CAPTION
+msgid "Deslocamentos do Eixo Z"
+msgstr "Z-Achse Verschiebung"
+
+#: TFRMZINFO.LABEL6.CAPTION
+#| msgid "O nivel zero do eixo Z e a superficie da placa!"
+msgid "O nivel zero do eixo Z é a superficie da placa!"
+msgstr "Die Null Ebene der Z-Achse ist bei PCB Oberfläche!"
+
+#: TFRMZINFO.LABEL7.CAPTION
+msgid "Profundidade dos furos"
+msgstr "Bohrtiefe"
+
+#: TFRMZINFO.LABEL8.CAPTION
+msgctxt "TFRMZINFO.LABEL8.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: TFRMZINFO.LABEL9.CAPTION
+msgid "Profundidade do recorte"
+msgstr "Schnitttiefe"
+
+#: uprincipal.texto01
+msgid "Tamanho original da imagem"
+msgstr "Originalbildgrösse"
+
+#: uprincipal.texto02
+msgid "Tamanho otimizado da imagem"
+msgstr "Bildes Optimierte Größe"
+
+#: uprincipal.texto03
+msgid " Pontos por mm"
+msgstr "Punkte pro mm"
+
+#: uprincipal.texto04
+msgid "Tamanho de Imagem muito grande! Tente reduzir o tamanho."
+msgstr "Bild zu groß! Versuchen Sie, die Größe zu verringern. "
+
+#: uprincipal.texto05
+msgid "Favor especificar o tamanho da placa antes!"
+msgstr "Bitte geben Sie die Größe der Leiterplatte vor! "
+
+#: uprincipal.texto06
+msgid "( Arquivo de furos da PCI )"
+msgstr "(PCB Löcher Datei) "
+
+#: uprincipal.texto07
+msgid "( Gerado pelo programa PCIToGCode )"
+msgstr "(Erstellt durch das PCIToGCode Programm) "
+
+#: uprincipal.texto08
+msgid "( Arquivo Convertido: "
+msgstr "(Konvertierte Datei:"
+
+#: uprincipal.texto09
+msgid "( Tamanho da placa: X = "
+msgstr "(PCB Größe: X ="
+
+#: uprincipal.texto10
+msgid "( Boa fura#231#227o! )"
+msgstr "(Gute Bohren!) "
+
+#: uprincipal.texto11
+msgid "( Arquivo de fresagem de PCI )"
+msgstr "(Fräsen Datei von PCB)"
+
+#: uprincipal.texto13
+msgid "( Boa fresagem! )"
+msgstr "(Gute Fräsen!) "
+

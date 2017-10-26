@@ -1,0 +1,468 @@
+object FrmZInfo: TFrmZInfo
+  Left = 452
+  Height = 374
+  Top = 150
+  Width = 344
+  HorzScrollBar.Page = 291
+  HorzScrollBar.Range = 287
+  VertScrollBar.Page = 227
+  VertScrollBar.Range = 227
+  ActiveControl = Edit1
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Deslocamentos do eixo Z'
+  ClientHeight = 374
+  ClientWidth = 344
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30'
+  object Label1: TLabel
+    Left = 6
+    Height = 17
+    Top = 50
+    Width = 151
+    Caption = 'Profundidade de fresagem'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 6
+    Height = 17
+    Top = 128
+    Width = 153
+    Caption = 'Altura para  deslocamento'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 284
+    Height = 15
+    Top = 62
+    Width = 17
+    Caption = 'mm'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 284
+    Height = 15
+    Top = 140
+    Width = 17
+    Caption = 'mm'
+    Font.Height = -11
+    Font.Name = 'Arial'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 0
+    Height = 25
+    Top = 0
+    Width = 344
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Deslocamentos do Eixo Z'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -21
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 17
+    Top = 312
+    Width = 263
+    Alignment = taCenter
+    BorderSpacing.CellAlignHorizontal = ccaCenter
+    BorderSpacing.CellAlignVertical = ccaCenter
+    Caption = 'O nivel zero do eixo Z é a superficie da placa!'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Bevel1: TBevel
+    Left = 3
+    Height = 24
+    Top = 309
+    Width = 336
+    Shape = bsFrame
+  end
+  object Label7: TLabel
+    Left = 6
+    Height = 17
+    Top = 88
+    Width = 133
+    Caption = 'Profundidade dos furos'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 284
+    Height = 15
+    Top = 100
+    Width = 17
+    Caption = 'mm'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    Left = 231
+    Height = 26
+    Top = 48
+    Width = 51
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit1Change
+    OnExit = Edit1Exit
+    ParentFont = False
+    TabStop = False
+    TabOrder = 0
+    Text = '0,30'
+  end
+  object Edit2: TEdit
+    Left = 231
+    Height = 26
+    Top = 126
+    Width = 51
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit2Change
+    OnExit = Edit2Exit
+    ParentFont = False
+    TabStop = False
+    TabOrder = 1
+    Text = '3,00'
+  end
+  object BtnOK: TButton
+    Left = 3
+    Height = 32
+    Top = 337
+    Width = 337
+    BorderSpacing.InnerBorder = 4
+    Caption = 'OK'
+    OnClick = BtnOKClick
+    TabOrder = 2
+  end
+  object UpDown1: TUpDown
+    Left = 311
+    Height = 31
+    Top = 45
+    Width = 29
+    Min = 10
+    Max = 2000
+    Position = 30
+    TabOrder = 3
+    Wrap = False
+    OnClick = UpDown1Click
+  end
+  object UpDown2: TUpDown
+    Left = 311
+    Height = 31
+    Top = 123
+    Width = 29
+    Min = 10
+    Max = 1000
+    Position = 150
+    TabOrder = 4
+    Wrap = False
+    OnClick = UpDown2Click
+  end
+  object Edit3: TEdit
+    Left = 231
+    Height = 26
+    Top = 86
+    Width = 51
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit3Change
+    OnExit = Edit3Exit
+    ParentFont = False
+    TabStop = False
+    TabOrder = 5
+    Text = '2,40'
+  end
+  object UpDown3: TUpDown
+    Left = 311
+    Height = 31
+    Top = 83
+    Width = 29
+    Min = 10
+    Max = 2000
+    Position = 120
+    TabOrder = 6
+    Wrap = False
+    OnClick = UpDown3Click
+  end
+  object Label9: TLabel
+    Left = 6
+    Height = 17
+    Top = 166
+    Width = 138
+    Caption = 'Profundidade do recorte'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 6
+    Height = 17
+    Top = 207
+    Width = 194
+    Caption = 'Número de passes para o recorte'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit4: TEdit
+    Left = 231
+    Height = 26
+    Top = 165
+    Width = 51
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit4Change
+    OnExit = Edit4Exit
+    ParentFont = False
+    TabStop = False
+    TabOrder = 7
+    Text = '2,1'
+  end
+  object Edit5: TEdit
+    Left = 264
+    Height = 26
+    Top = 205
+    Width = 37
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit5Change
+    OnExit = Edit5Exit
+    ParentFont = False
+    TabStop = False
+    TabOrder = 8
+    Text = '3'
+  end
+  object Label11: TLabel
+    Left = 284
+    Height = 15
+    Top = 175
+    Width = 17
+    Caption = 'mm'
+    Font.Height = -11
+    Font.Name = 'Arial'
+    ParentColor = False
+    ParentFont = False
+  end
+  object UpDown4: TUpDown
+    Left = 311
+    Height = 31
+    Top = 162
+    Width = 29
+    Min = 10
+    Max = 1000
+    Position = 150
+    TabOrder = 9
+    Wrap = False
+    OnClick = UpDown4Click
+  end
+  object UpDown5: TUpDown
+    Left = 311
+    Height = 31
+    Top = 202
+    Width = 29
+    Min = 1
+    Max = 10
+    Position = 10
+    TabOrder = 10
+    Wrap = False
+    OnClick = UpDown5Click
+  end
+  object Label13: TLabel
+    Left = 6
+    Height = 17
+    Top = 246
+    Width = 182
+    Caption = 'Avanço do eixo Z a cada passe'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit6: TEdit
+    Left = 264
+    Height = 26
+    Top = 244
+    Width = 56
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit2Change
+    ParentFont = False
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 11
+    Text = '0,40'
+  end
+  object Label14: TLabel
+    Left = 325
+    Height = 15
+    Top = 255
+    Width = 17
+    Caption = 'mm'
+    Font.Height = -11
+    Font.Name = 'Arial'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Shape1: TShape
+    Left = 6
+    Height = 4
+    Top = 70
+    Width = 223
+  end
+  object Shape2: TShape
+    Left = 6
+    Height = 4
+    Top = 108
+    Width = 223
+  end
+  object Shape3: TShape
+    Left = 6
+    Height = 4
+    Top = 148
+    Width = 223
+  end
+  object Shape4: TShape
+    Left = 6
+    Height = 4
+    Top = 186
+    Width = 223
+  end
+  object Shape5: TShape
+    Left = 6
+    Height = 4
+    Top = 227
+    Width = 256
+  end
+  object Shape6: TShape
+    Left = 6
+    Height = 4
+    Top = 266
+    Width = 256
+  end
+  object Label15: TLabel
+    Left = 6
+    Height = 17
+    Top = 282
+    Width = 130
+    Caption = 'Velocidade do Spindle'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Shape7: TShape
+    Left = 6
+    Height = 4
+    Top = 302
+    Width = 256
+  end
+  object Edit7: TEdit
+    Left = 264
+    Height = 26
+    Top = 280
+    Width = 56
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit7Change
+    OnExit = Edit7Exit
+    ParentFont = False
+    TabStop = False
+    TabOrder = 12
+    Text = '15000'
+  end
+  object Label16: TLabel
+    Left = 322
+    Height = 15
+    Top = 293
+    Width = 22
+    Caption = 'RPM'
+    Font.Height = -11
+    Font.Name = 'Arial'
+    ParentColor = False
+    ParentFont = False
+  end
+end

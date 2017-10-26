@@ -1,0 +1,122 @@
+object FrmSobre: TFrmSobre
+  Left = 874
+  Height = 280
+  Top = 362
+  Width = 390
+  ActiveControl = Memo1
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Sobre'
+  ClientHeight = 280
+  ClientWidth = 390
+  Position = poDesktopCenter
+  LCLVersion = '1.6.0.4'
+  object Memo1: TMemo
+    Left = 8
+    Height = 236
+    Top = 8
+    Width = 376
+    Lines.Strings = (
+      'PCIToGCode V 2.0'
+      ''
+      'Programa de conversão de imagens de placa de circuito impresso '
+      'para '
+      'arquivos de fresagem G-Code.'
+      'Este programa foi desenvolvido em Free Pascal & Lazarus.'
+      ''
+      '  Copyright (C) <2007>  <Rubens Bernardi>'
+      '   '
+      '    Este programa é software livre; você pode redistribuí-lo e/ou '
+      'modificá-lo '
+      'sob os termos da Licença Pública Geral GNU, conforme publicada '
+      'pela '
+      'Free Software Foundation; tanto a versão 2 da Licença como (a '
+      'seu '
+      'critério) qualquer versão mais nova.'
+      ''
+      '    Este programa é distribuído na expectativa de ser útil, mas SEM '
+      'QUALQUER GARANTIA; sem mesmo a garantia implícita de '
+      'COMERCIALIZAÇÃO ou de ADEQUAÇÃO A QUALQUER '
+      'PROPÓSITO '
+      'EM PARTICULAR. Consulte a Licença Pública Geral GNU para '
+      'obter mais '
+      'detalhes.'
+      ' '
+      '    Você deve ter recebido uma cópia da Licença Pública Geral '
+      'GNU  junto '
+      'com este programa; se não, escreva para a Free Software '
+      'Foundation, '
+      'Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.'
+      ''
+      ''
+      'Desenvolvido por:'
+      'Engenheiro Eletrônico Rubens Bernardi.'
+      'Qualquer duvida, bugs ou sugestões favor me contatar. '
+      'Email:  rubens.bernardi@gmail.com'
+      ''
+      '_________________________________________________________'
+      '_________'
+      '---------------------------------------------------------------------'
+      '-----------------'
+      '------------------------------'
+      ''
+      'PCIToGCode V 2.0'
+      ''
+      'Software for to convert images of printed circuit board for'
+      'Milling G-Code File.'
+      'This program was developed in Free Pascal & Lazarus.'
+      ''
+      '   Copyright (C) <2007> <Rubens Bernardi>'
+      '   '
+      '     This program is free software: you can redistribute it and / or '
+      'modify '
+      'it'
+      'under the terms of the GNU General Public License as published '
+      'by'
+      'Free Software Foundation, either version 2 of the License, or (at '
+      'your'
+      'option) any later version.'
+      ''
+      '     This program is distributed in the hope it will be useful, but '
+      'WITHOUT'
+      'ANY WARRANTY, without even the implied warranty of'
+      'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE'
+      'IN PARTICULAR. See the GNU General Public License for more'
+      'details.'
+      ' '
+      '     You should have received a copy of the GNU General Public '
+      'License '
+      'along'
+      'with this program, if not, write to the Free Software Foundation;'
+      'Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.'
+      ''
+      ''
+      'Developed by:'
+      'Electronic Engineer Rubens Bernardi.'
+      'Any questions, bugs or suggestions please contact me.'
+      'Email: rubens.bernardi@gmail.com'
+      ''
+    )
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 208
+    Height = 25
+    Top = 248
+    Width = 176
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Fechar'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 8
+    Height = 25
+    Top = 248
+    Width = 192
+    Caption = 'Doações'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+end

@@ -1,0 +1,239 @@
+object FrmMedida: TFrmMedida
+  Left = 490
+  Height = 235
+  Top = 407
+  Width = 492
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Medidas da placa'
+  ClientHeight = 235
+  ClientWidth = 492
+  FormStyle = fsStayOnTop
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '1.6.0.4'
+  object Label1: TLabel
+    Left = 0
+    Height = 19
+    Top = 0
+    Width = 492
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Coloque aqui a medida real da sua placa em centimetros:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 348
+    Height = 14
+    Top = 216
+    Width = 34
+    Caption = 'Lado A'
+    Font.Color = clRed
+    Font.Height = -11
+    Font.Name = 'Arial'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 215
+    Height = 14
+    Top = 120
+    Width = 34
+    Caption = 'Lado B'
+    Font.Color = clRed
+    Font.Height = -11
+    Font.Name = 'Arial'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Image1: TImage
+    Left = 268
+    Height = 176
+    Top = 32
+    Width = 200
+    Align = alCustom
+    Center = True
+    Proportional = True
+    Stretch = True
+  end
+  object BtnOK: TButton
+    Left = 10
+    Height = 32
+    Top = 192
+    Width = 176
+    BorderSpacing.InnerBorder = 4
+    Caption = 'OK'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -21
+    Font.Name = 'Times New Roman'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold, fsItalic]
+    OnClick = BtnOKClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 98
+    Top = 24
+    Width = 174
+    Caption = 'Tamanho'
+    ClientHeight = 78
+    ClientWidth = 170
+    TabOrder = 1
+    object Label4: TLabel
+      Left = 3
+      Height = 12
+      Top = 21
+      Width = 34
+      Caption = 'Lado A'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Height = 12
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 3
+      Height = 12
+      Top = 57
+      Width = 34
+      Caption = 'Lado B'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Height = 12
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 102
+      Height = 14
+      Top = 57
+      Width = 15
+      Caption = 'Cm'
+      Font.Height = -11
+      Font.Name = 'Arial'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 102
+      Height = 14
+      Top = 21
+      Width = 15
+      Caption = 'Cm'
+      Font.Height = -11
+      Font.Name = 'Arial'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Edit2: TEdit
+      Left = 46
+      Height = 24
+      Top = 45
+      Width = 51
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      OnChange = Edit2Change
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Edit1: TEdit
+      Left = 46
+      Height = 24
+      Top = 9
+      Width = 51
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      OnChange = Edit1Change
+      ParentFont = False
+      TabOrder = 1
+    end
+    object UpDown1: TUpDown
+      Left = 126
+      Height = 31
+      Top = 1
+      Width = 33
+      Max = 5000
+      Min = 1
+      OnClick = UpDown1Click
+      Position = 10
+      TabOrder = 2
+      Wrap = False
+    end
+    object UpDown2: TUpDown
+      Left = 126
+      Height = 31
+      Top = 38
+      Width = 33
+      Max = 5000
+      Min = 1
+      OnClick = UpDown2Click
+      Position = 10
+      TabOrder = 3
+      Wrap = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 10
+    Height = 66
+    Top = 120
+    Width = 174
+    Caption = 'Resolução'
+    ClientHeight = 46
+    ClientWidth = 170
+    TabOrder = 2
+    object Label8: TLabel
+      Left = 4
+      Height = 1
+      Top = 1
+      Width = 1
+      Font.Height = -11
+      Font.Name = 'Arial'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label9: TLabel
+      Left = 3
+      Height = 1
+      Top = 15
+      Width = 1
+      Font.Height = -11
+      Font.Name = 'Arial'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label10: TLabel
+      Left = 3
+      Height = 1
+      Top = 30
+      Width = 1
+      Font.Height = -11
+      Font.Name = 'Arial'
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+end

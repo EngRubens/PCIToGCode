@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <LRSInOutputDirectory Value="False"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <Title Value="PCIToGCode"/>
+      <UseAppBundle Value="False"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N Value="True"/>
+      <OutDir Value="i18n"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <BuildNr Value="66"/>
+      <Language Value="0416"/>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="\usr\X11R6\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="12">
+      <Unit0>
+        <Filename Value="PCIToGCode.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <CursorPos Y="27"/>
+        <UsageCount Value="200"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="UPrincipal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="1057"/>
+        <CursorPos X="23" Y="1066"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="UMedidas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmMedida"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="49"/>
+        <CursorPos X="36" Y="93"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="UOtimizar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmOtimizar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="166"/>
+        <CursorPos X="19" Y="175"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="USobre.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmSobre"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="80" Y="8"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="UVelocidade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmVelocidade"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="85"/>
+        <CursorPos X="71" Y="63"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="UZInfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmZInfo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="60"/>
+        <CursorPos X="6" Y="123"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="UVetor.pas"/>
+        <TopLine Value="13"/>
+        <CursorPos X="4" Y="44"/>
+        <UsageCount Value="151"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="UFuros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmFuros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="105"/>
+        <CursorPos X="29" Y="124"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="UCMedidas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmCMedidas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="117"/>
+        <CursorPos Y="41"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="C:\lazarus\components\lazutils\winlazutf8.inc"/>
+        <TopLine Value="492"/>
+        <CursorPos X="14" Y="514"/>
+        <UsageCount Value="2"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\lazarus\components\lazutils\lazfileutils.pas"/>
+        <TopLine Value="91"/>
+        <CursorPos X="23" Y="108"/>
+        <UsageCount Value="2"/>
+      </Unit11>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1659" Column="7" TopLine="1657"/>
+      </Position1>
+      <Position2>
+        <Filename Value="UFuros.pas"/>
+        <Caret Line="270" TopLine="248"/>
+      </Position2>
+      <Position3>
+        <Filename Value="UFuros.pas"/>
+        <Caret Line="149" Column="22" TopLine="134"/>
+      </Position3>
+      <Position4>
+        <Filename Value="UFuros.pas"/>
+        <Caret Line="157" Column="13" TopLine="131"/>
+      </Position4>
+      <Position5>
+        <Filename Value="UFuros.pas"/>
+        <Caret Line="159" Column="90" TopLine="142"/>
+      </Position5>
+      <Position6>
+        <Filename Value="UFuros.pas"/>
+        <Caret Line="170" Column="17" TopLine="143"/>
+      </Position6>
+      <Position7>
+        <Filename Value="UFuros.pas"/>
+        <Caret Line="162" Column="82" TopLine="143"/>
+      </Position7>
+      <Position8>
+        <Filename Value="UFuros.pas"/>
+        <Caret Line="159" Column="16" TopLine="145"/>
+      </Position8>
+      <Position9>
+        <Filename Value="UFuros.pas"/>
+        <Caret Line="161" TopLine="145"/>
+      </Position9>
+      <Position10>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="961" Column="27" TopLine="898"/>
+      </Position10>
+      <Position11>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1669" Column="3" TopLine="1667"/>
+      </Position11>
+      <Position12>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1488" Column="5" TopLine="1486"/>
+      </Position12>
+      <Position13>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1811" Column="3" TopLine="1792"/>
+      </Position13>
+      <Position14>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1154" Column="51" TopLine="1138"/>
+      </Position14>
+      <Position15>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="18" Column="78"/>
+      </Position15>
+      <Position16>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1814" Column="8" TopLine="1812"/>
+      </Position16>
+      <Position17>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1815" Column="3" TopLine="1813"/>
+      </Position17>
+      <Position18>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1130" Column="46" TopLine="1122"/>
+      </Position18>
+      <Position19>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1815" Column="3" TopLine="1813"/>
+      </Position19>
+      <Position20>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1160" Column="22" TopLine="1149"/>
+      </Position20>
+      <Position21>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1815" Column="3" TopLine="1813"/>
+      </Position21>
+      <Position22>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1166" Column="25" TopLine="1140"/>
+      </Position22>
+      <Position23>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1167" Column="25" TopLine="1153"/>
+      </Position23>
+      <Position24>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1166" Column="25" TopLine="1152"/>
+      </Position24>
+      <Position25>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1151" Column="17" TopLine="1230"/>
+      </Position25>
+      <Position26>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1663" Column="7" TopLine="1661"/>
+      </Position26>
+      <Position27>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1076" Column="30" TopLine="1066"/>
+      </Position27>
+      <Position28>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1078" Column="30" TopLine="1069"/>
+      </Position28>
+      <Position29>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1088" Column="7" TopLine="1069"/>
+      </Position29>
+      <Position30>
+        <Filename Value="UPrincipal.pas"/>
+        <Caret Line="1074" Column="19" TopLine="1069"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsStabs"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShoLineNum Value="True"/>
+        <ShowDebugInfo Value="True"/>
+        <ShowHintsForUnusedUnitsInMainSrc Value="True"/>
+      </Verbosity>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="ECodetoolError"/>
+      </Item1>
+      <Item2>
+        <Name Value="EFOpenError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EProcess"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,212 @@
+object FrmCMedidas: TFrmCMedidas
+  Left = 499
+  Height = 343
+  Top = 333
+  Width = 425
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Calcular tamanho da placa'
+  ClientHeight = 343
+  ClientWidth = 425
+  FormStyle = fsStayOnTop
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.6.0.4'
+  object Label1: TLabel
+    Left = 0
+    Height = 41
+    Top = 0
+    Width = 424
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Calcular o tamanho da placa baseado na distancia padrão dos pinos de um CI de 2,54mm.'
+    Font.Height = -17
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 128
+    Top = 48
+    Width = 408
+    Caption = 'Eixo X'
+    ClientHeight = 109
+    ClientWidth = 404
+    TabOrder = 0
+    object BtnPonto1x: TButton
+      Left = 6
+      Height = 25
+      Hint = 'Clique no primeiro furo.'
+      Top = 5
+      Width = 163
+      Caption = 'Capturar primeiro ponto'
+      OnClick = BtnPonto1xClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object BtnPonto2x: TButton
+      Left = 6
+      Height = 25
+      Hint = 'Clique no segundo furo.'
+      Top = 32
+      Width = 163
+      Caption = 'Capturar segundo ponto'
+      OnClick = BtnPonto2xClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+    object Label1x: TLabel
+      Left = 174
+      Height = 1
+      Top = 16
+      Width = 1
+      ParentColor = False
+    end
+    object Label2x: TLabel
+      Left = 174
+      Height = 1
+      Top = 43
+      Width = 1
+      ParentColor = False
+    end
+    object Label3x: TLabel
+      Left = 174
+      Height = 1
+      Top = 72
+      Width = 1
+      ParentColor = False
+    end
+    object BtnCalcularx: TButton
+      Left = 6
+      Height = 25
+      Top = 72
+      Width = 163
+      Caption = 'Calcular resolução'
+      OnClick = BtnCalcularxClick
+      TabOrder = 2
+    end
+    object Image1: TImage
+      Left = 286
+      Height = 90
+      Top = -4
+      Width = 114
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B477261706869634701000089504E47
+        0D0A1A0A0000000D494844520000006D0000005A010300000088494A00000000
+        0467414D410000AFC837058AE900000006504C5445000000FFFFFFA5D99FDD00
+        00001974455874536F6674776172650041646F626520496D6167655265616479
+        71C9653C000000C74944415438CB63F88F0C7E306072D951B87F7EA2707FFFB3
+        FFFFA39EF93394FBFCFFF9EF9FEDED1F43B9F1FF3F7CFE6F6F7F98A5C01DC4B5
+        FFFF9FF15F3DFB644143611057FEFFFFCF7FFE7F360602A8BDDF7FFEFFCC08E1
+        EEFF07E47FFEFFF93384BBFD1B90FBC1981DCA5DFEE93F581AEA8C06B0F6E730
+        2E4416EE48B05E04176C323DB88402966CEE0386038C0DCC0C6C0C3C0C120C16
+        54E53E3878B0B9999D8D8F4746C28220977AF6D22EAC46B903C2FDC090801CC3
+        D4E41624202543425CEAD98BD7BF0086D394ED36E54A930000000049454E44AE
+        426082
+      }
+      Proportional = True
+      Stretch = True
+      Transparent = True
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 8
+    Height = 128
+    Top = 176
+    Width = 408
+    Caption = 'Eixo Y'
+    ClientHeight = 109
+    ClientWidth = 404
+    TabOrder = 1
+    object BtnPonto1y: TButton
+      Left = 6
+      Height = 25
+      Hint = 'Clique no primeiro furo.'
+      Top = 5
+      Width = 163
+      Caption = 'Capturar primeiro ponto'
+      OnClick = BtnPonto1yClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object BtnPonto2y: TButton
+      Left = 6
+      Height = 25
+      Hint = 'Clique no segundo furo.'
+      Top = 32
+      Width = 163
+      Caption = 'Capturar segundo ponto'
+      OnClick = BtnPonto2yClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+    object Label1y: TLabel
+      Left = 174
+      Height = 1
+      Top = 16
+      Width = 1
+      ParentColor = False
+    end
+    object Label2y: TLabel
+      Left = 174
+      Height = 1
+      Top = 40
+      Width = 1
+      ParentColor = False
+    end
+    object Label3y: TLabel
+      Left = 174
+      Height = 1
+      Top = 83
+      Width = 1
+      ParentColor = False
+    end
+    object BtnCalculary: TButton
+      Left = 6
+      Height = 25
+      Top = 72
+      Width = 163
+      Caption = 'Calcular resolução'
+      OnClick = BtnCalcularyClick
+      TabOrder = 2
+    end
+    object Image2: TImage
+      Left = 294
+      Height = 122
+      Top = -8
+      Width = 96
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B477261706869637B01000089504E47
+        0D0A1A0A0000000D4948445200000061000000750103000000648F1D6D000000
+        0467414D410000AFC837058AE900000006504C5445000000FFFFFFA5D99FDD00
+        00001974455874536F6674776172650041646F626520496D6167655265616479
+        71C9653C000000FB4944415438CBB594DD0DC220148579EB5B1DA1A374A56E80
+        1B38828BD430822340E2833131569FFC0D581B929ED31624D1F2F635C0BD1FF7
+        A4C2C15A8A7FD259941D5991FD4295A7DC53FB15C8A99EDA7305DE621774A74A
+        A2CFAA251AD564B491744E513D245768DAD98091C81A7470D700094F22899A69
+        EA96A619699A11F5E9548464802A4FF934599A91A5978FD1AD447A4934B233A4
+        6EAFD068B7468783463A6A343A15784B53862B70EA5694BA6DB211D71B900E50
+        DBB521870B91A31971BD3B4F85E84199789668640A34EAA9DB1999839161B291
+        D419264E9D0C2779502FD0D9F85F67241A05FB4CAF57F973F957BF489FE93436
+        9A89DE94E740C7D47518800000000049454E44AE426082
+      }
+      Proportional = True
+      Stretch = True
+      Transparent = True
+    end
+  end
+  object Button1: TButton
+    Left = 8
+    Height = 28
+    Top = 308
+    Width = 408
+    Caption = 'OK'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+end

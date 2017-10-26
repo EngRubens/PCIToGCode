@@ -1,0 +1,55 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFrmSobre','FORMDATA',[
+  'TPF0'#9'TFrmSobre'#8'FrmSobre'#4'Left'#3'j'#3#6'Height'#3#24#1#3'Top'#3'j'#1
+  +#5'Width'#3#134#1#13'ActiveControl'#7#5'Memo1'#11'BorderIcons'#11#12'biSyste'
+  +'mMenu'#0#11'BorderStyle'#7#8'bsSingle'#7'Caption'#6#5'Sobre'#12'ClientHeigh'
+  +'t'#3#24#1#11'ClientWidth'#3#134#1#8'Position'#7#15'poDesktopCenter'#10'LCLV'
+  +'ersion'#6#7'1.6.0.4'#0#5'TMemo'#5'Memo1'#4'Left'#2#8#6'Height'#3#236#0#3'To'
+  +'p'#2#8#5'Width'#3'x'#1#13'Lines.Strings'#1#6#16'PCIToGCode V 2.0'#6#0#6'@Pr'
+  +'ograma de convers'#195#163'o de imagens de placa de circuito impresso '#6#5
+  +'para '#6#28'arquivos de fresagem G-Code.'#6'8Este programa foi desenvolvido'
+  +' em Free Pascal & Lazarus.'#6#0#6')  Copyright (C) <2007>  <Rubens Bernardi'
+  +'>'#6#3'   '#6'E    Este programa '#195#169' software livre; voc'#195#170' p'
+  +'ode redistribu'#195#173'-lo e/ou '#6#13'modific'#195#161'-lo '#6'Asob os te'
+  +'rmos da Licen'#195#167'a P'#195#186'blica Geral GNU, conforme publicada '#6
+  +#5'pela '#6'@Free Software Foundation; tanto a vers'#195#163'o 2 da Licen'
+  +#195#167'a como (a '#6#4'seu '#6'&crit'#195#169'rio) qualquer vers'#195#163
+  +'o mais nova.'#6#0#6'G    Este programa '#195#169' distribu'#195#173'do na e'
+  +'xpectativa de ser '#195#186'til, mas SEM '#6'6QUALQUER GARANTIA; sem mesmo '
+  +'a garantia impl'#195#173'cita de '#6'/COMERCIALIZA'#195#135#195#131'O ou de'
+  +' ADEQUA'#195#135#195#131'O A QUALQUER '#6#11'PROP'#195#147'SITO '#6';EM PAR'
+  +'TICULAR. Consulte a Licen'#195#167'a P'#195#186'blica Geral GNU para '#6#11
+  +'obter mais '#6#9'detalhes.'#6#1' '#6'B    Voc'#195#170' deve ter recebido u'
+  +'ma c'#195#179'pia da Licen'#195#167'a P'#195#186'blica Geral '#6#11'GNU  ju'
+  +'nto '#6'9com este programa; se n'#195#163'o, escreva para a Free Software '
+  +#6#12'Foundation, '#6'=Inc., 59 Temple Place, Suite 330, Boston, MA 02111-13'
+  +'07, USA.'#6#0#6#0#6#17'Desenvolvido por:'#6'''Engenheiro Eletr'#195#180'nic'
+  +'o Rubens Bernardi.'#6'7Qualquer duvida, bugs ou sugest'#195#181'es favor me'
+  +' contatar. '#6'!Email:  rubens.bernardi@gmail.com'#6#0#6'9_________________'
+  +'________________________________________'#6#9'_________'#6'E---------------'
+  +'------------------------------------------------------'#6#17'--------------'
+  +'---'#6#30'------------------------------'#6#0#6#16'PCIToGCode V 2.0'#6#0#6
+  +';Software for to convert images of printed circuit board for'#6#20'Milling '
+  +'G-Code File.'#6'4This program was developed in Free Pascal & Lazarus.'#6#0#6
+  +')   Copyright (C) <2007> <Rubens Bernardi>'#6#3'   '#6'E     This program i'
+  +'s free software: you can redistribute it and / or '#6#7'modify '#6#2'it'#6
+  +'?under the terms of the GNU General Public License as published '#6#2'by'#6
+  +'BFree Software Foundation, either version 2 of the License, or (at '#6#4'yo'
+  +'ur'#6#26'option) any later version.'#6#0#6'D     This program is distribute'
+  +'d in the hope it will be useful, but '#6#7'WITHOUT'#6'2ANY WARRANTY, withou'
+  +'t even the implied warranty of'#6'3MERCHANTABILITY or FITNESS FOR A PARTICU'
+  +'LAR PURPOSE'#6':IN PARTICULAR. See the GNU General Public License for more'
+  +#6#8'details.'#6#1' '#6'?     You should have received a copy of the GNU Gen'
+  +'eral Public '#6#8'License '#6#5'along'#6'Awith this program, if not, write '
+  +'to the Free Software Foundation;'#6'=Inc., 59 Temple Place, Suite 330, Bost'
+  +'on, MA 02111-1307, USA.'#6#0#6#0#6#13'Developed by:'#6'$Electronic Engineer'
+  +' Rubens Bernardi.'#6'5Any questions, bugs or suggestions please contact me.'
+  +#6' Email: rubens.bernardi@gmail.com'#6#0#0#10'ScrollBars'#7#14'ssAutoVertic'
+  +'al'#8'TabOrder'#2#0#0#0#7'TButton'#7'Button1'#4'Left'#3#208#0#6'Height'#2#25
+  +#3'Top'#3#248#0#5'Width'#3#176#0#25'BorderSpacing.InnerBorder'#2#4#7'Caption'
+  +#6#6'Fechar'#7'OnClick'#7#12'Button1Click'#8'TabOrder'#2#1#0#0#7'TButton'#7
+  +'Button2'#4'Left'#2#8#6'Height'#2#25#3'Top'#3#248#0#5'Width'#3#192#0#7'Capti'
+  +'on'#6#9'Doa'#195#167#195#181'es'#7'OnClick'#7#12'Button2Click'#8'TabOrder'#2
+  +#2#0#0#0
+]);

@@ -1,0 +1,53 @@
+Finally, I managed to find a simple and effective way to make my application localizeable. It uses just one unit and no code.
+1. Add unit "defaulttranslator" to your uses list.
+2. Enable "i18n" in "Project Options" and set "PO output directory" to "locale" or "languages". You can put translation files right into application folder, but that would just make a mess. Don't forget to create an appropriate folder.
+3. Add components to the form. If you already have all components on your form, you'll have to move it a little bit, so it's modified.
+4. Save your project.
+5. Now there should be .po files in your "locale" or "languages" folder. For different languages files should be copied and renamed like so "project1.XX.po", where XX is language code (e.g. "en", "de", etc.).
+6. Translate .po files with translation software, and generate .mo files. I suggest to use POEdit.
+7. Run your application, and the translation to be used will be chosen by your regional locale settings. If you need to test other language - just start your application with following command line parameters - "-l XX" or "-lang XX", where XX is a language code.
+This method is not very versatile, but it translates resource strings and LCL component properties.
+
+
+Finalmente, consegui encontrar uma maneira simples e eficaz para fazer a tradução da minha aplicação. Ele usa apenas uma unidade e nenhum código.
+ 1. Adicionar "defaulttranslator" unidade à sua lista de usos.
+ 2. Ativar "i18n" em "Project Options" e defina "diretório de saída PO" a "locale" ou "línguas". Você pode colocar arquivos de tradução para a direita em pasta do aplicativo, mas que seria apenas fazer uma bagunça. Não se esqueça de criar uma pasta apropriada.
+ 3. Adicione componentes ao formulário. Se você já tem todos os componentes em sua forma, você terá que movê-lo um pouco, por isso é modificado.
+ 4. Salve o seu projeto.
+ 5. Agora, deve haver. Po em seu "local" ou "línguas" pasta. Para idiomas diferentes arquivos devem ser copiado e renomeado como assim "project1.XX.po", onde XX é o código da língua (por exemplo, "en", "de", etc.)
+ 6. Traduzir. Po com software de tradução, e gerar. Mo arquivos. Eu sugiro usar PoEdit.
+ 7. Execute o aplicativo, ea tradução para ser usado será escolhido por suas configurações de local regionais. Se você precisa testar outra língua - apenas iniciar o aplicativo com os seguintes parâmetros de linha de comando - "-l XX" ou "-lang XX", onde XX é o código do idioma.
+ Este método não é muito versátil, mas se traduz seqüências de recursos e propriedades de componentes LCL.
+
+
+
+
+
+ca.po # Catalan translations for Enigma2.
+cs.po # Czech translations for Enigma2.
+da.po # Danish translations for Enigma2.
+de.po # German translations for Enigma2.
+el.po # Greek translations for Enigma2.
+en.po # English translations for Enigma2.
+es.po # Spanish translations for Enigma2.
+et.po # Estonian translations for Enigma2.
+fi.po # Finnish translations for Enigma2.
+fr.po # French translations for Enigma2.
+fy.po # Frisian translations for Enigma2.
+hr.po # Croatian translations for Enigma2.
+hu.po # Hungarian translations for Enigma2.
+is.po # Icelandic translations for Enigma2.
+it.po # Italian translations for Enigma2.
+lt.po # Lithuanian translations for Enigma2.
+lv.po # Latvian translations for Enigma2.
+nl.po # Dutch translations for Enigma2.
+no.po # Norwegian translations for Enigma2.
+pl.po # Polish translations for Enigma2.
+pt.po # Portuguese translations for Enigma2.
+ru.po # Russian translations for Enigma2.
+sk.po # Slovak translations for Enigma2.
+sl.po # Slovenian translations for Enigma2.
+sr.po # Serbian translations for Enigma2.
+sv.po # Swedish translations for Enigma2.
+tr.po # Turkish translations for Enigma2.
+uk.po # Ukrainian translations for Enigma2.

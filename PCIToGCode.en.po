@@ -1,0 +1,654 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Rubens Bernardi <rubens.bernardi@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#: tfrmcmedidas.btncalcularx.caption
+msgctxt "TFRMCMEDIDAS.BTNCALCULARX.CAPTION"
+msgid "Calcular resolução"
+msgstr "Calculate Resolution"
+
+#: tfrmcmedidas.btncalculary.caption
+msgctxt "TFRMCMEDIDAS.BTNCALCULARY.CAPTION"
+msgid "Calcular resolução"
+msgstr "Calculate Resolutions"
+
+#: tfrmcmedidas.btnponto1x.caption
+msgctxt "TFRMCMEDIDAS.BTNPONTO1X.CAPTION"
+msgid "Capturar primeiro ponto"
+msgstr "Capture first point"
+
+#: tfrmcmedidas.btnponto1x.hint
+msgctxt "TFRMCMEDIDAS.BTNPONTO1X.HINT"
+msgid "Clique no primeiro furo."
+msgstr "Click on the first hole."
+
+#: tfrmcmedidas.btnponto1y.caption
+msgctxt "TFRMCMEDIDAS.BTNPONTO1Y.CAPTION"
+msgid "Capturar primeiro ponto"
+msgstr "Capture first point"
+
+#: tfrmcmedidas.btnponto1y.hint
+msgctxt "TFRMCMEDIDAS.BTNPONTO1Y.HINT"
+msgid "Clique no primeiro furo."
+msgstr "Click on the first hole."
+
+#: tfrmcmedidas.btnponto2x.caption
+msgctxt "TFRMCMEDIDAS.BTNPONTO2X.CAPTION"
+msgid "Capturar segundo ponto"
+msgstr "Capture second point."
+
+#: tfrmcmedidas.btnponto2x.hint
+msgctxt "TFRMCMEDIDAS.BTNPONTO2X.HINT"
+msgid "Clique no segundo furo."
+msgstr "Click on the second hole."
+
+#: tfrmcmedidas.btnponto2y.caption
+msgctxt "TFRMCMEDIDAS.BTNPONTO2Y.CAPTION"
+msgid "Capturar segundo ponto"
+msgstr "Capture second point."
+
+#: tfrmcmedidas.btnponto2y.hint
+msgctxt "TFRMCMEDIDAS.BTNPONTO2Y.HINT"
+msgid "Clique no segundo furo."
+msgstr "Click on the second hole."
+
+#: tfrmcmedidas.button1.caption
+msgctxt "TFRMCMEDIDAS.BUTTON1.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: tfrmcmedidas.caption
+msgctxt "tfrmcmedidas.caption"
+msgid "Calcular tamanho da placa"
+msgstr "Calculate board size"
+
+#: tfrmcmedidas.groupbox1.caption
+msgid "Eixo X"
+msgstr "X axis"
+
+#: tfrmcmedidas.groupbox2.caption
+msgid "Eixo Y"
+msgstr "Y axis"
+
+#: tfrmcmedidas.label1.caption
+msgctxt "TFRMCMEDIDAS.LABEL1.CAPTION"
+msgid "Calcular o tamanho da placa baseado na distancia padrão dos pinos de um CI de 2,54mm."
+msgstr "Calculate the size of the board based on distance standard pins of an IC of 2.54 mm."
+
+#: tfrmfuros.btncapturar.caption
+msgid "Capturar Furos"
+msgstr "Capture of Holes"
+
+#: tfrmfuros.btnexcluir.caption
+msgctxt "tfrmfuros.btnexcluir.caption"
+msgid "Excluir"
+msgstr "Delete"
+
+#: tfrmfuros.btngeragcodefuros.caption
+msgid "Sair"
+msgstr "Exit"
+
+#: tfrmfuros.btnincluir.caption
+msgctxt "tfrmfuros.btnincluir.caption"
+msgid "Incluir"
+msgstr "Include"
+
+#: tfrmfuros.caption
+msgctxt "tfrmfuros.caption"
+msgid "Captura de furos"
+msgstr "Capture of holes"
+
+#: tfrmfuros.edit1.text
+msgid "00"
+msgstr "00"
+
+#: tfrmfuros.groupbox1.caption
+msgid "Automático"
+msgstr "Automatic"
+
+#: tfrmfuros.groupbox2.caption
+msgctxt "TFRMFUROS.GROUPBOX2.CAPTION"
+msgid "Manual"
+msgstr "Manual"
+
+#: tfrmfuros.label1.caption
+msgid "Area livre"
+msgstr "Free Area"
+
+#: tfrmfuros.label2.caption
+#| msgid "Area do furo"
+msgid "Área do furo"
+msgstr "Hole area"
+
+#: tfrmfuros.label3.caption
+msgid "Quantidade de Furos"
+msgstr "Amount of Holes"
+
+#: tfrmfuros.label4.caption
+msgid "Tamanho do furo"
+msgstr "Hole size"
+
+#: tfrmfuros.label5.caption
+msgid "X ="
+msgstr "X ="
+
+#: tfrmfuros.label6.caption
+msgid "Y ="
+msgstr "Y ="
+
+#: tfrmmedida.btnok.caption
+msgctxt "TFRMMEDIDA.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: tfrmmedida.caption
+msgctxt "tfrmmedida.caption"
+msgid "Medidas da placa"
+msgstr "PCB Board Size"
+
+#: tfrmmedida.groupbox1.caption
+msgid "Tamanho"
+msgstr "Size"
+
+#: tfrmmedida.groupbox2.caption
+msgid "Resolução"
+msgstr "Resolution"
+
+#: tfrmmedida.label1.caption
+msgid "Coloque aqui a medida real da sua placa em centimetros:"
+msgstr "Fill in the size of your PCB, in centimeters:"
+
+#: tfrmmedida.label2.caption
+msgctxt "TFRMMEDIDA.LABEL2.CAPTION"
+msgid "Lado A"
+msgstr "Side A"
+
+#: tfrmmedida.label3.caption
+msgctxt "TFRMMEDIDA.LABEL3.CAPTION"
+msgid "Lado B"
+msgstr "Side B"
+
+#: tfrmmedida.label4.caption
+msgctxt "TFRMMEDIDA.LABEL4.CAPTION"
+msgid "Lado A"
+msgstr "Side A"
+
+#: tfrmmedida.label5.caption
+msgctxt "TFRMMEDIDA.LABEL5.CAPTION"
+msgid "Lado B"
+msgstr "Side B"
+
+#: tfrmmedida.label6.caption
+msgctxt "TFRMMEDIDA.LABEL6.CAPTION"
+msgid "Cm"
+msgstr "Cm"
+
+#: tfrmmedida.label7.caption
+msgctxt "TFRMMEDIDA.LABEL7.CAPTION"
+msgid "Cm"
+msgstr "Cm"
+
+#: tfrmotimizar.btnotimizar.caption
+msgid "Otimizar"
+msgstr "Optimize"
+
+#: tfrmotimizar.caption
+msgctxt "tfrmotimizar.caption"
+msgid "Otimizar Imagem"
+msgstr "Optimize image"
+
+#: tfrmotimizar.edit1.text
+msgid "1000"
+msgstr "1000"
+
+#: tfrmotimizar.label1.caption
+msgid "Fator de Branco"
+msgstr "White Factor"
+
+#: tfrmotimizar.label2.caption
+msgid "Espessura da borda"
+msgstr "Border Thickness"
+
+#: tfrmprincipal.caption
+#| msgid "PCIToGCode  v1.5"
+msgctxt "tfrmprincipal.caption"
+msgid "PCIToGCode  v2.0"
+msgstr "PCIToGCode  v1.3"
+
+#: tfrmprincipal.majuda.caption
+msgid "Ajuda"
+msgstr "Help"
+
+#: tfrmprincipal.menuitem1.caption
+msgid "CNC"
+msgstr "CNC"
+
+#: tfrmprincipal.mgerber.caption
+msgid "GCode"
+msgstr "GCode"
+
+#: tfrmprincipal.mimagem.caption
+msgctxt "TFRMPRINCIPAL.MIMAGEM.CAPTION"
+msgid "Imagem"
+msgstr "Image"
+
+#: tfrmprincipal.mvetor.caption
+msgctxt "TFRMPRINCIPAL.MVETOR.CAPTION"
+msgid "Vetor"
+msgstr "Vector"
+
+#: tfrmprincipal.smabrir.caption
+msgid "Abrir"
+msgstr "Open"
+
+#: tfrmprincipal.smborda.caption
+msgid "Borda"
+msgstr "Edge"
+
+#: tfrmprincipal.smbordaexterna.caption
+msgid "Externa"
+msgstr "External"
+
+#: tfrmprincipal.smbordainterna.caption
+msgid "Interna"
+msgstr "Internal"
+
+#: tfrmprincipal.smcontorno.caption
+msgid "Contorno da placa"
+msgstr "Board outline"
+
+#: tfrmprincipal.smeixoz.caption
+msgid "Curso do Eixo Z"
+msgstr "Z Axis Travel"
+
+#: tfrmprincipal.smfresar.caption
+msgid "Fresar"
+msgstr "Miling"
+
+#: tfrmprincipal.smgeracoordenadas.caption
+msgid "Gerar Coordenadas"
+msgstr "Generate the Coordinates"
+
+#: tfrmprincipal.smgerafresagem.caption
+msgid "Gerar arquivo de Fresagem"
+msgstr "Generate Milling file"
+
+#: tfrmprincipal.smgerafresagemsf.caption
+msgid "Gerar arquivo de Fresagem Sem Furos"
+msgstr "Generate Milling file Without Holes"
+
+#: tfrmprincipal.smgerafuracao.caption
+msgctxt "tfrmprincipal.smgerafuracao.caption"
+msgid "Gerar arquivo de Furação"
+msgstr "Generate the Drilling File"
+
+#: tfrmprincipal.smgerarecorte.caption
+msgid "Gerar Arquivo de Recorte"
+msgstr "Generate Cut File"
+
+#: tfrmprincipal.smmanual.caption
+msgctxt "TFRMPRINCIPAL.SMMANUAL.CAPTION"
+msgid "Manual"
+msgstr "Manual"
+
+#: tfrmprincipal.smmapafresagem.caption
+msgid "Mapa da Fresagem"
+msgstr "Milling Map"
+
+#: tfrmprincipal.smmapafresagemsf.caption
+msgid "Mapa da Fresagem Sem Furos"
+msgstr "Milling Map Without Holes"
+
+#: tfrmprincipal.smnaofresar.caption
+msgid "Não Fresar"
+msgstr "Not Miling"
+
+#: tfrmprincipal.smotimizar.caption
+msgctxt "TFRMPRINCIPAL.SMOTIMIZAR.CAPTION"
+msgid "Otimizar Imagem"
+msgstr "Optimize image"
+
+#: tfrmprincipal.smponto.caption
+msgid "Ponto"
+msgstr "Point"
+
+#: tfrmprincipal.smsalvaconfig.caption
+msgid "Salvar configuração"
+msgstr "Save configuration"
+
+#: tfrmprincipal.smsalvagcodefresagem.caption
+#| msgid "Salvar Gcode Fresar"
+msgid "Salvar GCode Fresar"
+msgstr "Save Gcode for Milling"
+
+#: tfrmprincipal.smsalvagcodefuros.caption
+#| msgid "Salva Gcode Furos"
+msgid "Salvar GCode Furos"
+msgstr "Save Gcode for Drilling"
+
+#: tfrmprincipal.smsalvagcoderecorte.caption
+msgid "Salvar GCode Recorte"
+msgstr "Save Gcode for Cuting"
+
+#: tfrmprincipal.smsalvagcodeunico.caption
+#| msgid "Salva Gcode único"
+msgid "Salvar Gcode único"
+msgstr "Save Gcode unique"
+
+#: tfrmprincipal.smsalvaotimizada.caption
+msgid "Salvar Otimizada"
+msgstr "Save Optimized"
+
+#: tfrmprincipal.smsalvavetorizada.caption
+msgid "Salvar Vetorizada"
+msgstr "Save Vectored"
+
+#: tfrmprincipal.smsepdecimal.caption
+msgid "Separador Decimal"
+msgstr "Decimal Separator"
+
+#: tfrmprincipal.smsobre.caption
+msgctxt "TFRMPRINCIPAL.SMSOBRE.CAPTION"
+msgid "Sobre"
+msgstr "About"
+
+#: tfrmprincipal.smtamanho.caption
+msgid "Tamanho Original"
+msgstr "Original Size"
+
+#: tfrmprincipal.smtamanhocalculado.caption
+msgid "Calcular Tamanho da Placa"
+msgstr "Calculate Board Size"
+
+#: tfrmprincipal.smtamanhootimizado.caption
+msgid "Tamanho Otimizado"
+msgstr "Optimized Size"
+
+#: tfrmprincipal.smtamanhoplaca.caption
+msgid "Tamanho da Placa"
+msgstr "PCB Size"
+
+#: tfrmprincipal.smvelocidade.caption
+msgid "Velocidade dos Eixos"
+msgstr "Displacement Speed over the axes"
+
+#: tfrmprincipal.smvetorizar.caption
+msgid "Vetorizar"
+msgstr "Vectorizing"
+
+#: tfrmprincipal.smvirgula.caption
+msgid "Virgula"
+msgstr "Comma"
+
+#: tfrmprincipal.tabsheet1.caption
+msgctxt "TFRMPRINCIPAL.TABSHEET1.CAPTION"
+msgid "Imagem"
+msgstr "Image"
+
+#: tfrmprincipal.tabsheet2.caption
+msgctxt "TFRMPRINCIPAL.TABSHEET2.CAPTION"
+msgid "Otimizada"
+msgstr "Optimized"
+
+#: tfrmprincipal.tabsheet3.caption
+msgctxt "TFRMPRINCIPAL.TABSHEET3.CAPTION"
+msgid "Vetor"
+msgstr "Vector"
+
+#: tfrmprincipal.tabsheet4.caption
+msgctxt "TFRMPRINCIPAL.TABSHEET4.CAPTION"
+msgid "Coordenadas"
+msgstr "Coordinates"
+
+#: tfrmprincipal.tabsheet5.caption
+#| msgid "G-Code Fresagem"
+msgctxt "TFRMPRINCIPAL.TABSHEET5.CAPTION"
+msgid "GCode Fresagem"
+msgstr "G-Code for Milling"
+
+#: tfrmprincipal.tabsheet6.caption
+#| msgid "Fresagem"
+msgctxt "TFRMPRINCIPAL.TABSHEET6.CAPTION"
+msgid "Mapa Fresagem"
+msgstr "Milling"
+
+#: tfrmprincipal.tabsheet7.caption
+#| msgid "G-Code Furação"
+msgctxt "TFRMPRINCIPAL.TABSHEET7.CAPTION"
+msgid "GCode Furação"
+msgstr "G-Code for Driling"
+
+#: tfrmprincipal.tabsheet8.caption
+msgid "Mapa Furaçao"
+msgstr "drilling map"
+
+#: tfrmprincipal.tabsheet9.caption
+msgid "GCode Recorte"
+msgstr "Gcode for Milling"
+
+#: tfrmsobre.button1.caption
+msgid "Fechar"
+msgstr "Close"
+
+#: tfrmsobre.button2.caption
+msgid "Doações"
+msgstr "Donate"
+
+#: tfrmsobre.caption
+msgctxt "tfrmsobre.caption"
+msgid "Sobre"
+msgstr "About"
+
+#: tfrmvelocidade.btnok.caption
+msgctxt "TFRMVELOCIDADE.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: tfrmvelocidade.edit1.text
+msgctxt "TFRMVELOCIDADE.EDIT1.TEXT"
+msgid "60"
+msgstr "60"
+
+#: tfrmvelocidade.edit2.text
+msgid "150"
+msgstr "150"
+
+#: tfrmvelocidade.edit3.text
+msgctxt "TFRMVELOCIDADE.EDIT3.TEXT"
+msgid "60"
+msgstr "60"
+
+#: tfrmvelocidade.frmvelocidade.caption
+msgid "Definir velocidade dos eixos"
+msgstr "Set displacement speed over axes"
+
+#: tfrmvelocidade.label1.caption
+msgid "Definir as velocidades dos eixos XY e Z."
+msgstr "Set the speed over XY and Z axes"
+
+#: tfrmvelocidade.label2.caption
+#| msgid "mm/minuto do eixo Z descendo"
+msgid "mm/minuto do eixo Z decendo"
+msgstr "Speed of Z axis descending, in mm per minute"
+
+#: tfrmvelocidade.label3.caption
+msgid "mm/minuto do eixo XY fresando"
+msgstr "Milling speed over XY axes, in mm per minute"
+
+#: tfrmvelocidade.label4.caption
+msgid "mm/minuto do eixo XY recortando"
+msgstr "Cutting speed over XY axes, in mm per minute"
+
+#: tfrmzinfo.btnok.caption
+msgctxt "TFRMZINFO.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: tfrmzinfo.edit1.text
+msgid "0,30"
+msgstr "0,30"
+
+#: tfrmzinfo.edit2.text
+msgid "3,00"
+msgstr "3,00"
+
+#: tfrmzinfo.edit3.text
+msgid "2,40"
+msgstr "2,40"
+
+#: tfrmzinfo.edit4.text
+msgid "2,1"
+msgstr "2,1"
+
+#: tfrmzinfo.edit5.text
+msgid "3"
+msgstr "3"
+
+#: tfrmzinfo.edit6.text
+msgid "0,40"
+msgstr "0,40"
+
+#: tfrmzinfo.edit7.text
+msgid "15000"
+msgstr "15000"
+
+#: tfrmzinfo.frmzinfo.caption
+msgid "Deslocamentos do eixo Z"
+msgstr "Displacement on Z axis"
+
+#: tfrmzinfo.label1.caption
+#| msgid "Profundidade de fresagem:"
+msgid "Profundidade de fresagem"
+msgstr "Milling depth"
+
+#: tfrmzinfo.label10.caption
+msgid "Número de passes para o recorte"
+msgstr "Number of passes to cut"
+
+#: tfrmzinfo.label11.caption
+msgctxt "TFRMZINFO.LABEL11.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: tfrmzinfo.label13.caption
+msgid "Avanço do eixo Z a cada passe"
+msgstr "Advance of Z axis on successive passes"
+
+#: tfrmzinfo.label14.caption
+msgctxt "TFRMZINFO.LABEL14.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: tfrmzinfo.label15.caption
+msgid "Velocidade do Spindle"
+msgstr "Spindle Speed"
+
+#: tfrmzinfo.label16.caption
+msgid "RPM"
+msgstr "RPM"
+
+#: tfrmzinfo.label2.caption
+#| msgid "Altura para  deslocamento:"
+msgid "Altura para  deslocamento"
+msgstr "Safe height for displacements"
+
+#: tfrmzinfo.label3.caption
+msgctxt "TFRMZINFO.LABEL3.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: tfrmzinfo.label4.caption
+msgctxt "TFRMZINFO.LABEL4.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: tfrmzinfo.label5.caption
+msgid "Deslocamentos do Eixo Z"
+msgstr "Displacement on Z axis"
+
+#: tfrmzinfo.label6.caption
+#| msgid "O nivel zero do eixo Z e a superficie da placa!"
+msgid "O nivel zero do eixo Z é a superficie da placa!"
+msgstr "The Z axis zero is at PCB surface!"
+
+#: tfrmzinfo.label7.caption
+msgid "Profundidade dos furos"
+msgstr "Drilling depth"
+
+#: tfrmzinfo.label8.caption
+msgctxt "TFRMZINFO.LABEL8.CAPTION"
+msgid "mm"
+msgstr "mm"
+
+#: tfrmzinfo.label9.caption
+msgid "Profundidade do recorte"
+msgstr "Cutting depth"
+
+#: uprincipal.texto01
+msgid "Tamanho original da imagem"
+msgstr "Original image size"
+
+#: uprincipal.texto02
+msgid "Tamanho otimizado da imagem"
+msgstr "Optimized Image Size"
+
+#: uprincipal.texto03
+msgid " Pontos por mm"
+msgstr " Dots per mm"
+
+#: uprincipal.texto04
+msgid "Tamanho de Imagem muito grande! Tente reduzir o tamanho."
+msgstr "Image size too big! Try reducing the size."
+
+#: uprincipal.texto05
+msgid "Favor especificar o tamanho da placa antes!"
+msgstr "Please, specify the size of PCB before!"
+
+#: uprincipal.texto06
+msgid "( Arquivo de furos da PCI )"
+msgstr "(File of Holes of PCB)"
+
+#: uprincipal.texto07
+msgid "( Gerado pelo programa PCIToGCode )"
+msgstr "(Generated by the program PCIToGCode)"
+
+#: uprincipal.texto08
+msgid "( Arquivo Convertido: "
+msgstr "(Converted File:"
+
+#: uprincipal.texto09
+msgid "( Tamanho da placa: X = "
+msgstr "(PCB Size: X ="
+
+#: uprincipal.texto10
+msgid "( Boa fura#231#227o! )"
+msgstr "(Good drilling!)"
+
+#: uprincipal.texto11
+msgid "( Arquivo de fresagem de PCI )"
+msgstr "(Milling File of PCB)"
+
+#: uprincipal.texto13
+msgid "( Boa fresagem! )"
+msgstr "(Good milling!)"
+
+#: uprincipal.texto14
+msgid "Furo excluido!"
+msgstr "Hole excluded!"
+
+#: uprincipal.texto15
+msgid "Furo inexistente!"
+msgstr "Hole inexistent!"
+
+#: uprincipal.texto16
+msgid "Furo adicionado!"
+msgstr "Hole added!"
+

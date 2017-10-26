@@ -1,0 +1,50 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFrmVelocidade','FORMDATA',[
+  'TPF0'#14'TFrmVelocidade'#13'FrmVelocidade'#4'Left'#3'('#2#6'Height'#3#177#0#3
+  +'Top'#3#219#0#5'Width'#3#142#1#13'ActiveControl'#7#5'Edit1'#11'BorderIcons'
+  +#11#12'biSystemMenu'#0#11'BorderStyle'#7#8'bsDialog'#7'Caption'#6#28'Definir'
+  +' velocidade dos eixos'#12'ClientHeight'#3#177#0#11'ClientWidth'#3#142#1#6'O'
+  +'nShow'#7#8'FormShow'#8'Position'#7#15'poDesktopCenter'#10'LCLVersion'#6#6'0'
+  +'.9.30'#0#6'TLabel'#6'Label1'#4'Left'#2#0#6'Height'#2#20#3'Top'#2#0#5'Width'
+  +#3#142#1#5'Align'#7#5'alTop'#9'Alignment'#7#8'taCenter'#7'Caption'#6'(Defini'
+  +'r as velocidades dos eixos XY e Z.'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10
+  +'Font.Color'#4#128#0'@'#0#11'Font.Height'#2#239#9'Font.Name'#6#5'Arial'#10'F'
+  +'ont.Pitch'#7#10'fpVariable'#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'#8
+  +#10'ParentFont'#8#0#0#6'TLabel'#6'Label2'#4'Left'#2'P'#6'Height'#2#18#3'Top'
+  +#2'/'#5'Width'#3#197#0#7'Caption'#6#27'mm/minuto do eixo Z decendo'#12'Font.'
+  +'CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2
+  +#241#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'
+  +#8#10'ParentFont'#8#0#0#6'TLabel'#6'Label3'#4'Left'#2'P'#6'Height'#2#18#3'To'
+  +'p'#2'S'#5'Width'#3#208#0#7'Caption'#6#29'mm/minuto do eixo XY fresando'#12
+  +'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'
+  +#2#241#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#11'ParentColo'
+  +'r'#8#10'ParentFont'#8#0#0#6'TBevel'#6'Bevel1'#4'Left'#2#3#6'Height'#2#19#3
+  +'Top'#2#1#5'Width'#3#137#1#0#0#5'TEdit'#5'Edit1'#4'Left'#2#30#6'Height'#2#23
+  +#3'Top'#2'('#5'Width'#2'*'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'
+  +#7#7'clBlack'#11'Font.Height'#2#244#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7
+  +#10'fpVariable'#10'Font.Style'#11#6'fsBold'#0#8'OnChange'#7#11'Edit1Change'
+  +#10'ParentFont'#8#8'TabOrder'#2#0#4'Text'#6#2'60'#0#0#5'TEdit'#5'Edit2'#4'Le'
+  +'ft'#2#30#6'Height'#2#24#3'Top'#2'L'#5'Width'#2'*'#12'Font.CharSet'#7#12'ANS'
+  +'I_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2#243#9'Font.Name'#6
+  +#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#10'Font.Style'#11#6'fsBold'#0#8'On'
+  +'Change'#7#11'Edit2Change'#10'ParentFont'#8#8'TabOrder'#2#1#4'Text'#6#3'150'
+  +#0#0#7'TButton'#5'BtnOK'#4'Left'#2#5#6'Height'#2#29#3'Top'#3#143#0#5'Width'#3
+  +#131#1#25'BorderSpacing.InnerBorder'#2#4#7'Caption'#6#2'OK'#7'OnClick'#7#10
+  +'BtnOKClick'#8'TabOrder'#2#2#0#0#7'TUpDown'#7'UpDown1'#4'Left'#2#9#6'Height'
+  +#2#31#3'Top'#2'!'#5'Width'#2#17#3'Min'#2#1#3'Max'#3'p'#23#8'Position'#2'<'#8
+  +'TabOrder'#2#3#4'Wrap'#8#7'OnClick'#7#12'UpDown1Click'#0#0#7'TUpDown'#7'UpDo'
+  +'wn2'#4'Left'#2#9#6'Height'#2#31#3'Top'#2'E'#5'Width'#2#17#3'Min'#2#1#3'Max'
+  +#3'p'#23#8'Position'#3#150#0#8'TabOrder'#2#4#4'Wrap'#8#7'OnClick'#7#12'UpDow'
+  +'n2Click'#0#0#6'TLabel'#6'Label4'#4'Left'#2'P'#6'Height'#2#18#3'Top'#2'w'#5
+  +'Width'#3#221#0#7'Caption'#6#31'mm/minuto do eixo XY recortando'#12'Font.Cha'
+  +'rSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2#241#9
+  +'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10
+  +'ParentFont'#8#0#0#5'TEdit'#5'Edit3'#4'Left'#2#30#6'Height'#2#23#3'Top'#2'p'
+  +#5'Width'#2'*'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clBlac'
+  +'k'#11'Font.Height'#2#244#9'Font.Name'#6#5'Arial'#10'Font.Pitch'#7#10'fpVari'
+  +'able'#10'Font.Style'#11#6'fsBold'#0#8'OnChange'#7#11'Edit1Change'#10'Parent'
+  +'Font'#8#8'TabOrder'#2#5#4'Text'#6#2'60'#0#0#7'TUpDown'#7'UpDown3'#4'Left'#2
+  +#9#6'Height'#2#31#3'Top'#2'i'#5'Width'#2#17#3'Min'#2#1#3'Max'#3'p'#23#8'Posi'
+  +'tion'#2'<'#8'TabOrder'#2#6#4'Wrap'#8#7'OnClick'#7#12'UpDown3Click'#0#0#0
+]);
