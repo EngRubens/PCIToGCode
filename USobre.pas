@@ -42,6 +42,8 @@ begin
    OpenURL('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4PTSTUHFA64GE');
 end;
 
+
+
 initialization
   {$I USobre.lrs}
 

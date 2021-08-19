@@ -1,7 +1,7 @@
 object FrmPrincipal: TFrmPrincipal
-  Left = 196
+  Left = 359
   Height = 520
-  Top = 22
+  Top = 139
   Width = 837
   Align = alBottom
   Caption = 'PCIToGCode  v3.0'
@@ -12,7 +12,7 @@ object FrmPrincipal: TFrmPrincipal
   OnClose = FormClose
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.12.0'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -7106,8 +7106,8 @@ object FrmPrincipal: TFrmPrincipal
     end
   end
   object MainMenu1: TMainMenu
-    left = 72
-    top = 136
+    Left = 72
+    Top = 136
     object MImagem: TMenuItem
       Caption = 'Imagem'
       object SMAbrir: TMenuItem
@@ -7273,25 +7273,23 @@ object FrmPrincipal: TFrmPrincipal
     end
   end
   object OpenPictureDialog1: TOpenPictureDialog
-    Width = 646
-    Height = 507
     Filter = 'Graphic (*.ico;*.ppm;*.pgm;*.pbm;*.png;*.xpm;*.bmp)|*.ico;*.ppm;*.pgm;*.pbm;*.png;*.xpm;*.bmp|Icon (*.ico)|*.ico|Portable PixMap (*.ppm)|*.ppm|Portable GrayMap (*.pgm)|*.pgm|Portable BitMap (*.pbm)|*.pbm|Portable Network Graphic (*.png)|*.png|Pixmap (*.xp'
     FilterIndex = 0
-    left = 104
-    top = 552
+    Left = 104
+    Top = 552
   end
   object SavePictureDialog1: TSavePictureDialog
     Filter = 'Graphic (*.jpeg;*.jpg;*.ico;*.ppm;*.pgm;*.pbm;*.png;*.xpm;*.bmp)|*.jpeg;*.jpg;*.ico;*.ppm;*.pgm;*.pbm;*.png;*.xpm;*.bmp|JPEG Image File (*.jpeg)|*.jpeg|JPEG Image File (*.jpg)|*.jpg|Icon (*.ico)|*.ico|Portable PixMap (*.ppm)|*.ppm|Portable GrayMap (*.pgm)'
     FilterIndex = 0
-    left = 72
-    top = 272
+    Left = 72
+    Top = 272
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = '.nc'
     FileName = '.nc'
     Filter = 'nc|nc'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
-    left = 72
-    top = 200
+    Left = 72
+    Top = 200
   end
 end

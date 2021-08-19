@@ -5,9 +5,9 @@ LazarusResources.Add('TFrmSobre','FORMDATA',[
   +#5'Width'#3#134#1#13'ActiveControl'#7#5'Memo1'#11'BorderIcons'#11#12'biSyste'
   +'mMenu'#0#11'BorderStyle'#7#8'bsSingle'#7'Caption'#6#5'Sobre'#12'ClientHeigh'
   +'t'#3#24#1#11'ClientWidth'#3#134#1#8'Position'#7#16'poMainFormCenter'#10'LCL'
-  +'Version'#6#7'1.6.4.0'#0#5'TMemo'#5'Memo1'#4'Left'#2#8#6'Height'#3#236#0#3'T'
-  +'op'#2#8#5'Width'#3'x'#1#13'Lines.Strings'#1#6#16'PCIToGCode V 3.0'#6#0#6'@P'
-  +'rograma de convers'#195#163'o de imagens de placa de circuito impresso '#6
+  +'Version'#6#8'2.0.12.0'#0#5'TMemo'#5'Memo1'#4'Left'#2#8#6'Height'#3#236#0#3
+  +'Top'#2#8#5'Width'#3'x'#1#13'Lines.Strings'#1#6#16'PCIToGCode V 3.1'#6#0#6'@'
+  +'Programa de convers'#195#163'o de imagens de placa de circuito impresso '#6
   +'!para arquivos de fresagem G-Code.'#6'8Este programa foi desenvolvido em Fr'
   +'ee Pascal & Lazarus.'#6#0#6'''Copyright (C) <2007>  <Rubens Bernardi>'#6#3
   +'   '#6'AEste programa '#195#169' software livre; voc'#195#170' pode redistr'
