@@ -43,15 +43,11 @@ Otimizar para o menor caminho para a fresagem
 
 Alterar velocidade do Spindle quando em deslocamento?
 
-
+Revisar codigo e testar.
 
 
 
 Dicas:
-
-1- Usar o evento onmousedown do componente: Nesse caso, é passado para a procedure uma variável nome button do tipo TMouseButton que, no caso, pode ser mbright (o botao direito).
-if Button = mbright then Edit1.Text := 'Botao Direito'
-else Edit1.text := 'Botão Esquerdo';
 
 EMC Utiliza ponto como separador decimal.
 
