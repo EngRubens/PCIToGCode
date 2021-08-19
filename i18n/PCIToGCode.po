@@ -122,10 +122,6 @@ msgstr ""
 msgid "Quantidade de Furos"
 msgstr ""
 
-#: tfrmfuros.label4.caption
-msgid "Tamanho do furo"
-msgstr ""
-
 #: tfrmfuros.label5.caption
 msgid "X ="
 msgstr ""
@@ -209,7 +205,7 @@ msgstr ""
 
 #: tfrmprincipal.caption
 msgctxt "TFRMPRINCIPAL.CAPTION"
-msgid "PCIToGCode  v2.0"
+msgid "PCIToGCode  v3.0"
 msgstr ""
 
 #: tfrmprincipal.majuda.caption
@@ -303,6 +299,18 @@ msgstr ""
 #: tfrmprincipal.smotimizar.caption
 msgctxt "TFRMPRINCIPAL.SMOTIMIZAR.CAPTION"
 msgid "Otimizar Imagem"
+msgstr ""
+
+#: tfrmprincipal.smotimizargcode.caption
+msgid "Otimizar GCode"
+msgstr ""
+
+#: tfrmprincipal.smotimizargcodenao.caption
+msgid "Não"
+msgstr ""
+
+#: tfrmprincipal.smotimizargcodesim.caption
+msgid "Sim"
 msgstr ""
 
 #: tfrmprincipal.smponto.caption
@@ -435,6 +443,11 @@ msgctxt "TFRMVELOCIDADE.BTNOK.CAPTION"
 msgid "OK"
 msgstr ""
 
+#: tfrmvelocidade.caption
+msgctxt "TFRMVELOCIDADE.CAPTION"
+msgid "Definir velocidade dos eixos"
+msgstr ""
+
 #: tfrmvelocidade.edit1.text
 msgctxt "TFRMVELOCIDADE.EDIT1.TEXT"
 msgid "60"
@@ -447,10 +460,6 @@ msgstr ""
 #: tfrmvelocidade.edit3.text
 msgctxt "TFRMVELOCIDADE.EDIT3.TEXT"
 msgid "60"
-msgstr ""
-
-#: tfrmvelocidade.frmvelocidade.caption
-msgid "Definir velocidade dos eixos"
 msgstr ""
 
 #: tfrmvelocidade.label1.caption
@@ -472,6 +481,11 @@ msgstr ""
 #: tfrmzinfo.btnok.caption
 msgctxt "TFRMZINFO.BTNOK.CAPTION"
 msgid "OK"
+msgstr ""
+
+#: tfrmzinfo.caption
+msgctxt "TFRMZINFO.CAPTION"
+msgid "Deslocamentos do eixo Z"
 msgstr ""
 
 #: tfrmzinfo.edit1.text
@@ -500,10 +514,6 @@ msgstr ""
 
 #: tfrmzinfo.edit7.text
 msgid "15000"
-msgstr ""
-
-#: tfrmzinfo.frmzinfo.caption
-msgid "Deslocamentos do eixo Z"
 msgstr ""
 
 #: tfrmzinfo.label1.caption

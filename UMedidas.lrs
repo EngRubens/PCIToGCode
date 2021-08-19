@@ -5,7 +5,7 @@ LazarusResources.Add('TFrmMedida','FORMDATA',[
   +#151#1#5'Width'#3#236#1#11'BorderIcons'#11#12'biSystemMenu'#0#11'BorderStyle'
   +#7#8'bsDialog'#7'Caption'#6#16'Medidas da placa'#12'ClientHeight'#3#235#0#11
   +'ClientWidth'#3#236#1#9'FormStyle'#7#11'fsStayOnTop'#6'OnShow'#7#8'FormShow'
-  +#8'Position'#7#15'poDesktopCenter'#10'LCLVersion'#6#7'1.6.0.4'#0#6'TLabel'#6
+  +#8'Position'#7#16'poMainFormCenter'#10'LCLVersion'#6#7'1.6.4.0'#0#6'TLabel'#6
   +'Label1'#4'Left'#2#0#6'Height'#2#19#3'Top'#2#0#5'Width'#3#236#1#5'Align'#7#5
   +'alTop'#9'Alignment'#7#8'taCenter'#7'Caption'#6'7Coloque aqui a medida real '
   +'da sua placa em centimetros:'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.C'

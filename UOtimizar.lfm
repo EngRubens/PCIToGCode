@@ -10,8 +10,8 @@ object FrmOtimizar: TFrmOtimizar
   ClientHeight = 175
   ClientWidth = 248
   OnShow = FormShow
-  Position = poDesktopCenter
-  LCLVersion = '1.2.4.0'
+  Position = poMainFormCenter
+  LCLVersion = '1.6.4.0'
   object Bevel2: TBevel
     Left = 6
     Height = 89
@@ -28,7 +28,7 @@ object FrmOtimizar: TFrmOtimizar
   end
   object Label1: TLabel
     Left = 8
-    Height = 29
+    Height = 30
     Top = 8
     Width = 191
     Alignment = taCenter
@@ -65,16 +65,16 @@ object FrmOtimizar: TFrmOtimizar
     Height = 41
     Top = 48
     Width = 41
-    Min = 1
     Max = 1000
+    Min = 1
+    OnClick = UpDown1Click
     Position = 30
     TabOrder = 1
     Wrap = False
-    OnClick = UpDown1Click
   end
   object Edit1: TEdit
     Left = 149
-    Height = 44
+    Height = 40
     Top = 48
     Width = 88
     Font.Height = -27
@@ -110,4 +110,4 @@ object FrmOtimizar: TFrmOtimizar
     ParentColor = False
     ParentFont = False
   end
-end
+end

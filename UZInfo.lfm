@@ -14,13 +14,13 @@ object FrmZInfo: TFrmZInfo
   ClientHeight = 374
   ClientWidth = 344
   OnShow = FormShow
-  Position = poDesktopCenter
-  LCLVersion = '0.9.30'
+  Position = poMainFormCenter
+  LCLVersion = '1.6.4.0'
   object Label1: TLabel
     Left = 6
-    Height = 17
+    Height = 16
     Top = 50
-    Width = 151
+    Width = 150
     Caption = 'Profundidade de fresagem'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -32,9 +32,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label2: TLabel
     Left = 6
-    Height = 17
+    Height = 16
     Top = 128
-    Width = 153
+    Width = 152
     Caption = 'Altura para  deslocamento'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -46,9 +46,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label3: TLabel
     Left = 284
-    Height = 15
+    Height = 14
     Top = 62
-    Width = 17
+    Width = 16
     Caption = 'mm'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -60,9 +60,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label4: TLabel
     Left = 284
-    Height = 15
+    Height = 14
     Top = 140
-    Width = 17
+    Width = 16
     Caption = 'mm'
     Font.Height = -11
     Font.Name = 'Arial'
@@ -71,7 +71,7 @@ object FrmZInfo: TFrmZInfo
   end
   object Label5: TLabel
     Left = 0
-    Height = 25
+    Height = 24
     Top = 0
     Width = 344
     Align = alTop
@@ -88,9 +88,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label6: TLabel
     Left = 8
-    Height = 17
+    Height = 16
     Top = 312
-    Width = 263
+    Width = 262
     Alignment = taCenter
     BorderSpacing.CellAlignHorizontal = ccaCenter
     BorderSpacing.CellAlignVertical = ccaCenter
@@ -112,9 +112,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label7: TLabel
     Left = 6
-    Height = 17
+    Height = 16
     Top = 88
-    Width = 133
+    Width = 132
     Caption = 'Profundidade dos furos'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -126,9 +126,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label8: TLabel
     Left = 284
-    Height = 15
+    Height = 14
     Top = 100
-    Width = 17
+    Width = 16
     Caption = 'mm'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -189,24 +189,24 @@ object FrmZInfo: TFrmZInfo
     Height = 31
     Top = 45
     Width = 29
-    Min = 10
     Max = 2000
+    Min = 10
+    OnClick = UpDown1Click
     Position = 30
     TabOrder = 3
     Wrap = False
-    OnClick = UpDown1Click
   end
   object UpDown2: TUpDown
     Left = 311
     Height = 31
     Top = 123
     Width = 29
-    Min = 10
     Max = 1000
+    Min = 10
+    OnClick = UpDown2Click
     Position = 150
     TabOrder = 4
     Wrap = False
-    OnClick = UpDown2Click
   end
   object Edit3: TEdit
     Left = 231
@@ -231,18 +231,18 @@ object FrmZInfo: TFrmZInfo
     Height = 31
     Top = 83
     Width = 29
-    Min = 10
     Max = 2000
+    Min = 10
+    OnClick = UpDown3Click
     Position = 120
     TabOrder = 6
     Wrap = False
-    OnClick = UpDown3Click
   end
   object Label9: TLabel
     Left = 6
-    Height = 17
+    Height = 16
     Top = 166
-    Width = 138
+    Width = 137
     Caption = 'Profundidade do recorte'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -254,9 +254,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label10: TLabel
     Left = 6
-    Height = 17
+    Height = 16
     Top = 207
-    Width = 194
+    Width = 193
     Caption = 'Número de passes para o recorte'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -304,9 +304,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label11: TLabel
     Left = 284
-    Height = 15
+    Height = 14
     Top = 175
-    Width = 17
+    Width = 16
     Caption = 'mm'
     Font.Height = -11
     Font.Name = 'Arial'
@@ -318,30 +318,30 @@ object FrmZInfo: TFrmZInfo
     Height = 31
     Top = 162
     Width = 29
-    Min = 10
     Max = 1000
+    Min = 10
+    OnClick = UpDown4Click
     Position = 150
     TabOrder = 9
     Wrap = False
-    OnClick = UpDown4Click
   end
   object UpDown5: TUpDown
     Left = 311
     Height = 31
     Top = 202
     Width = 29
-    Min = 1
     Max = 10
+    Min = 1
+    OnClick = UpDown5Click
     Position = 10
     TabOrder = 10
     Wrap = False
-    OnClick = UpDown5Click
   end
   object Label13: TLabel
     Left = 6
-    Height = 17
+    Height = 16
     Top = 246
-    Width = 182
+    Width = 181
     Caption = 'Avanço do eixo Z a cada passe'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -371,9 +371,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label14: TLabel
     Left = 325
-    Height = 15
+    Height = 14
     Top = 255
-    Width = 17
+    Width = 16
     Caption = 'mm'
     Font.Height = -11
     Font.Name = 'Arial'
@@ -418,9 +418,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label15: TLabel
     Left = 6
-    Height = 17
+    Height = 16
     Top = 282
-    Width = 130
+    Width = 128
     Caption = 'Velocidade do Spindle'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
@@ -456,9 +456,9 @@ object FrmZInfo: TFrmZInfo
   end
   object Label16: TLabel
     Left = 322
-    Height = 15
+    Height = 14
     Top = 293
-    Width = 22
+    Width = 21
     Caption = 'RPM'
     Font.Height = -11
     Font.Name = 'Arial'

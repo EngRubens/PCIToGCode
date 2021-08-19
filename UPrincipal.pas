@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs,
-  Menus, ExtCtrls, ExtDlgs, StdCtrls, fpimage, ComCtrls, LCLIntf, LCLType, IntfGraphics, types, crt;
+  Menus, ExtCtrls, ExtDlgs, StdCtrls, fpimage, ComCtrls, LCLIntf, LCLType, IntfGraphics, types, crt, StrUtils;
 
 type
 
@@ -23,8 +23,10 @@ type
     Memo2: TMemo;
     Memo3: TMemo;
     Memo4: TMemo;
-    MemoTemp: TMemo;
     MenuItem1: TMenuItem;
+    SMOtimizarGCodeSim: TMenuItem;
+    SMOtimizarGCodeNao: TMenuItem;
+    SMOtimizarGCode: TMenuItem;
     SMFresar: TMenuItem;
     SMNaoFresar: TMenuItem;
     SMContorno: TMenuItem;
@@ -111,6 +113,8 @@ type
     procedure SMGeraRecorteClick(Sender: TObject);
     procedure SMMapaFresagemsfClick(Sender: TObject);
     procedure SMNaoFresarClick(Sender: TObject);
+    procedure SMOtimizarGCodeNaoClick(Sender: TObject);
+    procedure SMOtimizarGCodeSimClick(Sender: TObject);
     procedure SMSalvaGCodeRecorteClick(Sender: TObject);
     procedure SMSalvaGCodeUnicoClick(Sender: TObject);
     procedure SMBordaExternaClick(Sender: TObject);
@@ -231,6 +235,30 @@ begin
   Result := valor;
 end;
 
+function SubStringOccurences( const subString, sourceString : string; caseSensitive : boolean) : integer;
+var
+pEx: integer;
+sub, source : string;
+
+begin
+  if caseSensitive then
+  begin
+    sub := subString;
+    source := sourceString;
+  end
+  else
+  begin
+    sub := LowerCase(subString);
+    source := LowerCase(sourceString);
+  end;
+  result := 0;
+  pEx := PosEx(sub, source, 1);
+  while pEx <> 0 do
+  begin
+    Inc(result);
+    pEx := PosEx(sub, source, pEx + Length(sub));
+  end;
+end;
 
 procedure CarregaCorPixel();
 var
@@ -441,11 +469,28 @@ var
   yc: integer;
   Q: integer;
   QA: integer;
+  BlocoIniX: array[0..9000] of integer;
+  BlocoIniY: array[0..9000] of integer;
+  BlocoFimX: array[0..9000] of integer;
+  BlocoFimY: array[0..9000] of integer;
+  SeqOrdena: array[0..9000] of integer;
+  NuSeq: Integer;
+  SeqIdeal: integer;
+  UltimoBlocoFimX : Integer;
+  UltimoBlocoFimY : Integer;
+  XYDifIdeal : integer;
+  XYDif : integer;
+  ContaBloco: Integer;
+  BlocoAtual: Integer;
   RConta: Integer;
+  BlocoUsado: boolean;
   raster: boolean;
   reta:  boolean;
+  FimOrdena : boolean;
   linha: array[0..90000] of string;
+  SLinha: string;
   arquivo: textfile;
+  arquivoOrdenado: textfile;
 begin
   FrmPrincipal.PageControl1.PageIndex := 3;
   FrmPrincipal.memo1.Clear;
@@ -454,6 +499,8 @@ begin
   FrmPrincipal.ProgressBar1.Min := 0;
   FrmPrincipal.ProgressBar1.Max := tpx;
   FrmPrincipal.ProgressBar1.Step := 1;
+  ContaBloco := 1;
+  BlocoAtual := 0;
   ContaLinha := 1;
   xa := 0;
   ya := 0;
@@ -461,6 +508,8 @@ begin
   QA := 0;
   N := 0;
   linha[ContaLinha] := 'Z = 3';
+  ContaLinha := ContaLinha + 1;
+  linha[ContaLinha] := 'Bloco ' + IntToStr(ContaBloco);
   ContaLinha := ContaLinha + 1;
   // Faz o rastreamento do bitmap pixel a pixel gerando as cooredenadas.
   for x := 0 to tpx do
@@ -485,6 +534,8 @@ begin
         // Grava o ponto inicial da fresagem
         linha[ContaLinha] := 'X = ' + IntToStr(x) + ' | Y = ' + IntToStr(tpy - y);
         ContaLinha := ContaLinha + 1;
+        BlocoFimX[ContaBloco] := x;
+        BlocoFimY[ContaBloco] := tpy - y;
         linha[ContaLinha] := 'Z = -1'; // + floattostr(ZF);
         ContaLinha := ContaLinha + 1;
         Q := 0;
@@ -739,14 +790,25 @@ begin
            linha[ContaLinha] := 'X = ' + IntToStr(xb) + ' | Y = ' + IntToStr(tpy - yb);
            ContaLinha := ContaLinha + 1;
            reta := true;
+           if(ContaBloco > BlocoAtual) then
+           Begin
+             BlocoIniX[ContaBloco] := xc;
+             BlocoIniY[ContaBloco] := tpy - yc;
+             BlocoAtual := ContaBloco;
+           end;
           end;
         end;
         linha[ContaLinha] := 'Z = 3'; // + floattostr(ZP);
         ContaLinha := ContaLinha + 1;
+        // Sinaliza inicio de bloco
+        ContaBloco := ContaBloco + 1;
+        linha[ContaLinha] := 'Bloco ' + IntToStr(ContaBloco);
+        ContaLinha := ContaLinha + 1;
       end;
     end;
   end;
-  linha[ContaLinha] := 'X = 0 | Y = 0';
+  ContaBloco := ContaBloco - 1;
+  ContaLinha := ContaLinha - 2;
   assignfile(arquivo, 'XYZCord.txt');
   if not FileExists('XYZCord.txt') then
     Rewrite(arquivo)
@@ -770,7 +832,6 @@ begin
         xc := StrToInt((copy(linha[x + 1], 5, pos('|', linha[x + 1]) - 6)));
         yc := StrToInt((copy(linha[x + 1], pos('|', linha[x + 1]) + 5, length(linha[x + 1]) - (pos('|', linha[x + 1]) + 4))));
         // Se o valor de X ou Y for igual ao anterior e ao posterior também caracteriza uma reta
-        // if (((xa = xb) and (xb = xc)) or ((ya = yb) and (yb = yc) and false)) then
         if ((xa = xb) and (ya = yb)) then
         begin
           Application.ProcessMessages;
@@ -797,7 +858,10 @@ begin
     end;
   end;
   closefile(arquivo);
-  FrmPrincipal.memo1.Lines.LoadFromFile('XYZCord.txt');
+  //if(FrmPrincipal.SMOtimizarGCodeSim.Checked) then
+  //  FrmPrincipal.memo1.Lines.LoadFromFile('XYZCordOrd.txt')
+  //else
+  //FrmPrincipal.memo1.Lines.LoadFromFile('XYZCord.txt');
   FrmPrincipal.image3.Show;
   FrmPrincipal.memo1.Show;
   FrmPrincipal.ProgressBar1.Position := 0;
@@ -806,6 +870,192 @@ begin
   FrmPrincipal.SMTamanhoPlaca.Enabled := True;
   FrmPrincipal.SMTamanhoCalculado.Enabled := True;
 end;
+
+
+
+procedure OrdenaBlocos(Arqv: string);
+var
+  arquivo: textfile;
+  arquivoOrdenado: textfile;
+  Linha: string;
+  LinhaAnterior: string;
+  BlocoIniX: array[0..9000] of integer;
+  BlocoIniY: array[0..9000] of integer;
+  BlocoFimX: array[0..9000] of integer;
+  BlocoFimY: array[0..9000] of integer;
+  SeqOrdena: array[0..9000] of integer;
+  SeqAtual: array[0..9000] of integer;
+  x: Integer;
+  y: Integer;
+  MaxBloco: Integer;
+  NuBlocos: Integer;
+  NuSeq: Integer;
+  SeqIdeal: integer;
+  UltimoBlocoFimX : Integer;
+  UltimoBlocoFimY : Integer;
+  XYDifIdeal : integer;
+  XYDif : integer;
+  ContaBloco: Integer;
+  BlocoAtual: Integer;
+  BlocoUsado: boolean;
+  FimOrdena : boolean;
+
+begin
+  Linha := '';
+  NuBlocos := 0;
+  // varrer o arquivo e armazenar as coordenadas de inicio e de fim do bloco
+  if FileExists(Arqv) then
+  begin
+    assignfile(arquivo, Arqv);
+    reset(arquivo);
+    while (not EOF(arquivo)) do
+    begin
+      LinhaAnterior := Linha;
+      readln(arquivo,Linha);
+      // Se encontrar a marca de bloco capturar o número do bloco
+      if(copy(Linha, 1, 1) = 'B') then
+      begin
+       NuBlocos := NuBlocos + 1;
+       BlocoAtual := StrToInt(copy(Linha,7,Length(Linha) -1));
+       SeqAtual[NuBlocos] :=  BlocoAtual;
+       readln(arquivo,Linha);
+       x := StrToInt((copy(Linha, 5, pos('|', Linha) - 6)));
+       y := StrToInt((copy(Linha, pos('|', Linha) + 5, length(Linha) - (pos('|', Linha) + 4))));
+       BlocoIniX[NuBlocos] := x;
+       BlocoIniY[NuBlocos] := y;
+      end;
+      // Se encontrar Z = 3 guarda a linha anterior que é o final de um bloco. Usar o número do bloco atual.
+      if((Linha = 'Z = 3') and (LinhaAnterior <> '')) then
+      begin
+        x := StrToInt((copy(LinhaAnterior, 5, pos('|', LinhaAnterior) - 6)));
+        y := StrToInt((copy(LinhaAnterior, pos('|', LinhaAnterior) + 5, length(LinhaAnterior) - (pos('|', LinhaAnterior) + 4))));
+	BlocoFimX[NuBlocos] := x;
+        BlocoFimY[NuBlocos] := y;
+      end;
+    end;
+  end;
+  // Fazer a ordenação de blocos
+  // ---------------------------
+  // Zera o array de sequencia
+  for y := 0 to NuBlocos do
+  begin
+    // Zerando
+    SeqOrdena[y] := 0;
+  end;
+  FimOrdena := false;
+  NuSeq := 1;
+  SeqOrdena[NuSeq] := SeqAtual[NuSeq];
+  UltimoBlocoFimX := BlocoFimX[NuSeq];
+  UltimoBlocoFimY := BlocoFimY[NuSeq];
+  FrmPrincipal.ProgressBar1.Min := 0;
+  FrmPrincipal.ProgressBar1.Max := NuBlocos;
+  FrmPrincipal.ProgressBar1.Step := 1;
+  while Not FimOrdena do
+  begin
+    // Seta a flag de fim de ordenação
+    FimOrdena := true;
+    XYDifIdeal := 999999;
+    // Varrer todos os bloocos para verificar qual é o mais próximo
+    for x := 0 to NuBlocos do
+    begin
+      // Seta a flag de bloco usado.
+      BlocoUsado := false;
+      // Seta a barra de progresso
+      FrmPrincipal.ProgressBar1.Position := x;
+      // Varrer a sequencia para verificar se o bloco já foi usado
+      for y := 0 to NuBlocos do
+      begin
+        // Verifica se o bloco já foi usado
+        if(SeqAtual[x] = SeqOrdena[y]) then
+        begin
+          BlocoUsado := true;
+        end;
+      end;
+      // Se o bloco ainda não foi usado faz o calculo e a comparação
+      if(Not BlocoUsado) then
+      Begin
+         // Fazer o cálculo
+         if(BlocoIniX[x] > UltimoBlocoFimX) then
+         begin
+           XYDif := BlocoIniX[x] - UltimoBlocoFimX;
+         end
+         else
+         begin
+           XYDif := UltimoBlocoFimX -  BlocoIniX[x];
+         end;
+         if(BlocoIniY[x] > UltimoBlocoFimY) then
+         begin
+           XYDif := XYDif + (BlocoIniY[x] - UltimoBlocoFimY);
+         end
+         else
+         begin
+           XYDif := XYDif + (UltimoBlocoFimY -  BlocoIniY[x]);
+         end;
+         // Fazer a comparação
+         if(XYDif < XYDifIdeal) then
+         begin
+           SeqIdeal := x;
+           XYDifIdeal := XYDif;
+         end;
+	 FimOrdena := false;
+       end;
+    end;
+    if(Not FimOrdena) then
+    Begin
+      NuSeq := NuSeq + 1;
+      SeqOrdena[NuSeq] := SeqAtual[SeqIdeal];
+      UltimoBlocoFimX := BlocoFimX[SeqIdeal];
+      UltimoBlocoFimY := BlocoFimY[SeqIdeal];
+    end;
+    //if(BlocoUsado) then
+    if(NuSeq >= NuBlocos) then
+    begin
+      FimOrdena := true;
+    end;
+  end;
+  FrmPrincipal.ProgressBar1.Position := 0;
+  // --------------------------
+  // Fim da ordenação de blocos
+
+  // Criar o arquivo com a nova ordenação
+   assignfile(arquivoOrdenado, copy(Arqv,0, pos('.',Arqv) - 1) + 'Ord.txt');
+  if not FileExists(copy(Arqv,0, pos('.',Arqv) - 1) + 'Ord.txt') then
+    Rewrite(arquivoOrdenado)
+  else
+    erase(arquivoOrdenado);
+  rewrite(arquivoOrdenado);
+  BlocoUsado := true;
+  for x := 0 to NuBlocos do
+  begin
+    // Varrer as linhas
+    if(x > 1) then BlocoUsado := false;
+    reset(arquivo);
+    while (not EOF(arquivo)) do
+    begin
+      readln(arquivo, Linha);
+      if(Linha = 'Bloco ' + IntToStr(SeqOrdena[x])) then
+      begin
+        BlocoUsado := true;
+      end
+      else
+      begin
+        if(copy(Linha, 1, 1) = 'B') then  BlocoUsado := false;
+      end;
+      if(BlocoUsado) then
+      begin
+        // Aqui copia o bloco
+        writeln(arquivoOrdenado, Linha);
+      end;
+    end;
+    closefile(arquivo);
+    FrmPrincipal.ProgressBar1.Position := x;
+  end;
+  closefile(arquivoOrdenado);
+  FrmPrincipal.ProgressBar1.Position := 0;
+  // -------------------------------
+end;
+
+
 
 procedure CarregaConfig();
 var
@@ -1029,6 +1279,12 @@ begin
      else l := l + 1;
    end;
    closefile(arquivo);
+   GLinha[LinhaContada] := 'N' + IntToStr(l) + ' G00 X0 Y0 Z' + floattostr(ZP);
+   if FrmPrincipal.SMPonto.Checked then
+   begin
+     GLinha[LinhaContada] := VirgPonto(Glinha[LinhaContada]);
+   end;
+   LinhaContada := LinhaContada + 1;
    // Comandos finais do arquivo.
    GLinha[LinhaContada] := 'M05';
    LinhaContada := LinhaContada + 1;
@@ -1042,70 +1298,17 @@ begin
    FrmPrincipal.ProgressBar1.Min := 0;
    FrmPrincipal.ProgressBar1.Max := LinhaContada;
    FrmPrincipal.ProgressBar1.Step := 1;
-   //LinhaContada := 1;
+   // Carrega Memo
    for n := 1 to LinhaContada do
    begin
      FrmPrincipal.memo2.Append(Glinha[n]);
-     //FrmPrincipal.ProgressBar1.Position := LinhaContada;
-     //Application.ProcessMessages;
+     FrmPrincipal.ProgressBar1.Position := n;
    end;
 end;
  FrmPrincipal.ProgressBar1.Position := 0;
  FrmPrincipal.Memo2.Show;
-
  FrmPrincipal.SMSalvaGCodeFresagem.Enabled := True;
  if FrmPrincipal.SMSalvaGCodeFuros.Enabled then FrmPrincipal.SMSalvaGCodeUnico.Enabled := True;
-end;
-
-Procedure OtimizaGeCode();
-var
-PosFinalX    : real;
-PosFinalY    : real;
-PosInicialX  : real;
-PosInicialY  : real;
-PosDife      : real;
-LinhaInicial : integer;
-LinhaFinal   : integer;
-x            : real;
-y            : real;
-N            : integer;
-
-Begin
- // Copiar as linhas do inicio até o fim do primeiro bloco
- N := 1;
- while(FrmPrincipal.MemoTemp.Lines.Strings[N] <> 'Y') do
- begin
-   // Copia a linha do MemoTemp
-   // Grava a linha no Memo definitivo
-   // Apaga a linha do MemoTemp
- end;
- // Enquanto o MemoTemp não estiver vazio fazer a varredura
- while(FrmPrincipal.MemoTemp.Lines.Count > 0) do
- Begin
-   // Loop para varrer as linhas do inicio ate o fim do MemoTemp
-   for n := 1 to (FrmPrincipal.MemoTemp.Lines.Count -1) do
-     begin
-       // Procura as linhas que correspondem ao inicio de um bloco
-       // Subtrair a posição X inicial da final e tirar o módulo.
-       // Subtrair a posição Y inicial da final e tirar o módulo.
-       // Somar as duas diferenças
-       // verifica se a diferença é menor do que a ultima que foi guardada
-       // Se a difrença for menor do que a ultima guardar a posição da linha inicial  'LinhaInicial'
-
-     end;
-     // Copiar as linhas do inicio até o fim do bloco
-     N := LinhaInicial;
-     // copiar linha enquanto a linha for diferente do fim de bloco.
-     While(FrmPrincipal.MemoTemp.Lines.Strings[N] <> 'Y') do
-     begin
-       // Copia a linha do MemoTemp
-       // Grava a linha no Memo definitivo
-       // Apaga a linha do MemoTemp
-       N := N + 1;
-     end;
-
- end;
-
 end;
 
 procedure CarregaImagemVetorisada();
@@ -1165,7 +1368,7 @@ begin
   xi := 0;
   for x := 0 to tpx + 1 do
   begin
-    Application.ProcessMessages;
+    //Application.ProcessMessages;
     for y := 0 to tpy + 1 do
     begin
       FrmPrincipal.image4.Picture.Bitmap.Canvas.Pixels[x, y] := $FFFFFF;
@@ -1179,7 +1382,7 @@ begin
     assignfile(arquivo, Arqv);
     reset(arquivo);
     //FrmPrincipal.image4.Hide;
-    FrmPrincipal.Image4.Canvas.Pen.Width := 3;
+    FrmPrincipal.Image4.Canvas.Pen.Width := 1;
     while (not EOF(arquivo)) do
     begin
       readln(arquivo, linha);
@@ -1188,12 +1391,12 @@ begin
       if (StepBar > (contalinha / 100)) then
       begin
         FrmPrincipal.ProgressBar1.Position := LinhaContada;
-        Application.ProcessMessages;
+        //Application.ProcessMessages;
         StepBar := 0;
       end;
       if (copy(linha, 1, 1) <> '') then
       begin
-        if (copy(linha, 1, 1) <> 'Z') then
+        if ((copy(linha, 1, 1) <> 'Z') and (copy(linha, 1, 1) <> 'B')) then
         begin
           for n := 0 to length(linha) do
           begin
@@ -1207,7 +1410,7 @@ begin
             if f then
             begin
               // Marca pontos do caminho onde a placa sera fresada
-              FrmPrincipal.image4.Canvas.Pen.Color := $0000FF;
+              FrmPrincipal.image4.Canvas.Pen.Color := $00009F;
               FrmPrincipal.image4.Canvas.Line(xi, yt - yi, xf, yt - yf);
             end
             else
@@ -1215,8 +1418,7 @@ begin
               // Marca pontos do caminho que a ferramenta anda sem fresar
               FrmPrincipal.image4.Canvas.Pen.Color := $0FF7D7;
               FrmPrincipal.image4.Canvas.Line(xi, yt - yi, xf, yt - yf);
-              //Delay(20);
-              FrmPrincipal.image4.Show;
+              //FrmPrincipal.image4.Show;
             end;
           end;
           xi := xf;
@@ -1225,10 +1427,17 @@ begin
         end
         else
         begin
-          if (strtofloat(copy(linha, 4, length(linha)))) < 0 then
-            f := True
+          if (copy(linha, 1, 1) <> 'B') then
+          begin
+            if (strtofloat(copy(linha, 4, length(linha)))) < 0 then
+              f := True
+            else
+              f := False;
+          end
           else
-            f := False;
+          begin
+           FrmPrincipal.image4.Show;
+          end;
         end;
       end;
     end;
@@ -1282,13 +1491,46 @@ begin
     assignfile(arquivo, 'XYZCord.txt');
     erase(arquivo);
    end;
-
-   if FileExists('XYZCordsf.txt') then
+   if FileExists('XYZCordOrd.txt') then
    begin
-     assignfile(arquivo, 'XYZCordsf.txt');
+     assignfile(arquivo, 'XYZCordOrd.txt');
      erase(arquivo);
    end;
-
+   if FileExists('XYZCordSF.txt') then
+   begin
+     assignfile(arquivo, 'XYZCordSF.txt');
+     erase(arquivo);
+   end;
+   if FileExists('XYZCordSFOrd.txt') then
+   begin
+     assignfile(arquivo, 'XYZCordSFOrd.txt');
+     erase(arquivo);
+   end;
+   if FileExists('XYZCordF.txt') then
+   begin
+     assignfile(arquivo, 'XYZCordF.txt');
+     erase(arquivo);
+   end;
+   if FileExists('XYZCordFOrd.txt') then
+   begin
+     assignfile(arquivo, 'XYZCordFOrd.txt');
+     erase(arquivo);
+   end;
+   if FileExists('Fresagem.txt') then
+   begin
+     assignfile(arquivo, 'Fresagem.txt');
+     erase(arquivo);
+   end;
+   if FileExists('Furos.txt') then
+   begin
+     assignfile(arquivo, 'Furos.txt');
+     erase(arquivo);
+   end;
+   if FileExists('Recorte.txt') then
+   begin
+     assignfile(arquivo, 'Recorte.txt');
+     erase(arquivo);
+   end;
 end;
 
 procedure TFrmPrincipal.Image1DblClick(Sender: TObject);
@@ -1403,6 +1645,7 @@ begin
   end;
 end;
 
+
 procedure TFrmPrincipal.SMFresarClick(Sender: TObject);
 begin
   SMNaoFresar.Checked := false;
@@ -1433,7 +1676,10 @@ end;
 
 procedure TFrmPrincipal.SMGeraFresagemsfClick(Sender: TObject);
 begin
-    GeraGCode('XYZCordsf.txt');
+  if(FrmPrincipal.SMOtimizarGCodeSim.Checked) then
+    GeraGCode('XYZCordSFOrd.txt')
+  else
+    GeraGCode('XYZCordSF.txt');
 end;
 
 procedure TFrmPrincipal.SMGeraRecorteClick(Sender: TObject);
@@ -1472,7 +1718,7 @@ begin
    end;
    FrmPrincipal.memo4.Append(GLinha);
   l := l + 1;
-  GLinha := 'N' + inttostr(l) + ' G00 X0 Y0 Z' + FloatToStr(ZP) + f;
+  GLinha := 'N' + inttostr(l) + ' G00 X-0,5 Y-0,5 Z' + FloatToStr(ZP) + f;
   if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
@@ -1482,35 +1728,35 @@ begin
   Begin
    f := ' F' + inttostr(VRXY);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X0 Y0 Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X-0,5 Y-0,5 Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
    end;
    FrmPrincipal.memo4.Append(GLinha);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X' + PlacaX + ' Y0 Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X' + copy(floattostr((x / tx) + 0.5),0,4 + pos(',',floattostr((x / tx) + 0.5))) + ' Y-0,5 Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
    end;
    FrmPrincipal.memo4.Append(GLinha);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X' + PlacaX + ' Y' + PlacaY + ' Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X' + copy(floattostr((x / tx) + 0.5),0,4 + pos(',',floattostr((x / tx) + 0.5))) + ' Y' + copy(floattostr((y / ty) + 0.5),0,3 + pos(',',floattostr((y / ty) + 0.5))) + ' Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
    end;
    FrmPrincipal.memo4.Append(GLinha);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X0 Y' + PlacaY + ' Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X-0,5 Y' + copy(floattostr((y / ty) + 0.5),0,3 + pos(',',floattostr((y / ty) + 0.5))) + ' Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
    end;
    FrmPrincipal.memo4.Append(GLinha);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X0 Y0 Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X-0,5 Y-0,5 Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
@@ -1518,7 +1764,7 @@ begin
    FrmPrincipal.memo4.Append(GLinha);
   end;
   l := l + 1;
-  GLinha := 'N' + inttostr(l) + ' G00 X0 Y0 Z' + floattostr(ZP);
+  GLinha := 'N' + inttostr(l) + ' G00 X-0,5 Y-0,5 Z' + floattostr(ZP);
   if FrmPrincipal.SMPonto.Checked then
   begin
    GLinha := VirgPonto(GLinha);
@@ -1540,13 +1786,28 @@ end;
 
 procedure TFrmPrincipal.SMMapaFresagemsfClick(Sender: TObject);
 begin
-    CriaMapa('XYZCordsf.txt');
+  if(FrmPrincipal.SMOtimizarGCodeSim.Checked) then
+    CriaMapa('XYZCordSFOrd.txt')
+  else
+    CriaMapa('XYZCordSF.txt');
 end;
 
 procedure TFrmPrincipal.SMNaoFresarClick(Sender: TObject);
 begin
   SMNaoFresar.Checked := true;
   SMFresar.Checked := false;
+end;
+
+procedure TFrmPrincipal.SMOtimizarGCodeNaoClick(Sender: TObject);
+begin
+  SMOtimizarGCodeSim.Checked := false;
+  SMOtimizarGCodeNao.Checked := true;
+end;
+
+procedure TFrmPrincipal.SMOtimizarGCodeSimClick(Sender: TObject);
+begin
+  SMOtimizarGCodeSim.Checked := true;
+  SMOtimizarGCodeNao.Checked := false;
 end;
 
 procedure TFrmPrincipal.SMSalvaGCodeRecorteClick(Sender: TObject);
@@ -1571,7 +1832,7 @@ begin
   memo4.Lines.SaveToFile('Recorte.txt');
   SaveDialog1.FileName := 'Completo.nc';
   if SaveDialog1.Execute then
-    begin
+  begin
     // Abre um arquivo para gravar os dados GCode
     assignfile(arquivo1, SaveDialog1.FileName);
     if not FileExists(SaveDialog1.FileName) then
@@ -1594,7 +1855,6 @@ begin
           writeln(arquivo1, linha);
         end;
       end;
-      Erase(arquivo);
       closefile(arquivo);
     end;
     if FileExists('Furos.txt') then
@@ -1613,7 +1873,6 @@ begin
           writeln(arquivo1, linha);
         end;
       end;
-      Erase(arquivo);
       closefile(arquivo);
     end;
     if FileExists('Recorte.txt') then
@@ -1632,11 +1891,24 @@ begin
           writeln(arquivo1, linha);
         end;
       end;
-      Erase(arquivo);
       closefile(arquivo);
     end;
     closefile(arquivo1);
-
+  end;
+  if FileExists('Fresagem.txt') then
+  begin
+    assignfile(arquivo, 'Fresagem.txt');
+    erase(arquivo);
+  end;
+  if FileExists('Furos.txt') then
+  begin
+    assignfile(arquivo, 'Furos.txt');
+    erase(arquivo);
+  end;
+  if FileExists('Recorte.txt') then
+  begin
+    assignfile(arquivo, 'Recorte.txt');
+    erase(arquivo);
   end;
 end;
 
@@ -1711,7 +1983,10 @@ end;
 
 procedure TFrmPrincipal.SMGeraFresagemClick(Sender: TObject);
 begin
-  GeraGCode('XYZCord.txt');
+  if(FrmPrincipal.SMOtimizarGCodeSim.Checked) then
+    GeraGCode('XYZCordOrd.txt')
+  else
+    GeraGCode('XYZCord.txt');
 end;
 
 procedure TFrmPrincipal.SMEixoZClick(Sender: TObject);
@@ -1722,6 +1997,11 @@ end;
 procedure TFrmPrincipal.SMGeraCoordenadasClick(Sender: TObject);
 begin
   GeraCoordenadas();
+  OrdenaBlocos('XYZCord.txt');
+  if(FrmPrincipal.SMOtimizarGCodeSim.Checked) then
+    FrmPrincipal.memo1.Lines.LoadFromFile('XYZCordOrd.txt')
+  else
+    FrmPrincipal.memo1.Lines.LoadFromFile('XYZCord.txt');
   SMTamanho.Enabled := False;
   SMOtimizar.Enabled := False;
   SMTamanhoOtimizado.Enabled := False;
@@ -1863,7 +2143,10 @@ end;
 
 procedure TFrmPrincipal.SMMapaFresagemClick(Sender: TObject);
 begin
-  CriaMapa('XYZCord.txt');
+  if(FrmPrincipal.SMOtimizarGCodeSim.Checked) then
+    CriaMapa('XYZCordOrd.txt')
+  else
+    CriaMapa('XYZCord.txt');
 end;
 
 procedure TFrmPrincipal.SMSobreClick(Sender: TObject);

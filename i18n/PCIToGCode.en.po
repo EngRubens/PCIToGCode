@@ -132,10 +132,6 @@ msgstr "Hole area"
 msgid "Quantidade de Furos"
 msgstr "Amount of Holes"
 
-#: tfrmfuros.label4.caption
-msgid "Tamanho do furo"
-msgstr "Hole size"
-
 #: tfrmfuros.label5.caption
 msgid "X ="
 msgstr "X ="
@@ -218,9 +214,10 @@ msgid "Espessura da borda"
 msgstr "Border Thickness"
 
 #: tfrmprincipal.caption
-#| msgid "PCIToGCode  v1.5"
+#, fuzzy
+#| msgid "PCIToGCode  v2.0"
 msgctxt "tfrmprincipal.caption"
-msgid "PCIToGCode  v2.0"
+msgid "PCIToGCode  v3.0"
 msgstr "PCIToGCode  v2.0"
 
 #: tfrmprincipal.majuda.caption
@@ -315,6 +312,18 @@ msgstr "Not Miling"
 msgctxt "TFRMPRINCIPAL.SMOTIMIZAR.CAPTION"
 msgid "Otimizar Imagem"
 msgstr "Optimize image"
+
+#: tfrmprincipal.smotimizargcode.caption
+msgid "Otimizar GCode"
+msgstr ""
+
+#: tfrmprincipal.smotimizargcodenao.caption
+msgid "Não"
+msgstr ""
+
+#: tfrmprincipal.smotimizargcodesim.caption
+msgid "Sim"
+msgstr ""
 
 #: tfrmprincipal.smponto.caption
 msgid "Ponto"
@@ -452,6 +461,12 @@ msgctxt "TFRMVELOCIDADE.BTNOK.CAPTION"
 msgid "OK"
 msgstr "OK"
 
+#: tfrmvelocidade.caption
+#, fuzzy
+msgctxt "tfrmvelocidade.caption"
+msgid "Definir velocidade dos eixos"
+msgstr "Set displacement speed over axes"
+
 #: tfrmvelocidade.edit1.text
 msgctxt "TFRMVELOCIDADE.EDIT1.TEXT"
 msgid "60"
@@ -465,10 +480,6 @@ msgstr "150"
 msgctxt "TFRMVELOCIDADE.EDIT3.TEXT"
 msgid "60"
 msgstr "60"
-
-#: tfrmvelocidade.frmvelocidade.caption
-msgid "Definir velocidade dos eixos"
-msgstr "Set displacement speed over axes"
 
 #: tfrmvelocidade.label1.caption
 msgid "Definir as velocidades dos eixos XY e Z."
@@ -491,6 +502,12 @@ msgstr "Cutting speed over XY axes, in mm per minute"
 msgctxt "TFRMZINFO.BTNOK.CAPTION"
 msgid "OK"
 msgstr "OK"
+
+#: tfrmzinfo.caption
+#, fuzzy
+msgctxt "tfrmzinfo.caption"
+msgid "Deslocamentos do eixo Z"
+msgstr "Displacement on Z axis"
 
 #: tfrmzinfo.edit1.text
 msgid "0,30"
@@ -519,10 +536,6 @@ msgstr "0.40"
 #: tfrmzinfo.edit7.text
 msgid "15000"
 msgstr "15000"
-
-#: tfrmzinfo.frmzinfo.caption
-msgid "Deslocamentos do eixo Z"
-msgstr "Displacement on Z axis"
 
 #: tfrmzinfo.label1.caption
 #| msgid "Profundidade de fresagem:"

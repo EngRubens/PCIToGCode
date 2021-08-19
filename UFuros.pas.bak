@@ -48,8 +48,8 @@ type
 
 var
   FrmFuros: TFrmFuros;
-  ZInic : array[0..1000] of integer;
-  ZFim : array[0..1000] of integer;
+  BlocoFuro: array[0..9999] of integer;
+  ContaFuro : integer;
 
 implementation
 
@@ -123,59 +123,53 @@ end;
 
 procedure TiraMarcaFuros();
 var
-ContaFuro : integer;
 ContaLinha : integer;
+BlocoAtual : integer;
+Furo : Boolean;
 arquivar : textfile;
+linha: string;
+N: integer;
 
 begin
-// Rotina para eliminar os contornos dos furos na fresagem
-ContaLinha := 0;
-ContaFuro := 1;
-if FileExists('XYZCord.txt') then
+  // Rotina para eliminar os contornos dos furos na fresagem
+  ContaLinha := 0;
+  if FileExists('XYZCord.txt') then
   begin
-   // Criar um novo arquivo
-   assignfile(arquivar, 'XYZCordsf.txt');
-   if not FileExists('XYZCordsf.txt') then
-     Rewrite(arquivar)
-   else
-    erase(arquivar);
-   rewrite(arquivar);
+    // Criar um novo arquivo
+    assignfile(arquivar, 'XYZCordsf.txt');
+    if not FileExists('XYZCordsf.txt') then
+      Rewrite(arquivar)
+    else
+      erase(arquivar);
+    rewrite(arquivar);
    // Criado o novo arquivo
    for ContaLinha := 0 to FrmPrincipal.Memo1.Lines.Count do
    Begin
-    if ((Contalinha < ZInic[ContaFuro]) or (Contalinha >= ZFim[ContaFuro])) then
-     Begin
-      if (Contalinha = ZFim[ContaFuro]) then
-       begin
-        ContaFuro := ContaFuro + 1;
-       end
-      else
+    linha := FrmPrincipal.Memo1.Lines.Strings[ContaLinha];
+    // Verifica se a linha é de inicio de bloco
+    if (copy(linha,1,1) = 'B') then
+     begin
+      // Captura o número do bloco
+      BlocoAtual := StrToInt(copy(linha,7,Length(linha) -1));
+      // Verifica se o numero do bloco atual esta entre os números de blocos de furação
+      for N := 0 to ContaFuro do
       begin
-       if (Contalinha = ZFim[ContaFuro - 1] + 1)  then
-        begin
-         writeln(arquivar, 'Z = 3');
-         writeln(arquivar, FrmPrincipal.Memo1.Lines.Strings[ContaLinha]);
-         writeln(arquivar, 'Z = -1');
-        end;
-       // Grava linha no arquivo novo
-       if (Contalinha <> ZInic[ContaFuro] - 2) then
-        begin
-         writeln(arquivar, FrmPrincipal.Memo1.Lines.Strings[ContaLinha]);
-        end
-       else
-       begin
-        writeln(arquivar, FrmPrincipal.Memo1.Lines.Strings[ContaLinha + 1]);
-        writeln(arquivar, 'Z = -1');
-       end;
+        if(BlocoAtual = BlocoFuro[N]) then Furo := true else Furo := false;
       end;
      end;
+    // Se não for um bloco de furação copia os dados para o novo arquivo
+    if (Not Furo) then
+    Begin
+         writeln(arquivar, FrmPrincipal.Memo1.Lines.Strings[ContaLinha]);
+    end;
    end;
   end;
   closefile(arquivar);
   // Fim da rotina para eliminar os contornos dos furos na fresagem
 end;
 
-procedure CapturaFuros();
+
+procedure CapturaFurosNovo();
 var
 p : integer;
 x : real;
@@ -185,213 +179,218 @@ y : real;
 ymax : real;
 ymin : real;
 z : real;
-cx: integer;
-cy: integer;
 ux: integer;
 uy: integer;
 l : integer;
-ContaFuro : integer;
-ZInicial : integer;
-ZFinal : integer;
 ContaLinha : integer;
 f : string;
-foi : boolean;
-Confirma : boolean;
 linha : string;
 GLinha : String;
 arquivo : textfile;
-
+Inicio : boolean;
 begin
- if (tx = 0) or (ty = 0) then
-  showmessage(Texto05)
- else
- begin
-  ux := 0;
-  uy := 0;
-  x := 0;
-  xmax := 0;
-  xmin := 0;
-  y := 0;
-  ymax := 0;
-  ymin := 0;
-  //z := 0;
-  l := 0;
-  f := '';
-  ContaFuro := 0;
-  ContaLinha := 0;
-  ZFinal := 0;
-  Confirma := false;
-  foi := false;
-  Limpa();
-  //FrmPrincipal.Notebook1.PageIndex := 7;
-  FrmPrincipal.Image5.Hide;
-  FrmPrincipal.memo3.Clear;
-  FrmPrincipal.memo3.Append(Texto06);
-  FrmPrincipal.memo3.Append(Texto07);
-  FrmPrincipal.memo3.Append(Texto08 +  Imagem + ' )');
-  FrmPrincipal.memo3.Append(Texto09 + PlacaX + ' Cm    Y = ' + PlacaY + ' Cm )');
-  FrmPrincipal.memo3.Append(Texto10);
-  FrmPrincipal.memo3.Append('G90');
-  FrmPrincipal.memo3.Append('G21');
-  FrmPrincipal.memo3.Append('M08');
-  FrmPrincipal.memo3.Append('M03 S' + IntToStr(ZVS));
-  FrmPrincipal.memo3.Append('M07');
-  l := l + 1;
-  GLinha := 'N' + inttostr(l) + ' G01 X' + copy(floattostr(x),0,4 + pos(',',floattostr(x))) + ' Y' + copy(floattostr(y),0,3 + pos(',',floattostr(y))) + ' Z' + floattostr(ZP) + f ;
-  if FrmPrincipal.SMPonto.Checked then
-   begin
-    GLinha := VirgPonto(GLinha);
-   end;
-  FrmFuros.Edit1.Caption := '';
-  FrmPrincipal.memo3.Append(GLinha);
-  if FileExists('XYZCord.txt') then
+  if (tx = 0) or (ty = 0) then
+    showmessage(Texto05)
+  else
   begin
-  assignfile(arquivo,'XYZCord.txt');
-   reset(arquivo);
-   while (not EOF(arquivo)) do
-   begin
-    readln(arquivo,linha);
-    // Contagem das linhas do arquivo
-    ContaLinha :=  ContaLinha + 1;
-    if (copy(linha,1,1) = 'X') then
+    ux := 0;
+    uy := 0;
+    x := 0;
+    xmax := 0;
+    xmin := 0;
+    y := 0;
+    ymax := 0;
+    ymin := 0;
+    //z := 0;
+    l := 0;
+    f := '';
+    ContaFuro := 0;
+    ContaLinha := 0;
+	Inicio := true;
+    Limpa();
+    //FrmPrincipal.Notebook1.PageIndex := 7;
+    FrmPrincipal.Image5.Hide;
+    FrmPrincipal.memo3.Clear;
+    FrmPrincipal.memo3.Append(Texto06);
+    FrmPrincipal.memo3.Append(Texto07);
+    FrmPrincipal.memo3.Append(Texto08 +  Imagem + ' )');
+    FrmPrincipal.memo3.Append(Texto09 + PlacaX + ' Cm    Y = ' + PlacaY + ' Cm )');
+    FrmPrincipal.memo3.Append(Texto10);
+    FrmPrincipal.memo3.Append('G90');
+    FrmPrincipal.memo3.Append('G21');
+    FrmPrincipal.memo3.Append('M08');
+    FrmPrincipal.memo3.Append('M03 S' + IntToStr(ZVS));
+    FrmPrincipal.memo3.Append('M07');
+    l := l + 1;
+    GLinha := 'N' + inttostr(l) + ' G01 X' + copy(floattostr(x),0,4 + pos(',',floattostr(x))) + ' Y' + copy(floattostr(y),0,3 + pos(',',floattostr(y))) + ' Z' + floattostr(ZP) + f ;
+    if FrmPrincipal.SMPonto.Checked then
     begin
-     p := pos('|',linha);
-     x := strtoint((copy(linha,5,p - 6)));
-     y := strtoint((copy(linha,p + 5,length(linha) - (p + 4))));
-     if not foi then
-     Begin
-      // Carrega o valor inicial das coordenadas em mm.
-      xmax := x;
-      ymax := y;
-      xmin := x;
-      ymin := y;
-      foi := true;
-     end;
-     // Caso o valor de x ou y tenha se alterado, guarda a variação maxima e minima
-     if (x > xmax) then xmax := x;
-     if (y > ymax) then ymax := y;
-     if (x < xmin) then xmin := x;
-     if (y < ymin) then ymin := y;
+      GLinha := VirgPonto(GLinha);
     end;
-    // Se a linha é da coordenada Z fechou um bloco continuo, então testa as
-    // diferenças entre os maximos e minimos para ver se é maior do que seria um furo.
-    //if (copy(linha,1,5) = 'Z = -') then
-    if ((copy(linha,1,1) = 'Z') and (copy(linha,1,5) <> 'Z = -'))then
+    FrmFuros.Edit1.Caption := '';
+    FrmPrincipal.memo3.Append(GLinha);
+    // Verifica se o arquivo de coordenadas existe
+    if FileExists('XYZCord.txt') then
     begin
-     // Guarda o número da última linha da coordenada Z
-     ZInicial := ZFinal;
-     // Guarda o número da linha atual da coordenada Z
-     ZFinal := ContaLinha;
-     foi := false;
-     //Verifica se o valor da quantidade de pixels maximo é maior do que o minimo e se a diferença entre eles convertido para milimetros ("... / tx")
-     // aplicando-se o fator de ajuste de tamanho do furo ("/ 5 * FrmFuros.TrackBar3.Position") é menór do que 2.
-     if ((xmax >= xmin) and (((xmax - xmin) / tx / 5 * FrmFuros.TrackBar3.Position) < 2) and (ymax >= ymin) and (((ymax - ymin) / ty / 5 * FrmFuros.TrackBar3.Position) < 2) and (z > 0)) then
-     begin
-      // Encontra o ponto central do furo
-      x := (xmin + ((xmax - xmin) / 2));
-      y := (ymin + ((ymax - ymin) / 2));
-      // Verifica se existe algum ponto em volta do xy com uma distancia menor que 2 mm
-      Confirma := true;
-      // Faz uma varredura em volta do furo a uma distancia que depende do fator de ajuste da relação entre o furo e a borda da trilha.
-      for cx := round(x - (FrmFuros.TrackBar1.Position / 2)) to round(x + (FrmFuros.TrackBar1.Position / 2)) do
-      Begin
-       for cy := round(y - (FrmFuros.TrackBar1.Position / 2)) to round(y + (FrmFuros.TrackBar1.Position / 2)) do
-       //if (Pixel_OUT[cx,tpy - cy] <> 'R') then image3.Canvas.Pixels[cx,tpy - cy] := clBlue;
-       Begin
+      assignfile(arquivo,'XYZCord.txt');
+      reset(arquivo);
+      while (not EOF(arquivo)) do
+      begin
+        readln(arquivo,linha);
+        // Contagem das linhas do arquivo
+        ContaLinha :=  ContaLinha + 1;
+        // Se a linha for inicio / Fim de bloco faz o calculo e reseta as variaveis
+        if ((copy(linha,1,1) = 'B') and not Inicio) then
+        begin
+          // faz o calculo
+          //Verifica se o valor da quantidade de pixels maximo é maior do que o minimo e se a diferença entre eles convertido para milimetros ("... / tx")
+          // aplicando-se o fator de ajuste de tamanho do furo ("/ 5 * FrmFuros.TrackBar3.Position") é menór do que 2.
+          if ((xmax >= xmin) and (((xmax - xmin) / tx / 5 * FrmFuros.TrackBar3.Position) < 2) and (ymax >= ymin) and (((ymax - ymin) / ty / 5 * FrmFuros.TrackBar3.Position) < 2) and (z > 0)) then
+          begin
+            // Encontra o ponto central do furo
+            x := (xmin + ((xmax - xmin) / 2));
+            y := (ymin + ((ymax - ymin) / 2));
+            ContaFuro := ContaFuro + 1;
+            BlocoFuro[ContaFuro] := StrToInt(copy(linha,7,Length(linha) -1));
+            FrmFuros.Edit1.Caption := IntToStr(ContaFuro);
+            // Desenhar caminho de posicionamento da broca
+            FrmPrincipal.Image5.Canvas.Pen.Color:= $0FF7D7;
+            FrmPrincipal.Image5.Canvas.Line(ux, uy, round(x), tpy - round(y));
+            FrmPrincipal.image5.Canvas.Pixels[ux,uy] := ClBlack;
+            FrmPrincipal.image5.Canvas.Pixels[round(x),(tpy - round(y))] := ClBlack;
+            // Guarda a ultima posição do furo
+            ux := round(x);
+            uy := tpy - round(y);
+            // Cria os GCodes de furação
+            l := l + 1;
+            f := ' F' + inttostr(vfz);
+            GLinha := 'N' + inttostr(l) + ' G00 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z'+ floattostr(ZP);
+            if FrmPrincipal.SMPonto.Checked then
+            begin
+              GLinha := VirgPonto(GLinha);
+            end;
+            FrmPrincipal.memo3.Append(GLinha);
+            l := l + 1;
+            GLinha := 'N' + inttostr(l) + ' G01 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z-' + floattostr(ZPF) + f ;
+            if FrmPrincipal.SMPonto.Checked then
+            begin
+              GLinha := VirgPonto(GLinha);
+            end;
+            FrmPrincipal.memo3.Append(GLinha);
+            l := l + 1;
+            GLinha := 'N' + inttostr(l) + ' G00 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z' + floattostr(ZP);
+            if FrmPrincipal.SMPonto.Checked then
+            begin
+              GLinha := VirgPonto(GLinha);
+            end;
+            FrmPrincipal.memo3.Append(GLinha);
+          end;
+          // zera
+          xmax := 0;
+          ymax := 0;
+          xmin := 0;
+          ymin := 0;
+        end;
+    	// Se a linha é de coordenadas vai capturando os dados
+        if (copy(linha,1,1) = 'X') then
+        begin
+		  Inicio := false;
+          p := pos('|',linha);
+          x := strtoint((copy(linha,5,p - 6)));
+          y := strtoint((copy(linha,p + 5,length(linha) - (p + 4))));
+          // Se as variaveis de maximo e miimo estão zeradas captura o primeiro valor
+          if((xmax = 0) and (ymax = 0) and (xmin = 0) and (ymin = 0)) then
+          begin
+            xmax := x;
+            ymax := y;
+            xmin := x;
+            ymin := y;
+          end;
+          // Caso o valor de x ou y tenha se alterado, guarda a variação maxima e minima
+          if (x > xmax) then xmax := x;
+          if (y > ymax) then ymax := y;
+          if (x < xmin) then xmin := x;
+          if (y < ymin) then ymin := y;
+        end;
+      end;
 
-        if ((Pixel_OUT[cx,tpy - cy] <> 'B') and not
-           (((cx > x - trunc(FrmFuros.TrackBar2.Position / 2)) and (cx < x + trunc(FrmFuros.TrackBar2.Position / 2))) and
-           ((cy > y - trunc(FrmFuros.TrackBar2.Position / 2)) and (cy < y + trunc(FrmFuros.TrackBar2.Position / 2)))))  then
-
-
-           // ------------------------------------------
-        //   (((cx > x - trunc(FrmFuros.TrackBar2.Position / 2)) and (cx < x + trunc(FrmFuros.TrackBar2.Position / 2))) and
-        //    ((cy > y - trunc(FrmFuros.TrackBar2.Position / 2)) and (cy < y + trunc(FrmFuros.TrackBar2.Position / 2)))) and not
-        //   (((cx = round(x + (FrmFuros.TrackBar1.Position / 2))) and (cy = round(y + (FrmFuros.TrackBar1.Position / 2)))) or
-        //    ((cx = round(x + (FrmFuros.TrackBar1.Position / 2))) and (cy = round(y - (FrmFuros.TrackBar1.Position / 2)))) or
-        //    ((cx = round(x - (FrmFuros.TrackBar1.Position / 2))) and (cy = round(y + (FrmFuros.TrackBar1.Position / 2)))) or
-        //    ((cx = round(x - (FrmFuros.TrackBar1.Position / 2))) and (cy = round(y - (FrmFuros.TrackBar1.Position / 2))))) )  then
-           Begin
-            Confirma := false;
-            // Usado nos testes
-            //FrmPrincipal.image5.Canvas.Pixels[cx,tpy - cy] := clRed;
-           End
-           else
-           Begin
-            // Usado nos testes
-            //FrmPrincipal.image5.Canvas.Pixels[cx,tpy - cy] := clBlue;
-           End;
-       End;
-      End;
-      if Confirma then
-      Begin
-       ContaFuro := ContaFuro + 1;
-       FrmFuros.Edit1.Caption := IntToStr(ContaFuro);
-       // Guarda intervalo de coordenadas que representam o furo
-       ZInic[ContaFuro] := ZInicial + 2;
-       ZFim[ContaFuro] := ZFinal + 1;
-       //FrmPrincipal.memo2.Append(IntToStr(ContaFuro) + ' - ' + IntToStr(ZInicial - 1) + ' - ' + IntToStr(ZFinal));
-       if (((ux <> 0) and (uy <> 0))) then
-       begin
+      // faz o calculo
+      //Verifica se o valor da quantidade de pixels maximo é maior do que o minimo e se a diferença entre eles convertido para milimetros ("... / tx")
+      // aplicando-se o fator de ajuste de tamanho do furo ("/ 5 * FrmFuros.TrackBar3.Position") é menór do que 2.
+      if ((xmax >= xmin) and (((xmax - xmin) / tx / 5 * FrmFuros.TrackBar3.Position) < 2) and (ymax >= ymin) and (((ymax - ymin) / ty / 5 * FrmFuros.TrackBar3.Position) < 2) and (z > 0)) then
+      begin
+        // Encontra o ponto central do furo
+        x := (xmin + ((xmax - xmin) / 2));
+        y := (ymin + ((ymax - ymin) / 2));
+        ContaFuro := ContaFuro + 1;
+        //BlocoFuro[ContaFuro] := StrToInt(copy(linha,7,Length(linha) -1));
+        FrmFuros.Edit1.Caption := IntToStr(ContaFuro);
+        // Desenhar caminho de posicionamento da broca
         FrmPrincipal.Image5.Canvas.Pen.Color:= $0FF7D7;
         FrmPrincipal.Image5.Canvas.Line(ux, uy, round(x), tpy - round(y));
         FrmPrincipal.image5.Canvas.Pixels[ux,uy] := ClBlack;
-       end;
-       FrmPrincipal.image5.Canvas.Pixels[round(x),(tpy - round(y))] := ClBlack;
-       ux := round(x);
-       uy := tpy - round(y);
-       l := l + 1;
-       f := ' F' + inttostr(vfz);
-       GLinha := 'N' + inttostr(l) + ' G00 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z'+ floattostr(ZP);
-       if FrmPrincipal.SMPonto.Checked then
-       begin
-        GLinha := VirgPonto(GLinha);
-       end;
-       FrmPrincipal.memo3.Append(GLinha);
-       l := l + 1;
-       GLinha := 'N' + inttostr(l) + ' G01 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z-' + floattostr(ZPF) + f ;
-       if FrmPrincipal.SMPonto.Checked then
-       begin
-        GLinha := VirgPonto(GLinha);
-       end;
-       FrmPrincipal.memo3.Append(GLinha);
-       l := l + 1;
-       GLinha := 'N' + inttostr(l) + ' G00 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z' + floattostr(ZP);
-       if FrmPrincipal.SMPonto.Checked then
-       begin
-        GLinha := VirgPonto(GLinha);
-       end;
-       FrmPrincipal.memo3.Append(GLinha);
+        FrmPrincipal.image5.Canvas.Pixels[round(x),(tpy - round(y))] := ClBlack;
+        // Guarda a ultima posição do furo
+        ux := round(x);
+        uy := tpy - round(y);
+        // Cria os GCodes de furação
+        l := l + 1;
+        f := ' F' + inttostr(vfz);
+        GLinha := 'N' + inttostr(l) + ' G00 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z'+ floattostr(ZP);
+        if FrmPrincipal.SMPonto.Checked then
+        begin
+          GLinha := VirgPonto(GLinha);
+        end;
+        FrmPrincipal.memo3.Append(GLinha);
+        l := l + 1;
+        GLinha := 'N' + inttostr(l) + ' G01 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z-' + floattostr(ZPF) + f ;
+        if FrmPrincipal.SMPonto.Checked then
+        begin
+          GLinha := VirgPonto(GLinha);
+        end;
+        FrmPrincipal.memo3.Append(GLinha);
+        l := l + 1;
+        GLinha := 'N' + inttostr(l) + ' G00 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z' + floattostr(ZP);
+        if FrmPrincipal.SMPonto.Checked then
+        begin
+          GLinha := VirgPonto(GLinha);
+        end;
+        FrmPrincipal.memo3.Append(GLinha);
       end;
+      // zera
+      xmax := 0;
+      ymax := 0;
+      xmin := 0;
+      ymin := 0;
+      x := 0;
+      y := 0;
      end;
+    l := l + 1;
+    GLinha := 'N' + inttostr(l) + ' G00 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z' + floattostr(ZP);
+    if FrmPrincipal.SMPonto.Checked then
+    begin
+     GLinha := VirgPonto(GLinha);
     end;
+    FrmPrincipal.memo3.Append(GLinha);
+    //FrmFuros.Edit1.Caption := IntToStr(ContaFuro); // IntToStr(round((l-2) / 3));
+    // Comandos finais do arquivo de furação.
+    GLinha := 'M05';
+    FrmPrincipal.memo3.Append(GLinha);
+    GLinha := 'M09';
+    FrmPrincipal.memo3.Append(GLinha);
+    GLinha := 'M18';
+    FrmPrincipal.memo3.Append(GLinha);
+    GLinha := 'M02';
+    FrmPrincipal.memo3.Append(GLinha);
+    closefile(arquivo);
+  
    end;
-   x := 0;
-   y := 0;
-   l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G00 X' + copy(floattostr(x / tx),0,4 + pos(',',floattostr(x / tx))) + ' Y' + copy(floattostr(y / ty),0,3 + pos(',',floattostr(y / ty))) + ' Z' + floattostr(ZP);
-   if FrmPrincipal.SMPonto.Checked then
-   begin
-    GLinha := VirgPonto(GLinha);
-   end;
-   FrmPrincipal.memo3.Append(GLinha);
-   //FrmFuros.Edit1.Caption := IntToStr(ContaFuro); // IntToStr(round((l-2) / 3));
-   // Comandos finais do arquivo de furação.
-   GLinha := 'M05';
-   FrmPrincipal.memo3.Append(GLinha);
-   GLinha := 'M09';
-   FrmPrincipal.memo3.Append(GLinha);
-   GLinha := 'M18';
-   FrmPrincipal.memo3.Append(GLinha);
-   GLinha := 'M02';
-   FrmPrincipal.memo3.Append(GLinha);
-   closefile(arquivo);
-  end;
- end;
- FrmPrincipal.SMMapaFresagemsf.Enabled := True;
- FrmPrincipal.SMGeraFresagemsf.Enabled := True;
- FrmPrincipal.Image5.Show;
+   FrmPrincipal.SMMapaFresagemsf.Enabled := True;
+   FrmPrincipal.SMGeraFresagemsf.Enabled := True;
+   FrmPrincipal.Image5.Show;
 end;
+
+
 
 
 procedure TFrmFuros.FormShow(Sender: TObject);
@@ -429,7 +428,7 @@ End;
 
 procedure TFrmFuros.BtnCapturarClick(Sender: TObject);
 begin
- CapturaFuros();
+ CapturaFurosNovo();
  FrmPrincipal.ScrollBar3.Max := round(FrmPrincipal.image5.Height);
  FrmPrincipal.ScrollBar3.Min := 0;
  FrmPrincipal.ScrollBar3.Position := 0;

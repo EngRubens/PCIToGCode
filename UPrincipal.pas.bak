@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs,
-  Menus, ExtCtrls, ExtDlgs, StdCtrls, fpimage, ComCtrls, LCLIntf, LCLType, IntfGraphics, types, crt;
+  Menus, ExtCtrls, ExtDlgs, StdCtrls, fpimage, ComCtrls, LCLIntf, LCLType, IntfGraphics, types, crt, StrUtils;
 
 type
 
@@ -23,8 +23,10 @@ type
     Memo2: TMemo;
     Memo3: TMemo;
     Memo4: TMemo;
-    MemoTemp: TMemo;
     MenuItem1: TMenuItem;
+    SMOtimizarGCodeSim: TMenuItem;
+    SMOtimizarGCodeNao: TMenuItem;
+    SMOtimizarGCode: TMenuItem;
     SMFresar: TMenuItem;
     SMNaoFresar: TMenuItem;
     SMContorno: TMenuItem;
@@ -102,6 +104,7 @@ type
       MousePos: TPoint; var Handled: Boolean);
     procedure Image5MouseWheelUp(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: Boolean);
+    procedure MemoTempDblClick(Sender: TObject);
     procedure SMFresarClick(Sender: TObject);
     procedure ScrollBar1Change(Sender: TObject);
     procedure ScrollBar2Change(Sender: TObject);
@@ -111,6 +114,8 @@ type
     procedure SMGeraRecorteClick(Sender: TObject);
     procedure SMMapaFresagemsfClick(Sender: TObject);
     procedure SMNaoFresarClick(Sender: TObject);
+    procedure SMOtimizarGCodeNaoClick(Sender: TObject);
+    procedure SMOtimizarGCodeSimClick(Sender: TObject);
     procedure SMSalvaGCodeRecorteClick(Sender: TObject);
     procedure SMSalvaGCodeUnicoClick(Sender: TObject);
     procedure SMBordaExternaClick(Sender: TObject);
@@ -231,6 +236,30 @@ begin
   Result := valor;
 end;
 
+function SubStringOccurences( const subString, sourceString : string; caseSensitive : boolean) : integer;
+var
+pEx: integer;
+sub, source : string;
+
+begin
+  if caseSensitive then
+  begin
+    sub := subString;
+    source := sourceString;
+  end
+  else
+  begin
+    sub := LowerCase(subString);
+    source := LowerCase(sourceString);
+  end;
+  result := 0;
+  pEx := PosEx(sub, source, 1);
+  while pEx <> 0 do
+  begin
+    Inc(result);
+    pEx := PosEx(sub, source, pEx + Length(sub));
+  end;
+end;
 
 procedure CarregaCorPixel();
 var
@@ -441,11 +470,28 @@ var
   yc: integer;
   Q: integer;
   QA: integer;
+  BlocoIniX: array[0..9000] of integer;
+  BlocoIniY: array[0..9000] of integer;
+  BlocoFimX: array[0..9000] of integer;
+  BlocoFimY: array[0..9000] of integer;
+  SeqOrdena: array[0..9000] of integer;
+  NuSeq: Integer;
+  SeqIdeal: integer;
+  UltimoBlocoFimX : Integer;
+  UltimoBlocoFimY : Integer;
+  XYDifIdeal : integer;
+  XYDif : integer;
+  ContaBloco: Integer;
+  BlocoAtual: Integer;
   RConta: Integer;
+  BlocoUsado: boolean;
   raster: boolean;
   reta:  boolean;
+  FimOrdena : boolean;
   linha: array[0..90000] of string;
+  SLinha: string;
   arquivo: textfile;
+  arquivoOrdenado: textfile;
 begin
   FrmPrincipal.PageControl1.PageIndex := 3;
   FrmPrincipal.memo1.Clear;
@@ -454,6 +500,8 @@ begin
   FrmPrincipal.ProgressBar1.Min := 0;
   FrmPrincipal.ProgressBar1.Max := tpx;
   FrmPrincipal.ProgressBar1.Step := 1;
+  ContaBloco := 1;
+  BlocoAtual := 0;
   ContaLinha := 1;
   xa := 0;
   ya := 0;
@@ -461,6 +509,8 @@ begin
   QA := 0;
   N := 0;
   linha[ContaLinha] := 'Z = 3';
+  ContaLinha := ContaLinha + 1;
+  linha[ContaLinha] := 'Bloco ' + IntToStr(ContaBloco);
   ContaLinha := ContaLinha + 1;
   // Faz o rastreamento do bitmap pixel a pixel gerando as cooredenadas.
   for x := 0 to tpx do
@@ -485,6 +535,8 @@ begin
         // Grava o ponto inicial da fresagem
         linha[ContaLinha] := 'X = ' + IntToStr(x) + ' | Y = ' + IntToStr(tpy - y);
         ContaLinha := ContaLinha + 1;
+        BlocoFimX[ContaBloco] := x;
+        BlocoFimY[ContaBloco] := tpy - y;
         linha[ContaLinha] := 'Z = -1'; // + floattostr(ZF);
         ContaLinha := ContaLinha + 1;
         Q := 0;
@@ -739,14 +791,99 @@ begin
            linha[ContaLinha] := 'X = ' + IntToStr(xb) + ' | Y = ' + IntToStr(tpy - yb);
            ContaLinha := ContaLinha + 1;
            reta := true;
+           if(ContaBloco > BlocoAtual) then
+           Begin
+             BlocoIniX[ContaBloco] := xc;
+             BlocoIniY[ContaBloco] := tpy - yc;
+             BlocoAtual := ContaBloco;
+           end;
           end;
         end;
         linha[ContaLinha] := 'Z = 3'; // + floattostr(ZP);
         ContaLinha := ContaLinha + 1;
+        // Sinaliza inicio de bloco
+        ContaBloco := ContaBloco + 1;
+        linha[ContaLinha] := 'Bloco ' + IntToStr(ContaBloco);
+        ContaLinha := ContaLinha + 1;
       end;
     end;
   end;
-  linha[ContaLinha] := 'X = 0 | Y = 0';
+  ContaBloco := ContaBloco - 1;
+  ContaLinha := ContaLinha - 2;
+  //linha[ContaLinha] := '';
+  // Fazer a ordenação de blocos
+  // ---------------------------
+  // Zera o array de sequencia
+  for y := 1 to ContaBloco do
+  begin
+    // Zerando
+    SeqOrdena[y] := 0;
+  end;
+  FimOrdena := false;
+  NuSeq := 1;
+  SeqOrdena[1] := 1;
+  UltimoBlocoFimX := BlocoFimX[1];
+  UltimoBlocoFimY := BlocoFimY[1];
+  while Not FimOrdena do
+  begin
+    // Seta a flag de fim de ordenação
+    FimOrdena := true;
+	XYDifIdeal := 999999;
+    // Varrer todos os bloocos para verificar qual é o mais próximo
+    for x := 1 to ContaBloco do
+    begin
+	  // Seta a flag de bloco usado.
+	  BlocoUsado := false;
+      // Varrer a sequencia para verificar se o bloco já foi usado
+      for y := 1 to ContaBloco do
+      begin
+        // Verifica se o bloco já foi usado
+        if(SeqOrdena[y] = x) then
+        begin
+          BlocoUsado := true;
+        end;
+      end;
+        // Se o bloco ainda não foi usado faz o calculo e a comparação
+        if(Not BlocoUsado) then
+        Begin
+         // Fazer o cálculo
+         if(BlocoIniX[x] > UltimoBlocoFimX) then
+         begin
+           XYDif := BlocoIniX[x] - UltimoBlocoFimX;
+         end
+         else
+         begin
+           XYDif := UltimoBlocoFimX -  BlocoIniX[x];
+         end;
+         if(BlocoIniY[x] > UltimoBlocoFimY) then
+         begin
+           XYDif := XYDif + (BlocoIniY[x] - UltimoBlocoFimY);
+         end
+         else
+         begin
+           XYDif := XYDif + (UltimoBlocoFimY -  BlocoIniY[x]);
+         end;
+         // Fazer a comparação
+         if(XYDif < XYDifIdeal) then
+         begin
+           SeqIdeal := x;
+           XYDifIdeal := XYDif;
+         end;
+	 FimOrdena := false;
+       end;
+    end;
+    if(Not FimOrdena) then
+    Begin
+      NuSeq := NuSeq + 1;
+      SeqOrdena[NuSeq] := SeqIdeal;
+      UltimoBlocoFimX := BlocoFimX[SeqIdeal];
+      UltimoBlocoFimY := BlocoFimY[SeqIdeal];
+    end;
+  end;
+  // --------------------------
+  // Fim da ordenação de blocos
+  //linha[ContaLinha] := 'X = 0 | Y = 0';
+
   assignfile(arquivo, 'XYZCord.txt');
   if not FileExists('XYZCord.txt') then
     Rewrite(arquivo)
@@ -797,7 +934,45 @@ begin
     end;
   end;
   closefile(arquivo);
-  FrmPrincipal.memo1.Lines.LoadFromFile('XYZCord.txt');
+  // Criar o arquivo com a nova ordenação
+  assignfile(arquivoOrdenado, 'XYZCordOrd.txt');
+  if not FileExists('XYZCordOrd.txt') then
+    Rewrite(arquivoOrdenado)
+  else
+    erase(arquivoOrdenado);
+  rewrite(arquivoOrdenado);
+  BlocoUsado := true;
+  for x := 1 to ContaBloco do
+  begin
+    // Varrer as linhas
+    if(x > 1) then BlocoUsado := false;
+    reset(arquivo);
+    while (not EOF(arquivo)) do
+    begin
+      readln(arquivo, SLinha);
+      if(SLinha = 'Bloco ' + IntToStr(SeqOrdena[x])) then
+      begin
+        BlocoUsado := true;
+      end
+      else
+        begin
+          if(copy(SLinha, 1, 1) = 'B') then  BlocoUsado := false;
+        end;
+      if(BlocoUsado) then
+      begin
+        // Aqui copia o bloco
+        //FrmPrincipal.MemoTemp.Lines.Add(SLinha);
+        writeln(arquivoOrdenado, SLinha);
+      end;
+    end;
+    closefile(arquivo);
+  end;
+  closefile(arquivoOrdenado);
+  // -------------------------------
+  if(FrmPrincipal.SMOtimizarGCodeSim.Checked) then
+    FrmPrincipal.memo1.Lines.LoadFromFile('XYZCordOrd.txt')
+  else
+    FrmPrincipal.memo1.Lines.LoadFromFile('XYZCord.txt');
   FrmPrincipal.image3.Show;
   FrmPrincipal.memo1.Show;
   FrmPrincipal.ProgressBar1.Position := 0;
@@ -1057,56 +1232,6 @@ end;
  if FrmPrincipal.SMSalvaGCodeFuros.Enabled then FrmPrincipal.SMSalvaGCodeUnico.Enabled := True;
 end;
 
-Procedure OtimizaGeCode();
-var
-PosFinalX    : real;
-PosFinalY    : real;
-PosInicialX  : real;
-PosInicialY  : real;
-PosDife      : real;
-LinhaInicial : integer;
-LinhaFinal   : integer;
-x            : real;
-y            : real;
-N            : integer;
-
-Begin
- // Copiar as linhas do inicio até o fim do primeiro bloco
- N := 1;
- while(FrmPrincipal.MemoTemp.Lines.Strings[N] <> 'Y') do
- begin
-   // Copia a linha do MemoTemp
-   // Grava a linha no Memo definitivo
-   // Apaga a linha do MemoTemp
- end;
- // Enquanto o MemoTemp não estiver vazio fazer a varredura
- while(FrmPrincipal.MemoTemp.Lines.Count > 0) do
- Begin
-   // Loop para varrer as linhas do inicio ate o fim do MemoTemp
-   for n := 1 to (FrmPrincipal.MemoTemp.Lines.Count -1) do
-     begin
-       // Procura as linhas que correspondem ao inicio de um bloco
-       // Subtrair a posição X inicial da final e tirar o módulo.
-       // Subtrair a posição Y inicial da final e tirar o módulo.
-       // Somar as duas diferenças
-       // verifica se a diferença é menor do que a ultima que foi guardada
-       // Se a difrença for menor do que a ultima guardar a posição da linha inicial  'LinhaInicial'
-
-     end;
-     // Copiar as linhas do inicio até o fim do bloco
-     N := LinhaInicial;
-     While(FrmPrincipal.MemoTemp.Lines.Strings[N] <> 'Y') do
-     begin
-       // Copia a linha do MemoTemp
-       // Grava a linha no Memo definitivo
-       // Apaga a linha do MemoTemp
-       N := N + 1;
-     end;
-
- end;
-
-end;
-
 procedure CarregaImagemVetorisada();
 var
   x: integer;
@@ -1192,7 +1317,7 @@ begin
       end;
       if (copy(linha, 1, 1) <> '') then
       begin
-        if (copy(linha, 1, 1) <> 'Z') then
+        if ((copy(linha, 1, 1) <> 'Z') and (copy(linha, 1, 1) <> 'B')) then
         begin
           for n := 0 to length(linha) do
           begin
@@ -1224,10 +1349,13 @@ begin
         end
         else
         begin
-          if (strtofloat(copy(linha, 4, length(linha)))) < 0 then
-            f := True
-          else
-            f := False;
+          if (copy(linha, 1, 1) <> 'B') then
+          begin
+            if (strtofloat(copy(linha, 4, length(linha)))) < 0 then
+              f := True
+            else
+              f := False;
+          end;
         end;
       end;
     end;
@@ -1288,6 +1416,11 @@ begin
      erase(arquivo);
    end;
 
+   if FileExists('XYZCordOrd.txt') then
+   begin
+     assignfile(arquivo, 'XYZCordOrd.txt');
+     erase(arquivo);
+   end;
 end;
 
 procedure TFrmPrincipal.Image1DblClick(Sender: TObject);
@@ -1402,6 +1535,7 @@ begin
   end;
 end;
 
+
 procedure TFrmPrincipal.SMFresarClick(Sender: TObject);
 begin
   SMNaoFresar.Checked := false;
@@ -1471,7 +1605,7 @@ begin
    end;
    FrmPrincipal.memo4.Append(GLinha);
   l := l + 1;
-  GLinha := 'N' + inttostr(l) + ' G00 X0 Y0 Z' + FloatToStr(ZP) + f;
+  GLinha := 'N' + inttostr(l) + ' G00 X-0,5 Y-0,5 Z' + FloatToStr(ZP) + f;
   if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
@@ -1481,35 +1615,35 @@ begin
   Begin
    f := ' F' + inttostr(VRXY);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X0 Y0 Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X-0,5 Y-0,5 Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
    end;
    FrmPrincipal.memo4.Append(GLinha);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X' + PlacaX + ' Y0 Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X' + copy(floattostr((x / tx) + 0.5),0,4 + pos(',',floattostr((x / tx) + 0.5))) + ' Y-0,5 Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
    end;
    FrmPrincipal.memo4.Append(GLinha);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X' + PlacaX + ' Y' + PlacaY + ' Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X' + copy(floattostr((x / tx) + 0.5),0,4 + pos(',',floattostr((x / tx) + 0.5))) + ' Y' + copy(floattostr((y / ty) + 0.5),0,3 + pos(',',floattostr((y / ty) + 0.5))) + ' Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
    end;
    FrmPrincipal.memo4.Append(GLinha);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X0 Y' + PlacaY + ' Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X-0,5 Y' + copy(floattostr((y / ty) + 0.5),0,3 + pos(',',floattostr((y / ty) + 0.5))) + ' Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
    end;
    FrmPrincipal.memo4.Append(GLinha);
    l := l + 1;
-   GLinha := 'N' + inttostr(l) + ' G01 X0 Y0 Z-' + FloatToStr(ZRA * NP) + f;
+   GLinha := 'N' + inttostr(l) + ' G01 X-0,5 Y-0,5 Z-' + FloatToStr(ZRA * NP) + f;
    if FrmPrincipal.SMPonto.Checked then
    begin
     GLinha := VirgPonto(GLinha);
@@ -1517,7 +1651,7 @@ begin
    FrmPrincipal.memo4.Append(GLinha);
   end;
   l := l + 1;
-  GLinha := 'N' + inttostr(l) + ' G00 X0 Y0 Z' + floattostr(ZP);
+  GLinha := 'N' + inttostr(l) + ' G00 X-0,5 Y-0,5 Z' + floattostr(ZP);
   if FrmPrincipal.SMPonto.Checked then
   begin
    GLinha := VirgPonto(GLinha);
@@ -1546,6 +1680,18 @@ procedure TFrmPrincipal.SMNaoFresarClick(Sender: TObject);
 begin
   SMNaoFresar.Checked := true;
   SMFresar.Checked := false;
+end;
+
+procedure TFrmPrincipal.SMOtimizarGCodeNaoClick(Sender: TObject);
+begin
+  SMOtimizarGCodeSim.Checked := false;
+  SMOtimizarGCodeNao.Checked := true;
+end;
+
+procedure TFrmPrincipal.SMOtimizarGCodeSimClick(Sender: TObject);
+begin
+  SMOtimizarGCodeSim.Checked := true;
+  SMOtimizarGCodeNao.Checked := false;
 end;
 
 procedure TFrmPrincipal.SMSalvaGCodeRecorteClick(Sender: TObject);

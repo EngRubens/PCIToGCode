@@ -1,4 +1,4 @@
-TFRMVELOCIDADE.FRMVELOCIDADE.CAPTION=Definir velocidade dos eixos
+TFRMVELOCIDADE.CAPTION=Definir velocidade dos eixos
 TFRMVELOCIDADE.LABEL1.CAPTION=Definir as velocidades dos eixos XY e Z.
 TFRMVELOCIDADE.LABEL2.CAPTION=mm/minuto do eixo Z decendo
 TFRMVELOCIDADE.LABEL3.CAPTION=mm/minuto do eixo XY fresando

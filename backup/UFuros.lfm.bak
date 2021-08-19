@@ -1,0 +1,179 @@
+object FrmFuros: TFrmFuros
+  Left = 1022
+  Height = 351
+  Top = 214
+  Width = 222
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Captura de furos'
+  ClientHeight = 351
+  ClientWidth = 222
+  FormStyle = fsStayOnTop
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.6.4.0'
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 192
+    Top = 0
+    Width = 208
+    Caption = 'Automático'
+    ClientHeight = 172
+    ClientWidth = 204
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 14
+      Height = 18
+      Top = 33
+      Width = 69
+      Caption = 'Area livre'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -15
+      Font.Name = 'Verdana'
+      Font.Pitch = fpVariable
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 12
+      Height = 18
+      Top = 89
+      Width = 93
+      Caption = 'Área do furo'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -15
+      Font.Name = 'Verdana'
+      Font.Pitch = fpVariable
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 7
+      Height = 16
+      Top = 114
+      Width = 121
+      Caption = 'Quantidade de Furos'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      ParentColor = False
+      ParentFont = False
+    end
+    object BtnCapturar: TButton
+      Left = 7
+      Height = 25
+      Top = 136
+      Width = 187
+      Caption = 'Capturar Furos'
+      OnClick = BtnCapturarClick
+      TabOrder = 0
+    end
+    object TrackBar1: TTrackBar
+      Left = 6
+      Height = 32
+      Top = 0
+      Width = 100
+      Max = 30
+      Min = 10
+      OnChange = TrackBar1Change
+      Position = 20
+      TabOrder = 1
+    end
+    object TrackBar2: TTrackBar
+      Left = 7
+      Height = 32
+      Top = 56
+      Width = 100
+      OnChange = TrackBar2Change
+      Position = 5
+      TabOrder = 2
+    end
+    object Edit1: TEdit
+      Left = 154
+      Height = 23
+      Top = 107
+      Width = 40
+      TabOrder = 3
+      Text = '00'
+    end
+    object Panel1: TPanel
+      Left = 124
+      Height = 76
+      Top = 5
+      Width = 74
+      ClientHeight = 76
+      ClientWidth = 74
+      TabOrder = 4
+      object Shape1: TShape
+        Left = 14
+        Height = 46
+        Top = 16
+        Width = 46
+        Brush.Color = clBackground
+        Shape = stCircle
+      end
+      object Shape2: TShape
+        Left = 30
+        Height = 14
+        Top = 32
+        Width = 14
+        Shape = stCircle
+      end
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 8
+    Height = 113
+    Top = 200
+    Width = 208
+    Caption = 'Manual'
+    ClientHeight = 93
+    ClientWidth = 204
+    TabOrder = 1
+    object Label5: TLabel
+      Left = 8
+      Height = 15
+      Top = 3
+      Width = 18
+      Caption = 'X ='
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 8
+      Height = 15
+      Top = 26
+      Width = 18
+      Caption = 'Y ='
+      ParentColor = False
+    end
+    object BtnIncluir: TButton
+      Left = 6
+      Height = 29
+      Top = 56
+      Width = 96
+      Caption = 'Incluir'
+      OnClick = BtnIncluirClick
+      TabOrder = 0
+    end
+    object BtnExcluir: TButton
+      Left = 102
+      Height = 29
+      Top = 56
+      Width = 96
+      Caption = 'Excluir'
+      OnClick = BtnExcluirClick
+      TabOrder = 1
+    end
+  end
+  object BtnGeraGCodeFuros: TButton
+    Left = 16
+    Height = 25
+    Top = 320
+    Width = 187
+    Caption = 'Sair'
+    OnClick = BtnGeraGCodeFurosClick
+    TabOrder = 2
+  end
+end

@@ -135,10 +135,6 @@ msgstr "Zone du trou"
 msgid "Quantidade de Furos"
 msgstr "Nombre de trou"
 
-#: tfrmfuros.label4.caption
-msgid "Tamanho do furo"
-msgstr "Taille du trou"
-
 #: tfrmfuros.label5.caption
 msgid "X ="
 msgstr "X="
@@ -223,9 +219,9 @@ msgstr "Épaisseur de la bordure"
 
 #: tfrmprincipal.caption
 #, fuzzy
-#| msgid "PCIToGCode  v1.5"
+#| msgid "PCIToGCode  v2.0"
 msgctxt "tfrmprincipal.caption"
-msgid "PCIToGCode  v2.0"
+msgid "PCIToGCode  v3.0"
 msgstr "PCIToGCode  v1.5"
 
 #: tfrmprincipal.majuda.caption
@@ -321,6 +317,18 @@ msgstr ""
 msgctxt "TFRMPRINCIPAL.SMOTIMIZAR.CAPTION"
 msgid "Otimizar Imagem"
 msgstr "Optimiser l'Image"
+
+#: tfrmprincipal.smotimizargcode.caption
+msgid "Otimizar GCode"
+msgstr ""
+
+#: tfrmprincipal.smotimizargcodenao.caption
+msgid "Não"
+msgstr ""
+
+#: tfrmprincipal.smotimizargcodesim.caption
+msgid "Sim"
+msgstr ""
 
 #: tfrmprincipal.smponto.caption
 msgid "Ponto"
@@ -465,6 +473,12 @@ msgctxt "TFRMVELOCIDADE.BTNOK.CAPTION"
 msgid "OK"
 msgstr "OK"
 
+#: tfrmvelocidade.caption
+#, fuzzy
+msgctxt "tfrmvelocidade.caption"
+msgid "Definir velocidade dos eixos"
+msgstr "Définir la Vitesse des Axes"
+
 #: tfrmvelocidade.edit1.text
 msgctxt "TFRMVELOCIDADE.EDIT1.TEXT"
 msgid "60"
@@ -478,10 +492,6 @@ msgstr "150"
 msgctxt "TFRMVELOCIDADE.EDIT3.TEXT"
 msgid "60"
 msgstr "60"
-
-#: tfrmvelocidade.frmvelocidade.caption
-msgid "Definir velocidade dos eixos"
-msgstr "Définir la Vitesse des Axes"
 
 #: tfrmvelocidade.label1.caption
 msgid "Definir as velocidades dos eixos XY e Z."
@@ -503,6 +513,12 @@ msgstr "Vitesse des Axes XY mode Découpe en mm/Minute"
 msgctxt "TFRMZINFO.BTNOK.CAPTION"
 msgid "OK"
 msgstr "OK"
+
+#: tfrmzinfo.caption
+#, fuzzy
+msgctxt "tfrmzinfo.caption"
+msgid "Deslocamentos do eixo Z"
+msgstr "Déplacements de l'Axe Z"
 
 #: tfrmzinfo.edit1.text
 msgid "0,30"
@@ -531,10 +547,6 @@ msgstr "0,40"
 #: tfrmzinfo.edit7.text
 msgid "15000"
 msgstr "15000"
-
-#: tfrmzinfo.frmzinfo.caption
-msgid "Deslocamentos do eixo Z"
-msgstr "Déplacements de l'Axe Z"
 
 #: tfrmzinfo.label1.caption
 msgid "Profundidade de fresagem"

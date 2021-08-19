@@ -1,0 +1,174 @@
+object FrmVelocidade: TFrmVelocidade
+  Left = 552
+  Height = 177
+  Top = 219
+  Width = 398
+  ActiveControl = Edit1
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Definir velocidade dos eixos'
+  ClientHeight = 177
+  ClientWidth = 398
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30'
+  object Label1: TLabel
+    Left = 0
+    Height = 20
+    Top = 0
+    Width = 398
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Definir as velocidades dos eixos XY e Z.'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = 4194432
+    Font.Height = -17
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 80
+    Height = 18
+    Top = 47
+    Width = 197
+    Caption = 'mm/minuto do eixo Z decendo'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 80
+    Height = 18
+    Top = 83
+    Width = 208
+    Caption = 'mm/minuto do eixo XY fresando'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Bevel1: TBevel
+    Left = 3
+    Height = 19
+    Top = 1
+    Width = 393
+  end
+  object Edit1: TEdit
+    Left = 30
+    Height = 23
+    Top = 40
+    Width = 42
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit1Change
+    ParentFont = False
+    TabOrder = 0
+    Text = '60'
+  end
+  object Edit2: TEdit
+    Left = 30
+    Height = 24
+    Top = 76
+    Width = 42
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit2Change
+    ParentFont = False
+    TabOrder = 1
+    Text = '150'
+  end
+  object BtnOK: TButton
+    Left = 5
+    Height = 29
+    Top = 143
+    Width = 387
+    BorderSpacing.InnerBorder = 4
+    Caption = 'OK'
+    OnClick = BtnOKClick
+    TabOrder = 2
+  end
+  object UpDown1: TUpDown
+    Left = 9
+    Height = 31
+    Top = 33
+    Width = 17
+    Min = 1
+    Max = 6000
+    Position = 60
+    TabOrder = 3
+    Wrap = False
+    OnClick = UpDown1Click
+  end
+  object UpDown2: TUpDown
+    Left = 9
+    Height = 31
+    Top = 69
+    Width = 17
+    Min = 1
+    Max = 6000
+    Position = 150
+    TabOrder = 4
+    Wrap = False
+    OnClick = UpDown2Click
+  end
+  object Label4: TLabel
+    Left = 80
+    Height = 18
+    Top = 119
+    Width = 221
+    Caption = 'mm/minuto do eixo XY recortando'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit3: TEdit
+    Left = 30
+    Height = 23
+    Top = 112
+    Width = 42
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    OnChange = Edit1Change
+    ParentFont = False
+    TabOrder = 5
+    Text = '60'
+  end
+  object UpDown3: TUpDown
+    Left = 9
+    Height = 31
+    Top = 105
+    Width = 17
+    Min = 1
+    Max = 6000
+    Position = 60
+    TabOrder = 6
+    Wrap = False
+    OnClick = UpDown3Click
+  end
+end

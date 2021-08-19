@@ -1,7 +1,7 @@
 object FrmFuros: TFrmFuros
   Left = 711
   Height = 419
-  Top = 354
+  Top = 223
   Width = 222
   BorderIcons = []
   BorderStyle = bsSingle
@@ -12,21 +12,21 @@ object FrmFuros: TFrmFuros
   OnClose = FormClose
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.6.4.0'
   object GroupBox1: TGroupBox
     Left = 8
     Height = 248
     Top = 8
     Width = 208
     Caption = 'Automático'
-    ClientHeight = 229
+    ClientHeight = 228
     ClientWidth = 204
     TabOrder = 0
     object Label1: TLabel
       Left = 14
       Height = 18
       Top = 97
-      Width = 71
+      Width = 69
       Caption = 'Area livre'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -15
@@ -39,7 +39,7 @@ object FrmFuros: TFrmFuros
       Left = 12
       Height = 18
       Top = 153
-      Width = 92
+      Width = 93
       Caption = 'Área do furo'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -15
@@ -50,7 +50,7 @@ object FrmFuros: TFrmFuros
     end
     object Label3: TLabel
       Left = 7
-      Height = 15
+      Height = 16
       Top = 178
       Width = 121
       Caption = 'Quantidade de Furos'
@@ -103,7 +103,7 @@ object FrmFuros: TFrmFuros
     end
     object Edit1: TEdit
       Left = 154
-      Height = 27
+      Height = 23
       Top = 171
       Width = 40
       TabOrder = 3
@@ -149,22 +149,22 @@ object FrmFuros: TFrmFuros
     Top = 264
     Width = 208
     Caption = 'Manual'
-    ClientHeight = 94
+    ClientHeight = 93
     ClientWidth = 204
     TabOrder = 1
     object Label5: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 3
-      Width = 17
+      Width = 18
       Caption = 'X ='
       ParentColor = False
     end
     object Label6: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 26
-      Width = 17
+      Width = 18
       Caption = 'Y ='
       ParentColor = False
     end

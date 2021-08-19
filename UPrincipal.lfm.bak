@@ -1,7 +1,7 @@
 object FrmPrincipal: TFrmPrincipal
-  Left = 427
+  Left = 196
   Height = 520
-  Top = 122
+  Top = 22
   Width = 837
   Align = alBottom
   Caption = 'PCIToGCode  v2.0'
@@ -12,7 +12,7 @@ object FrmPrincipal: TFrmPrincipal
   OnClose = FormClose
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.6.4.0'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -37,9 +37,9 @@ object FrmPrincipal: TFrmPrincipal
       Height = 423
       Top = 1
       Width = 835
-      ActivePage = TabSheet5
+      ActivePage = TabSheet4
       Align = alClient
-      TabIndex = 6
+      TabIndex = 3
       TabOrder = 1
       object TabSheet1: TTabSheet
         Caption = 'Imagem'
@@ -60,13 +60,13 @@ object FrmPrincipal: TFrmPrincipal
       end
       object TabSheet2: TTabSheet
         Caption = 'Otimizada'
-        ClientHeight = 387
-        ClientWidth = 829
+        ClientHeight = 395
+        ClientWidth = 827
         object Image2: TImage
           Left = 0
-          Height = 397
+          Height = 395
           Top = 0
-          Width = 732
+          Width = 827
           Align = alClient
           AutoSize = True
           ParentShowHint = False
@@ -76,8 +76,8 @@ object FrmPrincipal: TFrmPrincipal
       end
       object TabSheet3: TTabSheet
         Caption = 'Vetor'
-        ClientHeight = 387
-        ClientWidth = 829
+        ClientHeight = 395
+        ClientWidth = 827
         object Image3: TImage
           Cursor = crCross
           Left = 0
@@ -95,8 +95,8 @@ object FrmPrincipal: TFrmPrincipal
         object ScrollBar1: TScrollBar
           Left = 0
           Height = 15
-          Top = 384
-          Width = 732
+          Top = 380
+          Width = 827
           Align = alBottom
           Max = 1000
           Min = -1000
@@ -105,8 +105,8 @@ object FrmPrincipal: TFrmPrincipal
           OnChange = ScrollBar1Change
         end
         object ScrollBar2: TScrollBar
-          Left = 719
-          Height = 384
+          Left = 812
+          Height = 380
           Top = 0
           Width = 15
           Align = alRight
@@ -138,13 +138,13 @@ object FrmPrincipal: TFrmPrincipal
       end
       object TabSheet6: TTabSheet
         Caption = 'Mapa Fresagem'
-        ClientHeight = 387
-        ClientWidth = 829
+        ClientHeight = 395
+        ClientWidth = 827
         object Image4: TImage
           Left = 0
-          Height = 387
+          Height = 395
           Top = 0
-          Width = 829
+          Width = 827
           Align = alClient
           AutoSize = True
           Proportional = True
@@ -153,13 +153,13 @@ object FrmPrincipal: TFrmPrincipal
       end
       object TabSheet8: TTabSheet
         Caption = 'Mapa Furaçao'
-        ClientHeight = 387
-        ClientWidth = 829
+        ClientHeight = 395
+        ClientWidth = 827
         object Image5: TImage
           Left = 0
-          Height = 384
+          Height = 380
           Top = 0
-          Width = 719
+          Width = 812
           Align = alClient
           AutoSize = True
           OnClick = Image5Click
@@ -173,16 +173,16 @@ object FrmPrincipal: TFrmPrincipal
         object ScrollBar3: TScrollBar
           Left = 0
           Height = 15
-          Top = 384
-          Width = 732
+          Top = 380
+          Width = 827
           Align = alBottom
           PageSize = 0
           TabOrder = 0
           OnChange = ScrollBar3Change
         end
         object ScrollBar4: TScrollBar
-          Left = 719
-          Height = 384
+          Left = 812
+          Height = 380
           Top = 0
           Width = 15
           Align = alRight
@@ -5803,16 +5803,6 @@ object FrmPrincipal: TFrmPrincipal
       Stretch = True
     end
   end
-  object MemoTemp: TMemo
-    Left = 688
-    Height = 40
-    Top = 8
-    Width = 88
-    Lines.Strings = (
-      'MemoTemp'
-    )
-    TabOrder = 2
-  end
   object MainMenu1: TMainMenu
     left = 72
     top = 136
@@ -5909,6 +5899,18 @@ object FrmPrincipal: TFrmPrincipal
         object SMVirgula: TMenuItem
           Caption = 'Virgula'
           OnClick = SMVirgulaClick
+        end
+      end
+      object SMOtimizarGCode: TMenuItem
+        Caption = 'Otimizar GCode'
+        object SMOtimizarGCodeSim: TMenuItem
+          Caption = 'Sim'
+          Checked = True
+          OnClick = SMOtimizarGCodeSimClick
+        end
+        object SMOtimizarGCodeNao: TMenuItem
+          Caption = 'Não'
+          OnClick = SMOtimizarGCodeNaoClick
         end
       end
       object SMGeraFuracao: TMenuItem
